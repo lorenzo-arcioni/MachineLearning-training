@@ -1,6 +1,6 @@
 # Machine Learning Hub
 
-Benvenuti nel mio Learning Hub dedicato all'apprendimento completo del Machine Learning! Questo repository offre una vasta gamma di risorse, tra cui Jupyter Notebook, immagini, grafici e animazioni, per aiutarti a padroneggiare questo campo affascinante.
+Benvenuti nel mio Learning Hub dedicato all'apprendimento completo della matematica per Machine Learning! Questo repository offre una vasta gamma di risorse, tra cui Jupyter Notebook, immagini, grafici e animazioni, per aiutarti ad avere una comprensione avanzata della matematica.
 
 ## Contenuti
 
