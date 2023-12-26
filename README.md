@@ -1,48 +1,47 @@
 # Applied Mathematical Science Hub (Build in progress...)
 
-Benvenuti nel mio Learning Hub dedicato all'apprendimento completo della matematica applicata! Questo repository offre una vasta gamma di risorse, tra cui Jupyter Notebook, immagini, grafici e animazioni, per aiutarti ad avere una comprensione avanzata della matematica applicata.
+Welcome to my Learning Hub dedicated to comprehensive learning of applied mathematics! This repository provides a wide range of resources, including Jupyter Notebooks, images, graphs, and animations, to help you gain an advanced understanding of applied mathematics.
 
-## Contenuti
+## Contents
 
-Questo repository copre una serie di argomenti fondamentali:
+This repository covers a series of fundamental topics:
 
-1. **Calcolo**
-   - [Analisi 1](link_a_notebook)
-   - [Analisi 2](link_a_notebook)
+1. **Calculus**
+   - [Analysis 1](notebook_link)
+   - [Analysis 2](notebook_link)
 
-2. **Algebra Lineare**
-   - [Introduzione all'Algebra Lineare](link_a_notebook)
-   - [Operazioni matriciali](link_a_notebook)
+2. **Linear Algebra**
+   - [Introduction to Linear Algebra](notebook_link)
+   - [Matrix Operations](notebook_link)
 
-3. **Statistica e Probabilità**
-   - [Statistica di base](link_a_notebook)
-   - [Probabilità e distribuzioni](link_a_notebook)
+3. **Statistics and Probability**
+   - [Basic Statistics](notebook_link)
+   - [Probability and Distributions](notebook_link)
 
-4. **Algoritmi**
-   - [Introduzione gli algoritmi](link_a_notebook)
-   - [Algoitmi avanzati](link_a_notebook)
-   - [Ottimizzazione](link_a_notebook)
+4. **Algorithms**
+   - [Introduction to Algorithms](notebook_link)
+   - [Advanced Algorithms](notebook_link)
+   - [Optimization](notebook_link)
 
 5. **Machine Learning**
-   - [Introduzione al Machine Learning](link_a_notebook)
-   - [Supervised Learning](link_a_notebook)
-   - [Unsupervised Learning](link_a_notebook)
-   - [Deep Learning](link_a_notebook)
-   - [Reinforcement Learning](link_a_notebook)
+   - [Introduction to Machine Learning](notebook_link)
+   - [Supervised Learning](notebook_link)
+   - [Unsupervised Learning](notebook_link)
+   - [Deep Learning](notebook_link)
+   - [Reinforcement Learning](notebook_link)
 
-6. **Data science**
-   - [Exploratory data analysis](link_a_notebook)
-   - [Data cleaning](link_a_notebook)
-   - [Data preprocessing](link_a_notebook)
-   - [Hyperparameter tuning](link_a_notebook)
-   - [Cross validation](link_a_notebook)
+6. **Data Science**
+   - [Exploratory Data Analysis](notebook_link)
+   - [Data Cleaning](notebook_link)
+   - [Data Preprocessing](notebook_link)
+   - [Hyperparameter Tuning](notebook_link)
+   - [Cross Validation](notebook_link)
 
+## Getting Started
 
-## Come iniziare
-
-1. Clona il repository sul tuo computer:
+1. Clone the repository to your computer:
    ```bash
-   git clone https://github.com/tuonome/machine-learning-learning-hub.git
+   git clone https://github.com/yourusername/machine-learning-learning-hub.git
    ```
-2. Apri la directory clonata con un editor per Jupyter Notebook (es. VsCode).
+2. Open the cloned directory with a Jupyter Notebook editor (e.g., VsCode).
 3. Happy learning!
