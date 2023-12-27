@@ -7,19 +7,23 @@ Welcome to my Learning Hub dedicated to comprehensive learning of applied mathem
 This repository covers a series of fundamental topics:
 
 1. **Calculus**
-   - [Analysis 1](notebook_link)
-   - [Analysis 2](notebook_link)
+   - [Functions](notebook_link)
+   - [Limits](notebook_link)
+   - [Derivatives](notebook_link)
+   - [Integrals](notebook_link)
 
 2. **Linear Algebra**
    - [Introduction to Linear Algebra](notebook_link)
    - [Matrix Operations](notebook_link)
 
-3. **Statistics and Probability**
-   - [Basic Statistics](notebook_link)
+3. **Statistics, Probability and Combinatorics**
+   - [Combinatorics]()
    - [Probability and Distributions](notebook_link)
+   - [Statistics](notebook_link)
 
 4. **Algorithms**
    - [Introduction to Algorithms](notebook_link)
+   - [Data Structures]()
    - [Advanced Algorithms](notebook_link)
    - [Optimization](notebook_link)
 
