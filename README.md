@@ -7,18 +7,18 @@ Welcome to my Learning Hub dedicated to comprehensive learning of applied mathem
 This repository covers a series of fundamental topics:
 
 1. **Calculus**
-   - [Functions](notebook_link)
-   - [Limits](notebook_link)
+   - [Functions](https://github.com/lorenzo-arcioni/Applied_Mathematics_Hub/blob/main/Calculus/Functions.ipynb)
+   - [Limits](https://github.com/lorenzo-arcioni/Applied_Mathematics_Hub/blob/main/Calculus/Limits.ipynb)
    - [Derivatives](notebook_link)
    - [Integrals](notebook_link)
 
 2. **Linear Algebra**
-   - [Introduction to Linear Algebra](notebook_link)
+   - [Introduction to Linear Algebra](https://github.com/lorenzo-arcioni/Applied_Mathematics_Hub/blob/main/Linear%20Algebra/linear_algebra.ipynb)
    - [Matrix Operations](notebook_link)
 
-3. **Statistics, Probability and Combinatorics**
+3. **Combinatorics, Probability and Statistics**
    - [Combinatorics]()
-   - [Probability and Distributions](notebook_link)
+   - [Probability](notebook_link)
    - [Statistics](notebook_link)
 
 4. **Algorithms**
