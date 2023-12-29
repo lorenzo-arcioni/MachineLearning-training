@@ -11,21 +11,23 @@ This repository covers a series of fundamental topics:
    - [Limits](https://github.com/lorenzo-arcioni/Applied_Mathematics_Hub/blob/main/Calculus/Limits.ipynb)
    - [Derivatives](notebook_link)
    - [Integrals](notebook_link)
+   - [Vector Calculus](notebook_link)
 
-2. **Linear Algebra**
-   - [Introduction to Linear Algebra](https://github.com/lorenzo-arcioni/Applied_Mathematics_Hub/blob/main/Linear%20Algebra/linear_algebra.ipynb)
-   - [Matrix Operations](notebook_link)
+2. **Linear Algebra and Analytic Geometry**
+   - [Linear Algebra](https://github.com/lorenzo-arcioni/Applied_Mathematics_Hub/blob/main/Linear%20Algebra/linear_algebra.ipynb)
+   - [Analytic Geometry](notebook_link)
 
 3. **Combinatorics, Probability and Statistics**
    - [Combinatorics]()
    - [Probability](notebook_link)
    - [Statistics](notebook_link)
 
-4. **Algorithms**
+4. **Algorithms and Optimization**
    - [Introduction to Algorithms](notebook_link)
    - [Data Structures]()
    - [Advanced Algorithms](notebook_link)
    - [Optimization](notebook_link)
+   - [Operational research]()
 
 5. **Machine Learning**
    - [Introduction to Machine Learning](notebook_link)
