@@ -51,3 +51,5 @@ This repository covers a series of fundamental topics:
    ```
 2. Open the cloned directory with a Jupyter Notebook editor (e.g., VsCode).
 3. Happy learning!
+
+## References
