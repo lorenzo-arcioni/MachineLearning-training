@@ -15,6 +15,11 @@ This repository covers a series of fundamental topics:
 
 2. **Linear Algebra and Analytic Geometry**
    - [Linear Algebra](https://github.com/lorenzo-arcioni/Applied_Mathematics_Hub/blob/main/Linear%20Algebra/linear_algebra.ipynb)
+
+      | Title                                     | Description                                         | Links     | Medium                                                                                |
+      | ----------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------- |------------------------------------|
+      | Scalars, vectors, matrices and tensors    | Introduction to basic concepts in linear algebra    | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Fundamentals.ipynb) |  [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@lorenzo.arcioni2000/a-pythonic-exploration-of-linear-algebra-scalars-vectors-matrices-and-tensors-2c1e24e4fd26) |
+
    - [Analytic Geometry](notebook_link)
 
 3. **Combinatorics, Probability and Statistics**
