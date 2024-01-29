@@ -18,7 +18,9 @@ This repository covers a series of fundamental topics:
 
       | Title                                     | Description                                         | Links     | Medium                                                                                |
       | ----------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------- |------------------------------------|
-      | Scalars, vectors, matrices and tensors    | Introduction to basic concepts in linear algebra    | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Fundamentals.ipynb) |  [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@lorenzo.arcioni2000/a-pythonic-exploration-of-linear-algebra-scalars-vectors-matrices-and-tensors-2c1e24e4fd26) |
+      | Scalars, Vectors, Matrices and Tensors    | Introduction to basic objects in Linear Algebra    | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Fundamentals.ipynb) |  [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@lorenzo.arcioni2000/a-pythonic-exploration-of-linear-algebra-scalars-vectors-matrices-and-tensors-2c1e24e4fd26) |
+      | Object Addition    | Introduction to object addition in Linear Algebra    |  |
+      | Object Multiplication   | Introduction to object multiplication in Linear Algebra    |  |
 
    - [Analytic Geometry](notebook_link)
 
