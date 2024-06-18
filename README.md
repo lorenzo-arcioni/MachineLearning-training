@@ -19,7 +19,7 @@ This repository covers a series of fundamental topics:
       | Title                                     | Description                                         | Colab     | Medium                                                                                |
       | ----------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------- |------------------------------------|
       | Scalars, Vectors, Matrices and Tensors    | Introduction to basic objects in Linear Algebra    | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Fundamentals.ipynb) |  [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@lorenzo.arcioni2000/a-pythonic-exploration-of-linear-algebra-scalars-vectors-matrices-and-tensors-2c1e24e4fd26) |
-      | Object Addition | Introduction to object addition in Linear Algebra  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Object%20Addition.ipynb) | |
+      | Object Addition | Introduction to object addition in Linear Algebra  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Object%20Addition.ipynb) | [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/ai-mind-labs/a-pythonic-exploration-of-linear-algebra-object-addition-287e9e2c185d) |
       | Object Multiplication | Introduction to object multiplication in Linear Algebra |  |
 
    - [Analytic Geometry](notebook_link)
@@ -39,6 +39,10 @@ This repository covers a series of fundamental topics:
 5. **Machine Learning**
    - [Introduction to Machine Learning](notebook_link)
    - [Supervised Learning](notebook_link)
+      | Title                                     | Description                                         | Colab     | Medium                                                                                |
+      | ----------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------- |------------------------------------|
+      | K-Nearest Neighbors (KNN)    | Proprietà e analisi teorica    |  |  |
+      | Decision Trees | Proprietà e analisi teorica | | |
    - [Unsupervised Learning](notebook_link)
    - [Deep Learning](notebook_link)
    - [Reinforcement Learning](notebook_link)

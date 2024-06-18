@@ -1,0 +1,191 @@
+\subsubsection{Scalar-Scalar Multiplication}
+Scaling one scalar by another results in a new scalar that represents the combined scaling effect. That results in stretching or compressing a one-dimensional point along a numerical scale.
+
+The product of two scalars $a,b \in \mathbb{F}$ is given by:
+
+\[ a \cdot b = c. \]
+
+The result $c \in \mathbb{F}$ is a new scalar in the same field of $a$ and $b$.
+
+\subsubsection{Scalar-Vector Multiplication}
+The scalar-vector multiplication consist in scaling each component of a vector by a scalar. That results in stretching or compressing a vector along its direction without changing its direction.
+
+The product of a vector $\vec{v} \in \mathbb{F}^n$ and a scalar $c$ is given by:
+
+\[ \vec{w} = c \cdot \vec{v} = \begin{bmatrix} c \cdot v_1 \\ c \cdot v_2 \\ \vdots \\ c \cdot v_n \end{bmatrix}. \]
+
+The result is a $\vec w \in \mathbb{F}^n$ vector that live in the same space of $\vec v$.
+
+\subsubsection{Vector-Vector Multiplication}
+The vector-vector multiplication consist of scaling each component of a vector by the components of an other one. It measures the similarity or alignment between two vectors. It is also known as \textbf{dot product} that is the product of vectors magnitudes and the cosine of the angle between them. It provides a measure of projection of one vector onto another.
+
+The \textbf{dot product} of a vector $\vec{v} \in \mathbb{F}^n$ and a vector $\vec{w} \in \mathbb{F}^n$ is given by:
+
+\[ \vec v \cdot \vec{w} = \sum_{i=1}^n v_i \cdot w_i = c \in \mathbb{F} \]
+
+The result is a scalar $c \in \mathbb{F}$.
+\\
+ 
+There exists also an other important type of multiplication called \textbf{Hadamard product}. The \textbf{Hadamard product} of two vectors $\vec a, \vec b \in \mathbb{F}^n$ is denoted as
+
+$$
+\vec a \odot \vec b = \begin{bmatrix}
+    a_1 b_1\\
+    a_2 b_2\\
+    \vdots\\
+    a_n b_n
+\end{bmatrix}.
+$$
+
+Both \textbf{dot product} and \textbf{Hadamard product} involves vectors with the same shape.
+
+\subsubsection{Scalar-Matrix Multiplication}
+The product of a scalar by a matrix consist of scaling each element of a matrix by the scalar. Geometrically, scaling each element in a matrix mean stretching or compressing the entire matrix by a factor.
+
+The product of a matrix $A_{mn} \in \mathbb{F}^{m \times n}$ and a scalar $c \in \mathbb{F}$ is given by:
+
+\[ A_{mn}' = c \cdot A_{mn} = \begin{bmatrix} c \cdot a_{11} & c \cdot a_{12} & \dots & c \cdot a_{1n} \\ c \cdot a_{21} & c \cdot a_{22} & \dots & c \cdot a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ c \cdot a_{m1} & c \cdot a_{m2} & \dots & c \cdot a_{mn} \end{bmatrix} \]
+
+\subsubsection{Vector-Matrix Multiplication}
+Multiply a matrix by a vector refers to combine rows of a matrix with corresponding components of a vector to produce a new vector. Intuitively, the matrix "transform" the vector in an other one in the space, by applying a linear transformation defined by the matrix. This transformation can include scaling, rotation, shearing, or any combination of these operations, depending on the specific values in the multiplied matrix.
+
+The product of the matrix $A_{mn} \in \mathbb{F}^{m \times n}$ and the vector $\vec v \in \mathbb{F}^n$ is defined as 
+
+$$
+A_{mn} \cdot \vec v = \begin{bmatrix}
+    a_{11} & \dots & a_{1n} \\
+    \vdots & \ddots & \vdots \\
+    a_{m1} & \dots & a_{mn}
+\end{bmatrix} \cdot \begin{bmatrix}
+    v_1 \\
+    \vdots\\
+    v_n
+\end{bmatrix} = \begin{bmatrix}
+    \sum_{i = 0}^n a_{1i} v_{i}\\
+    \vdots\\
+    \sum_{i = 0}^n a_{mi} v_{i}
+\end{bmatrix}.
+$$
+
+Remember that we can multiply a column vector by a matrix only if their shapes are compatible. Specifically, the number of columns of the matrix must be equal to the rows of the vector.
+
+\subsubsection{Matrix-Matrix Multiplication}
+Matrix-matrix multiplication involves the product of two matrices, typically denoted as  $A_{mk}B_{kn} = C_{mn}$ where $A_{mk}$ and $B_{kn}$ are matrices and $C_{mn}$ is the resulting matrix. The element of $C_{mn}$ are obtained by taking the dot product of the row vectors of matrix $A_{mk}$ with the column vectors of the matrix $B_{kn}$. The generic component $c_{ij}$ of matrix $C_{mn}$ is computed by
+
+\[
+c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj}.
+\]
+
+The matrix on the right side of the product must have the same number of columns as the number of rows in the matrix on the left side.
+
+\subsubsection{Scalar-Tensor Multiplication}
+As the same as the scalar-matrix product, the scalar-tensor multiplication mean scaling each element of a tensor by a scalar.
+
+The product of a tensor $T_{k_1k_2 \ldots k_d} \in \mathbb{F}^{k_1 \times k_2 \times \ldots \times k_d}$ and a scalar $c \in \mathbb{F}$ is given by:
+
+\[ 
+c \cdot T_{k_1k_2 \ldots k_d} = C_{k_1k_2 \ldots k_d} \in \mathbb{F}^{k_1 \times k_2 \times \ldots \times k_d},
+\]
+
+where each element $a_{i_1i_2 \ldots i_d}$ of $C_{k_1k_2 \ldots k_d}$ is equal to $c \cdot a_{i_1i_2 \ldots i_d}$.
+
+\subsubsection{Vector-Tensor Multiplication}
+The product of a vector and a tensor can be seen as a \textbf{dot product} that involves the vector and the first dimension elements of the tensor.
+The product of a vector $\vec{v} \in \mathbb{F}^n$ and a $d$th-order tensor $T_{k_1, \dots, k_d} \in \mathbb{F}^{k_1 \times k_2 \times \ldots \times k_d}$ is defined as follow:
+
+\[ Z_{k_2, \dots, k_d} = T_{k_1, \dots, k_d} \cdot \vec{v} = \sum_{i=0}^{k_1} T_{k_2, \dots, k_d}^i \cdot v_i
+\]
+
+As you can see, we have reduced the Vector-Tensor multiplication into a combination of Scalar-Tensor multiplication and tensor sum.
+Remember that in this generic case that $k_1$ must be equal to $n$.
+\\
+
+Note that even if $k_1 \neq n$ it is still possible to multiply the vector $\vec{v}$ and the tensor $T_{k_1, \dots, k_d}$ if there are at least a $k_i$ in the tensor shape that is equal to $n$. 
+
+In fact, we can choose which dimension of the tensor to sum over (\textit{sum over axes}), and only this dimension must be equal to $n$.
+
+For example consider a vector $\vec v \in \mathbb{F}^n$ and a tensor $T_{k_1, \dots, k_d} \in \mathbb{F}^{k_1 \times k_2 \times \ldots \times k_d}$ where a generic $k_r$ is equal to $n$. The Vector-Tensor product is defined as follow:
+
+\[ 
+Z_{k_1, \dots, k_{r-1}, k_{r+1}, \dots, k_d} = T_{k_1, \dots, k_{r}, \dots, k_d} \cdot \vec{v} =
+\begin{bmatrix}
+    \begin{bmatrix}
+        \begin{bmatrix}
+            \sum_{i=0}^{k_r} T_{k_{r+1}, \dots, k_d}^{1,i} \cdot v_i\\
+            \vdots\\
+            \sum_{i=0}^{k_r} T_{k_{r+1}, \dots, k_d}^{k_{r-1}, i} \cdot v_i
+        \end{bmatrix}^1_{k_{r-1}}\\
+        \ \ \vdots\\
+        \begin{bmatrix}
+            \sum_{i=0}^{k_r} T_{k_{r+1}, \dots, k_d}^{1,i} \cdot v_i\\
+            \vdots\\
+            \sum_{i=0}^{k_r} T_{k_{r+1}, \dots, k_d}^{k_{r-1}, i} \cdot v_i
+        \end{bmatrix}^{k_{r-1}}_{k_{r-1}}\\
+        \ \  \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ddots\\
+    \end{bmatrix}_{k_2}^1\\
+    \vdots\\
+    \begin{bmatrix}
+        \begin{bmatrix}
+            \sum_{i=0}^{k_r} T_{k_{r+1}, \dots, k_d}^{1,i} \cdot v_i\\
+            \vdots\\
+            \sum_{i=0}^{k_r} T_{k_{r+1}, \dots, k_d}^{k_{r-1}, i} \cdot v_i
+        \end{bmatrix}^1_{k_{r-1}}\\
+        \ \ \vdots\\
+        \begin{bmatrix}
+            \sum_{i=0}^{k_r} T_{k_{r+1}, \dots, k_d}^{1,i} \cdot v_i\\
+            \vdots\\
+            \sum_{i=0}^{k_r} T_{k_{r+1}, \dots, k_d}^{k_{r-1}, i} \cdot v_i
+        \end{bmatrix}^{k_{r-1}}_{k_{r-1}}\\
+        \ \  \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ddots\\
+    \end{bmatrix}^{k_2}_{k_2}
+\end{bmatrix}_{k_1}
+\]
+
+Once again, we have reduced the Vector-Tensor multiplication in a combination of Scalar-Tensor multiplication and tensor sum, but this time we have choose to sum over the $k_r$ axis instead of $k_1$ like in the previous case.
+
+\subsubsection{Matrix-Tensor Multiplication}
+The product of a matrix and a tensor can be seen as a matrix multiplication that involves the matrix and the first dimension elements of the tensor.
+The product of a matrix $A_{mn} \in \mathbb{F}^{m \times n}$ and a $d$th-order tensor $T_{k_1, \dots, k_d} \in \mathbb{F}^{k_1 \times k_2 \times \ldots \times k_d}$ is defined as follow:
+
+\[ Z_{k_1, \dots, k_d} = T_{k_1, \dots, k_d} \cdot A_{mn} = 
+\begin{bmatrix} 
+T_{k_2, \dots, k_n}^1 \cdot \vec a_1 \\ 
+T_{k_2, \dots, k_n}^2 \cdot \vec a_2 \\ 
+\vdots \\ 
+T_{k_2, \dots, k_n}^{k_1} \cdot \vec a_m
+\end{bmatrix} \]
+
+In this case $k_1$ must be equal to . 
+
+
+We can also choose two not consecutive axis on .. CHANGE THE FORMULA BELOW 
+
+\[ 
+Z_{k_1, \dots, k_{r-1}, k_{r+1}, \dots, k_d} = T_{k_1, \dots, k_{r}, \dots, k_d} \cdot A_{mn} =
+\begin{bmatrix}
+    \vdots \\
+    \begin{bmatrix}
+        \ \ \vdots \\
+        \begin{bmatrix}
+            T_{k_{r}, \dots, k_d}^{1} \cdot A_{mn}\\
+            \vdots\\
+            T_{k_{r}, \dots, k_d}^{k_{r-1}} \cdot  A_{mn}
+        \end{bmatrix}_{k_{r-1}}\\
+        \ \  \ \  \ \ \ \ \ \ \ \ \ \ \ \ \vdots \ \ \ \ \ \ \ \ \  \ \ddots\\
+    \end{bmatrix}_{k_2}\\
+    \vdots
+\end{bmatrix}_{k_1}
+\]
+
+In this case $k_r = m$ and $k_{s} = n$.
+
+\subsubsection{Tensor-Tensor Multiplication}
+The product of a $d$th-order tensor $A_{k_1, \dots, k_d} \in \mathbb{F}^{k1, \dots, k_d}$ and a $n$th-order tensor $T_{k_1, \dots, k_n} \in \mathbb{F}^{k1, \dots, k_d}$ is defined as follow:
+
+\[ Z_{k_1, \dots, k_d} = T_{k_1, \dots, k_d} \cdot  A_{k_1, \dots, k_d}  = 
+\begin{bmatrix} 
+T_{k_2, \dots, k_n}^1 \cdot  A_{k_2, \dots, k_d} \\ 
+T_{k_2, \dots, k_n}^2 \cdot  A_{k_2, \dots, k_d} \\ 
+\vdots \\ 
+T_{k_2, \dots, k_n}^{k_1} \cdot  A_{k_2, \dots, k_d}
+\end{bmatrix} \]
