@@ -19,7 +19,11 @@ This repository covers a series of fundamental topics:
       | Title                                     | Description                                         | Colab     | Medium                                                                                |
       | ----------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------------------- |------------------------------------|
       | Scalars, Vectors, Matrices and Tensors    | Introduction to basic objects in Linear Algebra    | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Fundamentals.ipynb) |  [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@lorenzo.arcioni2000/a-pythonic-exploration-of-linear-algebra-scalars-vectors-matrices-and-tensors-2c1e24e4fd26) |
+<<<<<<< HEAD
       | Object Addition | Introduction to object addition in Linear Algebra  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Object%20Addition.ipynb) | [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/ai-mind-labs/a-pythonic-exploration-of-linear-algebra-object-addition-287e9e2c185d) |
+=======
+      | Object Addition | Introduction to object addition in Linear Algebra  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lorenzo-arcioni/Applied-Mathematics-Hub/blob/main/Linear%20Algebra%20and%20Analytic%20Geometry/Object%20Addition.ipynb) | [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/ai-mind-labs/a-pythonic-exploration-of-linear-algebra-object-addition-287e9e2c185d)|
+>>>>>>> 53de940234f08c7af0d7a37dd9f4a39344a2c97e
       | Object Multiplication | Introduction to object multiplication in Linear Algebra |  |
 
    - [Analytic Geometry](notebook_link)
