@@ -2,15 +2,128 @@
 \section{Introduzione}
 
 \subsection{Panoramica dell'algoritmo K-Nearest Neighbors (KNN)}
-L'algoritmo K-Nearest Neighbors (KNN) è un metodo di apprendimento supervisionato utilizzato sia per problemi di classificazione che di regressione. La sua essenza risiede nel principio di vicinanza: gli oggetti simili tendono a trovarsi vicini nello spazio delle caratteristiche. Questa caratteristica rende il KNN intuitivo e semplice da implementare, pur essendo potente in molte applicazioni pratiche.
+L'algoritmo K-Nearest Neighbors (KNN) rappresenta un pilastro fondamentale 
+nell'ambito dell'apprendimento automatico supervisionato, apprezzato per la 
+sua semplicità concettuale e la sua efficacia in una vasta gamma di applicazioni. 
+La sua filosofia si basa sul principio intuitivo che oggetti simili tendono a 
+raggrupparsi nello stesso spazio delle caratteristiche. Questo approccio non 
+parametrico permette a KNN di adattarsi a strutture dati complesse e 
+a relazioni non lineari, senza fare assunzioni rigide sulla distribuzione dei dati.
 
-KNN è un metodo basato sulla prossimità, il che significa che, al momento della previsione per un nuovo dato, l'algoritmo cerca i K punti di addestramento più vicini (i "vicini") e utilizza le loro informazioni per fare la previsione. Per i problemi di classificazione, KNN assegna l'etichetta più comune tra i vicini; per i problemi di regressione, calcola la media dei valori dei vicini.
+\subsection{Funzionamento di KNN}
 
-Un aspetto fondamentale del KNN è la scelta del parametro K, che rappresenta il numero di vicini da considerare. La scelta di K influisce significativamente sulla performance dell'algoritmo: un K troppo piccolo può rendere il modello sensibile al rumore (overfitting), mentre un K troppo grande può diluire la precisione del modello (underfitting).
+KNN opera determinando le etichette di classificazione o i valori di 
+regressione per un nuovo punto, basandosi sulla vicinanza ai punti di addestramento. 
+Il parametro chiave di KNN è $K$, che rappresenta il numero di "vicini" più prossimi 
+da considerare durante la fase di predizione. Quando un nuovo dato deve essere 
+classificato, KNN calcola la distanza (come vedremo, esistono varie tipologie di distanze) 
+tra il dato da classificare 
+e tutti i punti di addestramento, quindi seleziona i $K$ punti più vicini. La classe o 
+il valore di regressione del nuovo dato è determinato dalla classe maggiormente rappresentata
+o dalla media dei valori nei punti vicini, rispettivamente.
 
-Un altro elemento critico del KNN è la metrica di distanza utilizzata per determinare la vicinanza tra i punti. Le metriche di distanza più comuni includono la distanza euclidea, la distanza di Manhattan e la distanza di Minkowski, ognuna delle quali ha proprietà diverse che possono influenzare i risultati in base alla natura dei dati.
+\subsection{Potenzialità di KNN}
 
-Nonostante la sua semplicità, KNN presenta alcune sfide, in particolare riguardo alla gestione di grandi dataset e alla sensibilità alla dimensionalità dei dati. Tuttavia, grazie alla sua natura non parametriche e alla facilità di implementazione, rimane un metodo popolare e ampiamente utilizzato in molte applicazioni di machine learning.
+KNN trova applicazione in numerosi settori grazie alla sua flessibilità e facilità di 
+implementazione. Nei sistemi di raccomandazione, ad esempio, può suggerire prodotti o 
+contenuti simili a quelli preferiti dall'utente sulla base dei gusti di altri utenti simili 
+(vicini). Nell'analisi di immagini e nel riconoscimento di pattern, KNN può classificare 
+nuove immagini confrontandole con esempi già noti. In ambito medico, può supportare la diagnosi 
+confrontando i sintomi del paziente con casi storici simili.
 
-\subsection{Importanza e applicazioni del KNN}
+\subsection{Caratteristiche e Limitazioni}
+
+Una delle caratteristiche distintive di KNN è la sua interpretabilità. Le decisioni di 
+classificazione o regressione si basano direttamente sulla vicinanza tra i dati, rendendo 
+il processo decisionale trasparente e facilmente comprensibile. Tuttavia, KNN può essere 
+sensibile al rumore nei dati e alla presenza di feature non rilevanti, il che può influenzare 
+negativamente le previsioni. Inoltre, gestire grandi dataset con KNN può essere computazionalmente 
+oneroso, poiché richiede il calcolo delle distanze tra il nuovo dato e tutti i punti di addestramento; 
+sopratutto quando si ha a che fare con dataset dimensionalmente complessi.
+
+\subsection{Definizione e concetto di base}
+
+\subsubsection{Dataset, feature e variabile target}
+
+Un dataset in machine learning è una collezione di dati organizzati in un formato strutturato. Ogni riga del dataset rappresenta un'osservazione, mentre ogni colonna rappresenta una caratteristica (feature) o la variabile target (etichetta). Le feature sono attributi che descrivono le osservazioni e possono essere di diversi tipi, come numeriche, categoriche o binarie. La variabile target è ciò che vogliamo predire utilizzando le feature.
+
+Ad esempio, in un dataset per la predizione del prezzo delle case, le feature potrebbero includere la superficie della casa, il numero di camere, la posizione, l'anno di costruzione, ecc. La variabile target sarebbe il prezzo della casa.
+
+\subsubsection{Problema di classificazione}
+
+Consideriamo un esempio reale: la diagnosi precoce di malattie cardiache. Questo è un problema non banale che richiede l'uso del machine learning per essere risolto efficacemente. Il dataset potrebbe includere pazienti con varie caratteristiche cliniche misurate durante esami medici. Le feature potrebbero includere età, genere, pressione sanguigna, livelli di colesterolo, frequenza cardiaca massima, risultati di elettrocardiogrammi, e altre misure cliniche rilevanti. La variabile target sarebbe una variabile binaria che indica la presenza o l'assenza di una malattia cardiaca.
+
+L'algoritmo KNN può essere utilizzato per classificare un nuovo paziente come "a rischio" o "non a rischio" di malattia cardiaca basandosi sui dati storici di altri pazienti. Quando un nuovo paziente entra per una valutazione, KNN calcola le distanze tra le caratteristiche cliniche del nuovo paziente e quelle dei pazienti nel dataset di addestramento. Seleziona i \( K \) pazienti più simili (i vicini più prossimi) e determina la classe del nuovo paziente in base alla maggioranza delle classi dei vicini.
+
+Per esempio, se \( K = 5 \) e tra i 5 pazienti più vicini al nuovo paziente 3 hanno una malattia cardiaca e 2 no, KNN predice che il nuovo paziente è "a rischio" di malattia cardiaca. Questa previsione può aiutare i medici a prendere decisioni informate riguardo ulteriori test o trattamenti, dimostrando l'importanza e l'utilità del Machine Learning in contesti medici critici.
+
+\subsubsection{Problema di regressione}
+
+Un esempio di problema di regressione risolvibile con l'algoritmo K-Nearest Neighbors (KNN) è la previsione del valore di mercato delle proprietà immobiliari in una città. Questo problema richiede un approccio che si affida al machine learning per ottenere stime accurate e affidabili, data la moltitudine di fattori che influenzano i prezzi delle case.
+
+Consideriamo un dataset che include informazioni dettagliate sulle proprietà immobiliari di una città. Le feature possono includere:
+
+\begin{itemize}
+    \item Superficie della proprietà (in metri quadrati)
+    \item Numero di camere da letto
+    \item Numero di bagni
+    \item Anno di costruzione
+    \item Distanza dai servizi principali (scuole, ospedali, trasporti pubblici)
+    \item Valutazioni della qualità del quartiere
+    \item Prezzi recenti delle proprietà vicine
+\end{itemize}
+
+La variabile target in questo caso è il prezzo di vendita della proprietà.
+
+Quando si vuole stimare il valore di una nuova proprietà, l'algoritmo KNN calcola la distanza tra le caratteristiche della nuova proprietà e quelle delle proprietà nel dataset di addestramento. Utilizzando una metrica di distanza (come la distanza euclidea), KNN identifica i \( K \) immobili più simili. 
+
+Ad esempio, se \( K = 5 \), KNN selezionerà le cinque proprietà più vicine alla nuova proprietà in termini di caratteristiche. Il prezzo stimato per la nuova proprietà sarà la media dei prezzi delle cinque proprietà più vicine.
+
+\[
+\hat{y} = \frac{1}{K} \sum_{i \in \mathcal{N}_K(\mathbf{x})} y_i
+\]
+
+Dove \( \hat{y} \) è il prezzo stimato della nuova proprietà, \( K \) è il numero di vicini considerati, \( \mathcal{N}_K(\mathbf{x}) \) rappresenta l'insieme dei \( K \) vicini più prossimi e \( y_i \) è il prezzo di una delle proprietà vicine.
+
+Questo approccio di regressione basato su KNN è particolarmente utile perché tiene conto della località spaziale e delle caratteristiche specifiche delle proprietà immobiliari. Inoltre, permette di adattarsi a variazioni non lineari e complesse nei dati, che sono comuni nel mercato immobiliare. La previsione accurata dei prezzi immobiliari è fondamentale per acquirenti, venditori, agenti immobiliari e investitori, rendendo KNN uno strumento prezioso in questo contesto.
+
+
+\subsection{Sfide e Ottimizzazioni}
+
+La "maledizione della dimensionalità" è una delle sfide principali di KNN, in quanto la 
+performance dell'algoritmo può decadere significativamente con l'aumento della dimensionalità 
+dei dati. Per mitigare questo problema, sono state sviluppate tecniche come la riduzione della 
+dimensionalità e l'uso di strutture dati specializzate (come KD-Trees) per accelerare il calcolo 
+delle distanze.
+
+\subsection{Applicazioni Avanzate e Ricerca}
+
+La ricerca attuale su KNN si concentra sulla sua integrazione con tecniche avanzate di 
+machine learning, come l'apprendimento semi-supervisionato e il trasferimento di conoscenza, 
+per migliorare ulteriormente la sua robustezza e la sua capacità predittiva in scenari complessi.
+
+Concludendo questa introduzione, KNN rimane una scelta potente e versatile per molte applicazioni di machine learning grazie alla sua semplicità, flessibilità e interpretabilità. Nonostante le sfide associate, continua a essere ampiamente utilizzato come punto di partenza per problemi di classificazione e regressione, offrendo risultati affidabili e interpretazioni chiare in vari contesti applicativi.
+
 \subsection{Obiettivi dell'articolo}
+
+L'obiettivo principale di questo articolo è fornire una comprensione completa e dettagliata 
+dell'algoritmo K-Nearest Neighbors (KNN) attraverso un'analisi sia teorica che pratica. 
+In primo luogo, l'articolo presenterà i fondamenti teorici di KNN, spiegando il funzionamento 
+dell'algoritmo, le metriche di distanza utilizzate (come la distanza euclidea e la distanza di Manhattan) 
+e l'importanza della scelta del parametro $K$. Verranno, inoltre, discusse le implicazioni di queste scelte 
+sulla performance dell'algoritmo.
+
+In secondo luogo, verranno esaminate le proprietà matematiche di KNN, inclusa la complessità 
+computazionale e le sfide legate alla "maledizione della dimensionalità". Saranno analizzati i 
+trade-off tra bias e varianza per comprendere come ottimizzare le prestazioni di questo algoritmo.
+
+In terzo luogo, l'articolo fornirà un'analisi empirica, confrontando KNN con altri algoritmi 
+di machine learning su dataset standard. Questo confronto aiuterà a evidenziare i punti di forza 
+e le limitazioni di KNN in scenari pratici.
+
+Infine, l'articolo esplorerà le tecniche di ottimizzazione e miglioramento di KNN, 
+come la normalizzazione dei dati, l'uso di KNN pesato e l'implementazione di strutture 
+dati efficienti come KD-Trees. 
+
+In sintesi, l'articolo mira a offrire una visione completa e 
+dettagliata dell'algoritmo KNN.

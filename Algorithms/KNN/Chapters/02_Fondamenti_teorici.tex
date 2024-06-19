@@ -1,6 +1,53 @@
 \section{Fondamenti Teorici del KNN}
-\subsection{Definizione e concetto di base}
+
 \subsection{Definizione matematica formale}
+
+Per formalizzare matematicamente l'algoritmo K-Nearest Neighbors (KNN), consideriamo un dataset di addestramento \( \mathcal{D} = \{(\mathbf{x}_i, y_i)\}_{i=1}^N \), dove \( \mathbf{x}_i \in \mathbb{R}^d \) rappresenta un punto dati con \( d \) caratteristiche e \( y_i \in \mathbb{R} \) (o \( y_i \in \{1, \ldots, C\} \) per la classificazione) rappresenta l'etichetta associata.
+
+\subsubsection{Distanza tra punti dati}
+
+Per determinare i \( K \) vicini più prossimi, è necessario definire una metrica di distanza \( d(\mathbf{x}, \mathbf{z}) \) tra due punti dati \( \mathbf{x} \) e \( \mathbf{z} \). Le metriche comunemente utilizzate includono:
+
+\begin{itemize}
+    \item \textbf{Distanza Euclidea:}
+    \[
+    d(\mathbf{x}, \mathbf{z}) = ||\mathbf{x} - \mathbf{z}|| = \sqrt{\sum_{j=1}^d (x_j - z_j)^2}
+    \]
+
+    \item \textbf{Distanza di Manhattan:}
+    \[
+    d(\mathbf{x}, \mathbf{z}) = \sum_{j=1}^d |x_j - z_j|
+    \]
+
+    \item \textbf{Distanza di Minkowski:}
+    \[
+    d(\mathbf{x}, \mathbf{z}) = \left( \sum_{j=1}^d |x_j - z_j|^p \right)^{\frac{1}{p}}
+    \]
+    dove \( p \) è un parametro positivo che determina la forma della distanza.
+\end{itemize}
+
+\subsubsection{Classificazione}
+
+Nel contesto della classificazione, l'etichetta \( \hat{y} \) di un nuovo punto dati \( \mathbf{x} \) è determinata come segue:
+\begin{enumerate}
+    \item Calcolare la distanza tra \( \mathbf{x} \) e ogni punto dati \( \mathbf{x}_i \) nel dataset di addestramento.
+    \item Identificare i \( K \) punti più vicini a \( \mathbf{x} \) utilizzando la metrica di distanza scelta.
+    \item Assegnare a \( \mathbf{x} \) l'etichetta di classe più frequente tra i \( K \) vicini più prossimi. Formalmente,
+    \[
+    \hat{y} = \arg\max_{c \in \{1, \ldots, C\}} \sum_{i \in \mathcal{N}_K(\mathbf{x})} \mathbf{1}_{\{y_i = c\}}
+    \]
+    dove \( \mathcal{N}_K(\mathbf{x}) \) denota l'insieme dei \( K \) vicini più prossimi di \( \mathbf{x} \) e \( \mathbf{1}_{\{y_i = c\}} \) è una funzione indicatrice che vale 1 se \( y_i = c \) e 0 altrimenti.
+\end{enumerate}
+
+\subsubsection{Regressione}
+
+Per la regressione, il valore predetto \( \hat{y} \) per un nuovo punto dati \( \mathbf{x} \) è calcolato come la media dei valori dei \( K \) vicini più prossimi:
+\[
+\hat{y} = \frac{1}{K} \sum_{i \in \mathcal{N}_K(\mathbf{x})} y_i
+\]
+
+Questa definizione matematica formale fornisce una chiara comprensione del funzionamento di base dell'algoritmo KNN, sia per la classificazione che per la regressione.
+
 \subsection{Scelta del parametro K}
 \subsection{Metriche di distanza}
 \subsubsection{Distanza Euclidea}
