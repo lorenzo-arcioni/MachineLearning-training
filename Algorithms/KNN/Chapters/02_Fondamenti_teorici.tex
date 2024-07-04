@@ -2,59 +2,232 @@
 
 \subsection{Definizione matematica formale}
 
-Per formalizzare matematicamente l'algoritmo K-Nearest Neighbors (KNN), consideriamo un dataset di addestramento \( \mathcal{D} = \{(\mathbf{x}_i, y_i)\}_{i=1}^N \), dove \( \mathbf{x}_i \in \mathbb{R}^d \) rappresenta un punto dati con \( d \) caratteristiche e \( y_i \in \mathbb{R} \) (o \( y_i \in \{1, \ldots, C\} \) per la classificazione) rappresenta l'etichetta associata.
+Per formalizzare matematicamente l'algoritmo K-Nearest Neighbors (KNN), 
+consideriamo un dataset di addestramento \( \mathcal{D} = \{(\mathbf{x}_i, y_i)\}_{i=1}^N \), 
+dove \( \mathbf{x}_i \in \mathbb{R}^d \) rappresenta un vettore di lunghezza \( d \) 
+(un punto dati con \( d \) caratteristiche) e \( y_i \in \mathbb{R} \) 
+(o \( y_i \in \{1, \ldots, C\} \) dove $C \in \mathbb{N}$, per la classificazione) rappresenta 
+un'istanza della variabile target associata.
 
-\subsubsection{Distanza tra punti dati}
+\subsection{Metriche di distanza}
 
-Per determinare i \( K \) vicini più prossimi, è necessario definire una metrica di distanza \( d(\mathbf{x}, \mathbf{z}) \) tra due punti dati \( \mathbf{x} \) e \( \mathbf{z} \). Le metriche comunemente utilizzate includono:
+Per determinare i \( K \) vicini più prossimi, è necessario definire 
+una metrica di distanza \( d(\mathbf{x}, \mathbf{z}) \) tra due vettori (punti dati) 
+\( \mathbf{x} \) e \( \mathbf{z} \). Le metriche comunemente utilizzate includono:
 
-\begin{itemize}
-    \item \textbf{Distanza Euclidea:}
+\subsubsection{Distanza Euclidea} 
+La distaza Euclidea (chiamata anche norma $L^2$) calcola la distanza diretta tra punti in uno spazio multidimensionale. È adatta per dati 
+che presentano caratteristiche continue e numeriche con scale e intervalli simili. 
+Può anche gestire bene gli outlier e il rumore, poiché dà più peso alle differenze più grandi. 
+Tuttavia, può essere influenzata dal "curse of dimensionality", che significa che all'aumentare 
+del numero di features, la distanza tra due punti diventa meno significativa e più simile tra loro.
+Inoltre, può essere influenzata dall'orientamento e dalla scala delle 
+    caratteristiche, poiché assume che tutte le features siano ugualmente 
+    importanti e che abbiano tutte una stessa scala.
     \[
     d(\mathbf{x}, \mathbf{z}) = ||\mathbf{x} - \mathbf{z}|| = \sqrt{\sum_{j=1}^d (x_j - z_j)^2}
     \]
 
-    \item \textbf{Distanza di Manhattan:}
+\subsubsection{Distanza Manhattan} La distanza Manhattan (chiamata anche norma $L^1$) 
+    è adatta per dati che presentano caratteristiche discrete e 
+    categoriali, poiché non penalizza tanto le piccole differenze 
+    quanto la distanza euclidea. Inoltre, gestisce meglio i dati ad alta 
+    dimensionalità, poiché è meno sensibile al "curse of dimensionality". 
+    Tuttavia, può essere influenzata dall'orientamento e dalla scala delle 
+    caratteristiche, poiché assume che tutte le features siano ugualmente 
+    importanti e che abbiano tutte una stessa scala.
     \[
     d(\mathbf{x}, \mathbf{z}) = \sum_{j=1}^d |x_j - z_j|
     \]
 
-    \item \textbf{Distanza di Minkowski:}
+\subsubsection{Distanza Chebyshev} La distanza Chebyshev (chiamata anche norma $L^{\infty}$) 
+    è adatta per dati che presentano caratteristiche discrete e 
+    categoriali, poiché non penalizza tanto le piccole differenze 
+    quanto la distanza euclidea. Inoltre, gestisce meglio i dati ad alta 
+    dimensionalità, poiché è meno sensibile al "curse of dimensionality". 
+    Tuttavia, è influenzata dall'orientamento e dalla scala delle 
+    caratteristiche, poiché assume che tutte le features siano ugualmente 
+    importanti e che abbiano tutte una stessa scala.
+
+    \[
+    d(\mathbf{x}, \mathbf{z}) = \sqrt[\infty]{\sum_{j=1}^d |x_j - z_j|^{\infty}} = \max_{j=1}^d |x_j - z_j|
+    \]
+
+    Diamo ora una dimostrazione della seconda ugualianza. Siano $\mathbf x$ e $\mathbf z$ due vettori di dimensione $d$.
+    
+    Sia $\mathbf a = [|x_i - z_i|]^{d}_{i=1}$ il vettore differenza in valore assoluto tra $\mathbf x$ e $\mathbf z$.
+    
+    Senza perdita di generalità, supponiamo che $\max_{j=1}^d |x_j - z_j| = a_i$.
+    
+    Allora:
+    \[
+    \lim_{p \to \infty} (a^p_1 + \ldots + a^p_d)^{1/p} \geq \lim_{p \to \infty} (a^p_i)^{1/p} = \lim_{p \to \infty} a_i = a_i = \max_{j=1}^d |x_j - z_j|
+    \]
+    
+    e:
+    \begin{align*}
+    \lim_{p \to \infty} (a^p_1 + \ldots + a^p_d)^{1/p} \leq \lim_{p \to \infty} (a^p_i + \ldots + a^p_i)^{1/p} &= \lim_{p \to \infty} (d \cdot a^p_i)^{1/p} \\
+    &= \lim_{p \to \infty} a_i \cdot d^{1/p} \\
+    &= a_i \cdot \lim_{p \to \infty} d^{1/p} \\
+    &= a_i = \max_{j=1}^d |x_j - z_j|
+    \end{align*}
+
+    Quindi, per il teorema del confronto, $\lim_{p \to \infty} (a^p_1 + \ldots + a^p_d)^{1/p} = \max_{j=1}^d |x_j - z_j|$. $\square$
+
+\subsubsection{Distanza Minkowski} La distanza Minkowski (chiamata anche norma $L^p$) è
+    una generalizzazione delle distanze Euclidea, Manhattan e Chebyshev. 
+    È definita da un parametro $p$ che controlla quanto peso viene dato alle differenze più 
+    grandi o più piccole tra le coordinate.
     \[
     d(\mathbf{x}, \mathbf{z}) = \left( \sum_{j=1}^d |x_j - z_j|^p \right)^{\frac{1}{p}}
     \]
-    dove \( p \) è un parametro positivo che determina la forma della distanza.
-\end{itemize}
+    dove \( p \) è un parametro positivo che determina la forma della distanza. La distanza 
+    Minkowski può essere vista come una famiglia di metriche di distanza che include la 
+    distanza Euclidea ($p = 2$), la distanza di Manhattan ($p = 1$) e la distanza di 
+    Chebyshev ($p = \infty$), che rappresenta il massimo delle differenze assolute 
+    tra le coordinate. La distanza di Minkowski è adatta per dati che presentano tipi misti 
+    di caratteristiche, poiché consente di regolare il parametro p per bilanciare 
+    l'importanza delle diverse caratteristiche e delle distanze. Tuttavia, può essere 
+    computazionalmente costosa e difficile da interpretare, poiché il parametro $p$ può 
+    avere effetti diversi su diversi insiemi di dati e problemi.
 
-\subsubsection{Classificazione}
+\subsubsection{Distanza Coseno} La distanza coseno (o similarità coseno) misura 
+    l'angolo tra due vettori in uno spazio multidimensionale, piuttosto che la loro distanza diretta. 
+    È particolarmente utile per dati in cui l'orientamento dei vettori è più importante della loro 
+    magnitudine, come nel caso di dati testuali o vettori di parole (word embeddings). La distanza 
+    coseno è calcolata come uno meno il coseno dell'angolo tra i vettori, quindi varia tra 0 e 2, 
+    dove 0 indica vettori identici (completamente simili) e 2 indica vettori diametralmente opposti 
+    (completamente dissimili).
 
-Nel contesto della classificazione, l'etichetta \( \hat{y} \) di un nuovo punto dati \( \mathbf{x} \) è determinata come segue:
-\begin{enumerate}
-    \item Calcolare la distanza tra \( \mathbf{x} \) e ogni punto dati \( \mathbf{x}_i \) nel dataset di addestramento.
-    \item Identificare i \( K \) punti più vicini a \( \mathbf{x} \) utilizzando la metrica di distanza scelta.
-    \item Assegnare a \( \mathbf{x} \) l'etichetta di classe più frequente tra i \( K \) vicini più prossimi. Formalmente,
     \[
-    \hat{y} = \arg\max_{c \in \{1, \ldots, C\}} \sum_{i \in \mathcal{N}_K(\mathbf{x})} \mathbf{1}_{\{y_i = c\}}
+d(\mathbf{x}, \mathbf{z}) = 1 - \frac{\mathbf{x} \cdot \mathbf{z}}{||\mathbf{x}|| \cdot ||\mathbf{z}||} = 1 - \frac{\sum_{j=1}^d x_j z_j}{\sqrt{\sum_{j=1}^d x_j^2} \sqrt{\sum_{j=1}^d z_j^2}}
+\]
+
+Qui, $\mathbf{x} \cdot \mathbf{z}$ rappresenta il prodotto scalare tra i 
+vettori $\mathbf{x}$ e $\mathbf{z}$, mentre $||\mathbf{x}||$ e $||\mathbf{z}||$ sono 
+le norme euclidee dei rispettivi vettori.
+
+La distanza coseno è particolarmente robusta rispetto a variazioni di scala nei dati, 
+poiché normalizza i vettori prima di calcolare l'angolo tra essi. Questo la rende adatta 
+per scenari in cui la lunghezza assoluta (magnitudine) dei vettori è meno rilevante 
+rispetto alla direzione, come nell'analisi di 
+documenti o nella raccomandazione di oggetti basata su preferenze utente. Tuttavia, può essere 
+influenzata dalla presenza di valori nulli o zero nei dati, che possono distorcere il calcolo della similarità.
+
+Diamo ora un'interpretazione intuitiva della distanza coseno. Siano $\mathbf x$ e $\mathbf z$ 
+due vettori di dimensione $d$. Il coseno dell'angolo $\alpha$ (l'angolo con ampiezza minore tra i due vettori),
+tra $\mathbf x$ e $\mathbf z$ si ottiene, secondo la definizione di coseno, dividendo $||proj_z \mathbf x||$ 
+(la lunghezza della 
+proiezione del vettore $\mathbf x$ nella direzione del vettore $\mathbf z$) per la norma del vettore $\mathbf x$:
+
+\begin{equation}
+\cos(\alpha) = \frac{||proj_z \mathbf x||}{||\mathbf x||}.
+\label{eq:cosine}
+\end{equation}
+
+Ora non ci rimane che trovare la norma del vettore proiezione. La proiezione $proj_z \mathbf x$ è
+un vettore che giace nella direzione di $\mathbf z$, quindi possiamo scriverlo come
+$c \cdot \mathbf z$ per qualche numero $c$. Per trovare $c$ possiamo utilizzare il fatto che la 
+proiezione $proj_z \mathbf x = c \cdot \mathbf z$ è un vettore che si annulla quando $\mathbf x$ è perpendicolare
+a $\mathbf z$. Come vettore perpendicolare a $\mathbf z$ possiamo considerare il vettore $\mathbf x - c \cdot \mathbf z$ 
+e moltipliciarlo per $\mathbf z$. Possiamo quindi ricavare il valore $c$ dalla seguente equazione:
+
+\begin{align}
+(\mathbf x - c \cdot \mathbf z) \cdot \mathbf z &= \mathbf 0\\
+\mathbf x \cdot \mathbf z - c \cdot \mathbf z \cdot \mathbf z &=\mathbf 0\\
+\mathbf x \cdot \mathbf z - c ||\mathbf z||^2 &= \mathbf 0\\
+c = \frac{\mathbf x \cdot \mathbf z}{||\mathbf z||^2}.
+\label{eq:projection}
+\end{align}
+
+Ora, mettendo insieme le due equazioni \eqref{eq:cosine} e \eqref{eq:projection}, otteniamo
+
+\begin{align*}
+\cos(\alpha) = \frac{||proj_z \mathbf x||}{||\mathbf x||} &= 
+\frac{||c \cdot \mathbf z||}{||\mathbf x||} = \frac{c \cdot ||\mathbf z||}{||\mathbf x||}=
+\frac{\mathbf x \cdot \mathbf z }{||\mathbf z||^2} \frac{||\mathbf z||}{||\mathbf x||}=
+\frac{\mathbf x \cdot \mathbf z}{||\mathbf x|| \cdot ||\mathbf z||}.
+\end{align*}
+
+Per ottenere ora un valore positivo che indica la distanza coseno tra due vettori, sottraiamo il coseno,
+che ha valori in $[-1, 1]$, ad $1$. In questo modo otteniamo una distanza massima di $2$ e una distanza minima
+di $0$.
+$\square$
+
+\subsubsection{Distanza di Hamming}
+La distanza di Hamming è una metrica comunemente utilizzata per misurare la somiglianza o la dissimiglianza tra due vettori di caratteristiche binarie. È particolarmente utile quando si lavora con dati categorici o binari, dove ogni caratteristica può assumere solo due valori possibili.
+
+Consideriamo due vettori di caratteristiche, $\mathbf{x}$ e $\mathbf{z}$, 
+ciascuno composto da $d$ caratteristiche binarie.
+
+La distanza di Hamming tra $\mathbf{x}$ e $\mathbf{z}$, denotata come $d(\mathbf{x}, \mathbf{z})$, può essere calcolata utilizzando la seguente formula:
+
+\[
+d(\mathbf{x}, \mathbf{z}) = \sum_{i=1}^{d} (x_i \oplus z_i)
+\]
+
+dove $\oplus$ denota l'operazione XOR elemento per elemento. Questo significa che la distanza di Hamming è la somma delle differenze bit a bit tra le caratteristiche corrispondenti dei due vettori.
+
+Per chiarire, l'operazione XOR ($\oplus$) restituisce 1 se $x_i \neq z_i$ e 0 se sono uguali. 
+Pertanto, sommando tutti i risultati degli XOR si ottiene il conteggio delle posizioni in cui i due vettori differiscono.
+
+Una variante generalizzata, utilizzabile per vettori di features categoriche (non per forza binarie), 
+della distanza di Hamming può essere calcolata utilizzando la seguente formula:
+
+\[
+d(\mathbf{x}, \mathbf{z}) = \sum_{i=1}^{d} \mathbf 1_{x_i \neq z_i}
+\]
+
+dove $x_i \neq y_i$ indica che la caratteristica $i$ del vettore $\mathbf{x}$ è diversa da quella del vettore $\mathbf{z}$.
+
+La distanza di Hamming è particolarmente conveniente da utilizzare quando le 
+caratteristiche dei dati sono binarie (derivate ad esempio da un one-hot encoding) o categoriche 
+che possono essere codificate in forma numerica.
+
+\subsection{KNN per la Classificazione}
+
+Nel contesto della classificazione, la variabile target \( \hat{y} \) di un nuovo punto dati \( \hat{\mathbf{x}} \) 
+viene determinata dal seguente algoritmo:
+
+\begin{enumerate}
+    \item Calcolare la distanza tra \( \hat{\mathbf{x}} \) e ogni punto dati \( \mathbf{x}_i \) nel dataset 
+    di addestramento \( \mathcal{D} \). Definiamo un nuovo vettore $\mathbf d$ che contiene le distanze 
+    tra \( \hat{\mathbf{x}} \) e ogni punto di \(\mathcal{D}\):
+
+    $$
+    \mathbf d = [d(\hat{\mathbf{x}}, \mathbf{x}_i)]^N_{i=1}
+    $$
+
+    \item Ordinare il vettore $\mathbf d$ in ordine decrescente e identificare i primi \( K \) punti più vicini a 
+    \( \hat{\mathbf{x}} \) ($\mathcal{N}_K(\hat{\mathbf{x}})$) utilizzando la metrica di distanza scelta.
+    \item Assegnare a \( \hat{\mathbf{x}} \) la variabile target di classe più frequente tra i \( K \) vicini più prossimi. Formalmente,
+    \[
+    \hat{y} = \arg\max_{c \in \{1, \ldots, C\}} \sum_{i \in \mathcal{N}_K(\hat{\mathbf{x}})} \mathbf{1}_{\{y_i = c\}}
     \]
-    dove \( \mathcal{N}_K(\mathbf{x}) \) denota l'insieme dei \( K \) vicini più prossimi di \( \mathbf{x} \) e \( \mathbf{1}_{\{y_i = c\}} \) è una funzione indicatrice che vale 1 se \( y_i = c \) e 0 altrimenti.
+    dove \( \mathcal{N}_K(\hat{\mathbf{x}}) \) denota l'insieme dei \( K \) vicini più prossimi di \( \hat{\mathbf{x}} \) e \( \mathbf{1}_{\{y_i = c\}} \) è una funzione indicatrice che vale 1 se \( y_i = c \) e 0 altrimenti.
 \end{enumerate}
 
-\subsubsection{Regressione}
+Nel contesto della classificazione, la funzione di aggregazione più comunemente utilizzata è la moda 
+(la classe più frequente). Quindi possiamo esprimere la variabile $\hat y$ come segue:
 
-Per la regressione, il valore predetto \( \hat{y} \) per un nuovo punto dati \( \mathbf{x} \) è calcolato come la media dei valori dei \( K \) vicini più prossimi:
 \[
-\hat{y} = \frac{1}{K} \sum_{i \in \mathcal{N}_K(\mathbf{x})} y_i
+\hat{y} = mode\{y_{i_1}, \ldots, y_{i_K}\} \quad \text{ with } i \in \mathcal{N}_K(\hat{\mathbf{x}}).
 \]
+
+\subsection{Regressione}
+
+Per la regressione, il valore predetto \( \hat{y} \) per un nuovo punto dati \( \hat{\mathbf{x}} \) è calcolato come la media dei valori dei \( K \) vicini più prossimi:
+\[
+\hat{y} = \frac{1}{K} \sum_{i \in \mathcal{N}_K(\hat{\mathbf{x}})} y_i
+\]
+
+Solitamente viene utilizzata la media aritmetica dei target dei punti in $\mathcal{N}_K(\hat{\mathbf{x}})$, ma possono essere utilizzate
+anche altre funzioni di aggregazione, come la mediana, la moda o la media ponderata in base alla distanza dei vicini (minore distanza 
+dal punto = maggiore peso nel calcolo della media).
 
 Questa definizione matematica formale fornisce una chiara comprensione del funzionamento di base dell'algoritmo KNN, sia per la classificazione che per la regressione.
 
 \subsection{Scelta del parametro K}
-\subsection{Metriche di distanza}
-\subsubsection{Distanza Euclidea}
-\subsubsection{Distanza di Manhattan}
-\subsubsection{Distanza di Minkowski}
-\subsubsection{Altre metriche di distanza}
-
 \section{Proprietà Matematiche e Analisi Teorica}
 \subsection{La maledizione della dimensionalità}
 \subsection{Complessità computazionale}
