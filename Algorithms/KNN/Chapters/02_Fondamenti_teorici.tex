@@ -190,21 +190,42 @@ Nel contesto della classificazione, la variabile target \( \hat{y} \) di un nuov
 viene determinata dal seguente algoritmo:
 
 \begin{enumerate}
-    \item Calcolare la distanza tra \( \hat{\mathbf{x}} \) e ogni punto dati \( \mathbf{x}_i \) nel dataset 
-    di addestramento \( \mathcal{D} \). Definiamo un nuovo vettore $\mathbf d$ che contiene le distanze 
+    \item Calcolare la distanza, utilizzando la metrica di distanza scelta, tra \( \hat{\mathbf{x}} \) e 
+    ogni punto dati \( \mathbf{x}_i \) nel dataset 
+    di addestramento \( \mathcal{D} \). Definiamo un nuovo vettore $\mathbf d^{\hat{\mathbf x}}$ che contiene le distanze 
     tra \( \hat{\mathbf{x}} \) e ogni punto di \(\mathcal{D}\):
 
     $$
-    \mathbf d = [d(\hat{\mathbf{x}}, \mathbf{x}_i)]^N_{i=1}
+    \mathbf d^{\hat{\mathbf x}} = [d(\hat{\mathbf{x}}, \mathbf{x}_i)]^N_{i=1}
     $$
 
-    \item Ordinare il vettore $\mathbf d$ in ordine decrescente e identificare i primi \( K \) punti più vicini a 
-    \( \hat{\mathbf{x}} \) ($\mathcal{N}_K(\hat{\mathbf{x}})$) utilizzando la metrica di distanza scelta.
+    \item A partire da $\mathbf d^{\hat{\mathbf x}}$, determiniamo un nuovo vettore 
+    $$
+    \overline{\mathbf d^{\hat{\mathbf x}}} = \arg\sort_{i \in [N]} d^{\hat{\mathbf x}}_i
+    $$
+
+    dove $N$ è la dimensione del dataset $\mathcal D$ e la funzione $\arg\sort$ è una funzione cosi definita:
+    
+    $$
+    \arg\sort_{i \in [N]} v_i = [\sigma(i)]^N_{i=1}
+    $$
+
+    dove $v_i$ è un elemento del vettore $\mathbf v = [v_1, \ldots, v_N]$, $i$ è un indice e $N$ è il numero di elementi di $\mathbf v$.
+    La funzione $\arg\sort$ restituisce una permutazione $\sigma: \{1, \ldots, N\} \rightarrow \{1, \ldots, N\}$, tale che 
+    $v_{\sigma(i)} \leq v_{\sigma(i+1)} \ \ \forall i \in [N-1]$.
+
+    A questo punto, possiamo definire l'insieme degli indici dei \( K \) vicini più prossimi come:
+
+    $$
+    \mathcal{N}_K(\hat{\mathbf{x}}) = \{\overline{d^{\hat{\mathbf x}}_i} \ | \ 1 \leq i \leq K\}.
+    $$
+
     \item Assegnare a \( \hat{\mathbf{x}} \) la variabile target di classe più frequente tra i \( K \) vicini più prossimi. Formalmente,
     \[
     \hat{y} = \arg\max_{c \in \{1, \ldots, C\}} \sum_{i \in \mathcal{N}_K(\hat{\mathbf{x}})} \mathbf{1}_{\{y_i = c\}}
     \]
-    dove \( \mathcal{N}_K(\hat{\mathbf{x}}) \) denota l'insieme dei \( K \) vicini più prossimi di \( \hat{\mathbf{x}} \) e \( \mathbf{1}_{\{y_i = c\}} \) è una funzione indicatrice che vale 1 se \( y_i = c \) e 0 altrimenti.
+    dove \( \mathcal{N}_K(\hat{\mathbf{x}}) \) denota l'insieme degli indici dei \( K \) vicini più prossimi 
+    di \( \hat{\mathbf{x}} \) e \( \mathbf{1}_{\{y_i = c\}} \) è una funzione indicatrice che vale 1 se \( y_i = c \) e 0 altrimenti.
 \end{enumerate}
 
 Nel contesto della classificazione, la funzione di aggregazione più comunemente utilizzata è la moda 
