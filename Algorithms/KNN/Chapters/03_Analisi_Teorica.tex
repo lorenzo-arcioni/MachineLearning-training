@@ -2,5 +2,58 @@
 \subsection{La maledizione della dimensionalità}
 \subsection{Complessità computazionale}
 \subsection{Trade-off bias-varianza nel KNN}
-\subsection{Interpretazione probabilistica del KNN}
+\subsection{Scelta di \( K \)}
+
+Nel contesto del KNN, il (iper)parametro $K$ gioca un ruolo cruciale nel determinare il trade-off tra bias e varianza:
+
+\subsubsection{Piccoli Valori di $K$}
+
+Quando $K$ è piccolo (ad esempio, $K=1$), il modello tende a seguire 
+molto da vicino i dati di addestramento. Questo può portare a un basso bias, 
+poiché il modello è molto flessibile e può adattarsi alle particolarità dei dati 
+di addestramento. Tuttavia, questo porta a una elevata varianza, poiché il modello 
+è sensibile al rumore nei dati. In altre parole, un valore di $K$ troppo piccolo può 
+causare overfitting.
+
+\subsubsection{Grandi Valori di $K$}
+
+Quando $K$ è grande (ad esempio, $K$ è una frazione significativa del dataset), 
+il modello diventa più rigido. Esso effettua la media su un numero maggiore di punti, 
+riducendo la varianza ma aumentando il bias. Questo significa che il modello potrebbe 
+non catturare le complessità del dataset e potrebbe risultare in underfitting.
+
+\subsubsection{Scegliere il Valore Ottimale di $K$}
+
+La scelta ottimale di $K$ dipende dal dataset specifico. 
+Una tecnica comune per trovare il valore ottimale di $K$ è utilizzare 
+la validazione incrociata (cross-validation). In questa tecnica, 
+il dataset viene diviso in $k$-folds (sottogruppi), e il modello 
+viene addestrato e valutato $k$ volte, ogni volta utilizzando un 
+diverso fold come set di validazione e il resto come set di addestramento. 
+La media degli errori di validazione per ciascun valore di $K$ viene quindi 
+utilizzata per selezionare il valore di $K$ che minimizza l'errore.
+
+\subsection{Interpretazione probabilistica}
+
+In teoria, per effettuare previsioni accurate, sarebbe ideale conoscere la distribuzione 
+condizionale dei dati. Tuttavia, nella pratica, questa distribuzione è generalmente sconosciuta, 
+rendendo impossibile una stima diretta basata su di essa. Nonostante ciò, metodi come il K-nearest 
+neighbors (KNN) riescono comunque a fare previsioni accurate stimando tale distribuzione in maniera non parametrica.
+
+Il KNN stima la distribuzione dei dati basandosi sui \( K \) punti di addestramento più vicini a un punto 
+di test \( \hat{\mathbf{x}} \). La probabilità condizionale viene calcolata come la frazione dei punti 
+in questo insieme che condividono la stessa caratteristica della variabile di interesse:
+
+\[
+Pr(Y = j \mid X = \mathbf{x}_0) = \frac{1}{K} \sum_{i \in N_0} I(y_i = j),
+\]
+
+dove \( N_0 \) rappresenta l'insieme dei \( K \) punti di addestramento più vicini a \( \mathbf{x}_0 \) e \( I(y_i = j) \) è una funzione indicatrice che vale 1 se \( y_i \) è uguale a \( j \) e 0 altrimenti.
+
+Nonostante la semplicità del metodo, il KNN può spesso produrre previsioni molto efficaci, avvicinandosi al comportamento ottimale in molti scenari. Tuttavia, la scelta del parametro \( K \) è cruciale: un valore troppo piccolo di \( K \) rende il modello troppo flessibile e sensibile al rumore nei dati, mentre un valore troppo grande può rendere il modello eccessivamente rigido e incapace di catturare la struttura sottostante dei dati.
+
+La relazione tra il tasso di errore di addestramento e quello di test non è sempre diretta. Aumentando la flessibilità del modello (diminuendo \( K \)), il tasso di errore di addestramento tende a diminuire, ma l'errore di test può aumentare se il modello soffre di overfitting. Questo comportamento è ben rappresentato dalla forma a U del grafico dell'errore di test in funzione di \( 1/K \).
+
+La scelta del giusto livello di flessibilità è fondamentale per il successo di qualsiasi metodo di apprendimento statistico. Nel Capitolo 5, torneremo su questo argomento e discuteremo vari metodi per stimare i tassi di errore di test, al fine di scegliere il livello ottimale di flessibilità per un determinato metodo di apprendimento statistico.
+
 \subsection{Comportamento asintotico e convergenza}

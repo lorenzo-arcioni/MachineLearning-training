@@ -13,26 +13,28 @@
 \contentsline {subsection}{\numberline {1.7}Applicazioni Avanzate e Ricerca}{4}{subsection.1.7}%
 \contentsline {subsection}{\numberline {1.8}Obiettivi dell'articolo}{4}{subsection.1.8}%
 \contentsline {section}{\numberline {2}Fondamenti Teorici del KNN}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Definizione matematica formale}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Definizione formale}{5}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Metriche di distanza}{5}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Distanza Euclidea}{5}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Distanza Manhattan}{5}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Distanza Chebyshev}{5}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.2}Distanza Manhattan}{6}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Distanza Chebyshev}{6}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Distanza Minkowski}{6}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Distanza Coseno}{6}{subsubsection.2.2.5}%
-\contentsline {subsubsection}{\numberline {2.2.6}Distanza di Hamming}{7}{subsubsection.2.2.6}%
-\contentsline {subsection}{\numberline {2.3}KNN per la Classificazione}{8}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Regressione}{8}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Scelta del parametro K}{9}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Proprietà Matematiche e Analisi Teorica}{9}{section.3}%
+\contentsline {subsubsection}{\numberline {2.2.5}Distanza Coseno}{7}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Distanza di Hamming}{8}{subsubsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.3}Algoritmo KNN}{8}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Analisi Teorica}{9}{section.3}%
 \contentsline {subsection}{\numberline {3.1}La maledizione della dimensionalità}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Complessità computazionale}{9}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Trade-off bias-varianza nel KNN}{9}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Interpretazione probabilistica del KNN}{9}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Comportamento asintotico e convergenza}{9}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Analisi Teorica}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}La maledizione della dimensionalità}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Complessità computazionale}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Trade-off bias-varianza nel KNN}{9}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Interpretazione probabilistica del KNN}{9}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Comportamento asintotico e convergenza}{9}{subsection.4.5}%
+\contentsline {subsection}{\numberline {3.4}Scelta di \( K \)}{9}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Piccoli Valori di $K$}{9}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Grandi Valori di $K$}{9}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Scegliere il Valore Ottimale di $K$}{9}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Interpretazione probabilistica}{9}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Interpretazione probabilistica}{9}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Comportamento asintotico e convergenza}{10}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Ottimizzazioni}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}KD-Tree}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Ball Tree}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Hashing}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Algoritmi Approximate Nearest Neighbors (ANN)}{10}{subsection.4.4}%

@@ -1,13 +1,53 @@
 \section{Fondamenti Teorici del KNN}
 
-\subsection{Definizione matematica formale}
+\subsection{Definizione formale}
 
 Per formalizzare matematicamente l'algoritmo K-Nearest Neighbors (KNN), 
 consideriamo un dataset di addestramento \( \mathcal{D} = \{(\mathbf{x}_i, y_i)\}_{i=1}^N \), 
 dove \( \mathbf{x}_i \in \mathbb{R}^d \) rappresenta un vettore di lunghezza \( d \) 
 (un punto dati con \( d \) caratteristiche) e \( y_i \in \mathbb{R} \) 
-(o \( y_i \in \{1, \ldots, C\} \) dove $C \in \mathbb{N}$, per la classificazione) rappresenta 
+(o \( y_i \in \{1, \ldots, C\} \) dove \(C \in \mathbb{N}\), per la classificazione) rappresenta 
 un'istanza della variabile target associata.
+
+Assumiamo di aver osservato un insieme di \( n \) punti dati diversi. 
+Queste osservazioni sono chiamate dati di addestramento perché li utilizziamo 
+per addestrare il nostro modello su come stimare una funzione che ci permette di 
+formalizzare la realtà di interesse. Lasciamo che \( x_{ij} \) 
+rappresenti il valore del \( j \)-esimo predittore, o input, per l'osservazione \( i \), 
+dove \( i = 1, 2, \ldots, n \) e \( j = 1, 2, \ldots, d \). Di conseguenza, sia \( y_i \) 
+la variabile di risposta per l'osservazione \( i \). 
+I nostri dati di addestramento consistono in \( \{(x_1, y_1), (x_2, y_2), 
+\ldots, (x_n, y_n)\} \), dove \( x_i = (x_{i1}, x_{i2}, \ldots, x_{id})^T \).\\
+
+Definiamo ora due funzioni utili a modellare il problema statistico:
+
+\begin{itemize}
+    \item La funzione relale \( f \) descrive la relazione tra l'input \( \mathbf{x} \) e la variabile target \( y \). Questa funzione rappresenta il fenomeno o il processo che genera i dati osservati.
+    
+    \item La funzione stimata \( \hat{f} \) è l'approssimazione di \( f \) 
+    ottenuta attraverso un modello statistico o un algoritmo di apprendimento (KNN in questo caso). 
+    \( \hat{f} \) cerca di approssimare \( f \) utilizzando i dati di addestramento disponibili per fare previsioni o inferenze su nuovi dati non osservati.
+\end{itemize}
+Il nostro obiettivo è applicare un metodo di apprendimento statistico 
+ai dati di addestramento per stimare la funzione sconosciuta \( f \). 
+In altre parole, vogliamo trovare una funzione \( \hat{f} \) tale che 
+\( y \approx \hat{f}(\mathbf{x}) \) per qualsiasi osservazione \( (\mathbf{x}, y) \).
+
+I metodi non parametrici, come il KNN, non presuppongono una forma 
+specifica per la funzione \( f \). Invece, cercano di stimare \( f \) 
+in modo che si avvicini il più possibile ai dati osservati, mantenendo 
+un andamento fluido e coerente. Questi approcci offrono un vantaggio 
+significativo rispetto ai metodi parametrici poiché non limitano \( f \) 
+a una forma predeterminata, permettendo quindi di adattarsi meglio a una 
+vasta gamma di possibili configurazioni per \( f \). Nei metodi parametrici, 
+invece, c'è il rischio che la forma funzionale $\hat{f}$, utilizzata per stimare \( f \), 
+sia molto diversa dalla reale \( f \), portando a modelli che non si adattano 
+bene ai dati. Al contrario, i metodi non parametrici evitano completamente 
+questo rischio perché non impongono alcuna assunzione sulla forma di \( f \). 
+Tuttavia, gli approcci non parametrici hanno uno svantaggio principale: 
+essi richiedono un numero elevato di osservazioni per ottenere una stima 
+accurata di \( f \), molto più alto rispetto a quanto necessario nei metodi 
+parametrici che riducono il problema a un numero limitato di parametri.
 
 \subsection{Metriche di distanza}
 
@@ -16,7 +56,8 @@ una metrica di distanza \( d(\mathbf{x}, \mathbf{z}) \) tra due vettori (punti d
 \( \mathbf{x} \) e \( \mathbf{z} \). Le metriche comunemente utilizzate includono:
 
 \subsubsection{Distanza Euclidea} 
-La distaza Euclidea (chiamata anche norma $L^2$) calcola la distanza diretta tra punti in uno spazio multidimensionale. È adatta per dati 
+La distaza Euclidea (chiamata anche norma $L^2$) calcola la distanza diretta tra punti in uno spazio multidimensionale. 
+È adatta per dati 
 che presentano caratteristiche continue e numeriche con scale e intervalli simili. 
 Può anche gestire bene gli outlier e il rumore, poiché dà più peso alle differenze più grandi. 
 Tuttavia, può essere influenzata dal "curse of dimensionality", che significa che all'aumentare 
@@ -86,7 +127,7 @@ Inoltre, può essere influenzata dall'orientamento e dalla scala delle
     distanza Euclidea ($p = 2$), la distanza di Manhattan ($p = 1$) e la distanza di 
     Chebyshev ($p = \infty$), che rappresenta il massimo delle differenze assolute 
     tra le coordinate. La distanza di Minkowski è adatta per dati che presentano tipi misti 
-    di caratteristiche, poiché consente di regolare il parametro p per bilanciare 
+    di caratteristiche, poiché consente di regolare il parametro $p$ per bilanciare 
     l'importanza delle diverse caratteristiche e delle distanze. Tuttavia, può essere 
     computazionalmente costosa e difficile da interpretare, poiché il parametro $p$ può 
     avere effetti diversi su diversi insiemi di dati e problemi.
@@ -184,10 +225,13 @@ La distanza di Hamming è particolarmente conveniente da utilizzare quando le
 caratteristiche dei dati sono binarie (derivate ad esempio da un one-hot encoding) o categoriche 
 che possono essere codificate in forma numerica.
 
-\subsection{KNN per la Classificazione}
+\subsubsection{Distanza Mahalanobis}
+[...]
 
-Nel contesto della classificazione, la variabile target \( \hat{y} \) di un nuovo punto dati \( \hat{\mathbf{x}} \) 
-viene determinata dal seguente algoritmo:
+\subsection{Algoritmo KNN}
+
+Nel KNN, la variabile target \( \hat{y} \) di un nuovo punto dati \( \hat{\mathbf{x}} \) 
+viene determinata come segue:
 
 \begin{enumerate}
     \item Calcolare la distanza, utilizzando la metrica di distanza scelta, tra \( \hat{\mathbf{x}} \) e 
@@ -199,59 +243,67 @@ viene determinata dal seguente algoritmo:
     \mathbf d^{\hat{\mathbf x}} = [d(\hat{\mathbf{x}}, \mathbf{x}_i)]^N_{i=1}
     $$
 
-    \item A partire da $\mathbf d^{\hat{\mathbf x}}$, determiniamo un nuovo vettore 
-    $$
-    \overline{\mathbf d^{\hat{\mathbf x}}} = \arg\sort_{i \in [N]} d^{\hat{\mathbf x}}_i
-    $$
-
-    dove $N$ è la dimensione del dataset $\mathcal D$ e la funzione $\arg\sort$ è una funzione cosi definita:
+    \item A partire da $\mathbf d^{\hat{\mathbf x}} = [d^{\hat{\mathbf x}}_1, \ldots, d^{\hat{\mathbf x}}_N]$, 
+    determiniamo un insieme $\mathcal{N}_K(\hat{\mathbf{x}}) = \{i_1, \ldots, i_k\}$ contenente gli indici
+    dei \( K \) vicini più prossimi di \( \hat{\mathbf{x}} \), quindi tale che
     
     $$
-    \arg\sort_{i \in [N]} v_i = [\sigma(i)]^N_{i=1}
+    \forall i \in \mathcal{N}_K(\hat{\mathbf{x}}) \ \ \nexists j \in [N] \setminus \mathcal{N}_K(\hat{\mathbf{x}}) : d^{\hat{\mathbf x}}_j < d^{\hat{\mathbf x}}_i.
     $$
 
-    dove $v_i$ è un elemento del vettore $\mathbf v = [v_1, \ldots, v_N]$, $i$ è un indice e $N$ è il numero di elementi di $\mathbf v$.
-    La funzione $\arg\sort$ restituisce una permutazione $\sigma: \{1, \ldots, N\} \rightarrow \{1, \ldots, N\}$, tale che 
-    $v_{\sigma(i)} \leq v_{\sigma(i+1)} \ \ \forall i \in [N-1]$.
+    %$$
+    %\sigma_{\hat{\mathbf x}} = \arg\sort_{i \in [N]} d^{\hat{\mathbf x}}_i
+    %$$
+%
+    %dove $N$ è la dimensione del dataset $\mathcal D$, $[N]$ è l'insieme $\{1, \ldots, N\}$ e la funzione $\arg\sort$ è una funzione cosi definita:
+    %
+    %$$
+    %\arg\sort_{i \in [N]} v_i = \sigma
+    %$$
+%
+    %dove $v_i$ è un elemento di un vettore $\mathbf v = [v_1, \ldots, v_N]$, $i$ è un indice in $\{1, \ldots, N\}$ e $N$ è il numero di elementi di $\mathbf v$.
+    %La funzione $\arg\sort$ restituisce una permutazione $\sigma: \{1, \ldots, N\} \rightarrow \{1, \ldots, N\}$, tale che 
+    %$v_{\sigma(i)} \leq v_{\sigma(i+1)} \ \ \forall i \in [N-1]$.
+%
 
-    A questo punto, possiamo definire l'insieme degli indici dei \( K \) vicini più prossimi come:
-
-    $$
-    \mathcal{N}_K(\hat{\mathbf{x}}) = \{\overline{d^{\hat{\mathbf x}}_i} \ | \ 1 \leq i \leq K\}.
-    $$
-
-    \item Assegnare a \( \hat{\mathbf{x}} \) la variabile target di classe più frequente tra i \( K \) vicini più prossimi. Formalmente,
-    \[
+    \item Assegnare a \( \hat{y} \):
+    
+    \begin{itemize}
+        
+        \item \textbf{Classificazione:} la classe più frequente tra i \( K \) vicini più prossimi. Formalmente,
+        \[
     \hat{y} = \arg\max_{c \in \{1, \ldots, C\}} \sum_{i \in \mathcal{N}_K(\hat{\mathbf{x}})} \mathbf{1}_{\{y_i = c\}}
     \]
     dove \( \mathcal{N}_K(\hat{\mathbf{x}}) \) denota l'insieme degli indici dei \( K \) vicini più prossimi 
     di \( \hat{\mathbf{x}} \) e \( \mathbf{1}_{\{y_i = c\}} \) è una funzione indicatrice che vale 1 se \( y_i = c \) e 0 altrimenti.
+    
+
+    La funzione di aggregazione più comunemente utilizzata è la moda (la classe più frequente), ma è possibile utilizzarne altre.
+    
+    \item \textbf{Regresione:} il risultato della funzione di aggregazione (solitamente la media aritmetica) applicata ai valori 
+    dei \( K \) vicini più prossimi. Formalmente,
+    \[
+    \hat{y} = \frac{1}{K} \sum_{i \in \mathcal{N}_K(\hat{\mathbf{x}})} y_i
+    \]
+    nel caso della media aritmetica.
+    Per stabilire il valore da assegnare alla variabile target $\hat{y}$, possono essere utilizzate
+    anche altre funzioni di aggregazione, come la mediana, la moda o la media ponderata in base alla distanza dei vicini (minore distanza 
+    dal punto = maggiore peso nel calcolo della media). 
+    In particolare, in quest'ultimo caso l'algoritmo prende il nome di Weighted KNN. 
+
+    %e formalmente può essere definito come:
+%
+    %$$
+    %\hat{y} = \frac{1}{K} \sum_{i \in \mathcal{N}_K(\hat{\mathbf{x}})} w_i \cdot y_i
+    %$$
+%
+    %dove \( w_i \) è la distanza normalizzata tra \( \hat{\mathbf{x}} \) e il punto \( \mathbf{x}_i \), formalmente,
+%
+    %$$
+    %w_i = \frac{1}{\sum_{i \in \mathcal{N}_K(\hat{\mathbf{x}})} d(\hat{\mathbf{x}}, \mathbf{x}_i)}
+    % \frac{d(\hat{\mathbf{x}}, \mathbf{x}_i)}{d(\hat{\mathbf{x}}, \mathbf{x}_{\sigma(i)})}
+    %$$
+
+    \end{itemize}
 \end{enumerate}
 
-Nel contesto della classificazione, la funzione di aggregazione più comunemente utilizzata è la moda 
-(la classe più frequente). Quindi possiamo esprimere la variabile $\hat y$ come segue:
-
-\[
-\hat{y} = mode\{y_{i_1}, \ldots, y_{i_K}\} \quad \text{ with } i \in \mathcal{N}_K(\hat{\mathbf{x}}).
-\]
-
-\subsection{Regressione}
-
-Per la regressione, il valore predetto \( \hat{y} \) per un nuovo punto dati \( \hat{\mathbf{x}} \) è calcolato come la media dei valori dei \( K \) vicini più prossimi:
-\[
-\hat{y} = \frac{1}{K} \sum_{i \in \mathcal{N}_K(\hat{\mathbf{x}})} y_i
-\]
-
-Solitamente viene utilizzata la media aritmetica dei target dei punti in $\mathcal{N}_K(\hat{\mathbf{x}})$, ma possono essere utilizzate
-anche altre funzioni di aggregazione, come la mediana, la moda o la media ponderata in base alla distanza dei vicini (minore distanza 
-dal punto = maggiore peso nel calcolo della media).
-
-Questa definizione matematica formale fornisce una chiara comprensione del funzionamento di base dell'algoritmo KNN, sia per la classificazione che per la regressione.
-
-\subsection{Scelta del parametro K}
-\section{Proprietà Matematiche e Analisi Teorica}
-\subsection{La maledizione della dimensionalità}
-\subsection{Complessità computazionale}
-\subsection{Trade-off bias-varianza nel KNN}
-\subsection{Interpretazione probabilistica del KNN}
-\subsection{Comportamento asintotico e convergenza}
