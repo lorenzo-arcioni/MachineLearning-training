@@ -21,6 +21,7 @@
 \contentsline {subsubsection}{\numberline {2.2.4}Distanza Minkowski}{6}{subsubsection.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.5}Distanza Coseno}{7}{subsubsection.2.2.5}%
 \contentsline {subsubsection}{\numberline {2.2.6}Distanza di Hamming}{8}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Distanza Mahalanobis}{8}{subsubsection.2.2.7}%
 \contentsline {subsection}{\numberline {2.3}Algoritmo KNN}{8}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Analisi Teorica}{9}{section.3}%
 \contentsline {subsection}{\numberline {3.1}La maledizione della dimensionalità}{9}{subsection.3.1}%
@@ -31,8 +32,7 @@
 \contentsline {subsubsection}{\numberline {3.4.2}Grandi Valori di $K$}{9}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Scegliere il Valore Ottimale di $K$}{9}{subsubsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.5}Interpretazione probabilistica}{9}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Interpretazione probabilistica}{9}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Comportamento asintotico e convergenza}{10}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.6}Comportamento asintotico e convergenza}{10}{subsection.3.6}%
 \contentsline {section}{\numberline {4}Ottimizzazioni}{10}{section.4}%
 \contentsline {subsection}{\numberline {4.1}KD-Tree}{10}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Ball Tree}{10}{subsection.4.2}%
