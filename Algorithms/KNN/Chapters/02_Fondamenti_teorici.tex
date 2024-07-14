@@ -68,9 +68,21 @@ Inoltre, può essere influenzata dall'orientamento e dalla scala delle
     \[
     d(\mathbf{x}, \mathbf{z}) = ||\mathbf{x} - \mathbf{z}|| = \sqrt{\sum_{j=1}^d (x_j - z_j)^2}
     \]
+Ad esempio, per due vettori in \( \mathbb{R}^2 \) \(\mathbf{x} = (x_1, x_2)\) e \(\mathbf{z} = (z_1, z_2)\), la distanza euclidea è calcolata come segue:
+
+\[
+d(\mathbf{x}, \mathbf{z}) = \sqrt{(x_1 - z_1)^2 + (x_2 - z_2)^2}
+\]
+
+Supponiamo che i vettori siano \(\mathbf{x} = (1, 2)\) e \(\mathbf{z} = (4, 6)\), allora la distanza euclidea è:
+
+\[
+d(\mathbf{x}, \mathbf{z}) = \sqrt{(1 - 4)^2 + (2 - 6)^2} = \sqrt{(-3)^2 + (-4)^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+\]
+    
 
 \subsubsection{Distanza Manhattan} La distanza Manhattan (chiamata anche norma $L^1$) 
-    è adatta per dati che presentano caratteristiche discrete e 
+    è una metrica adatta per dati che presentano caratteristiche discrete e 
     categoriali, poiché non penalizza tanto le piccole differenze 
     quanto la distanza euclidea. Inoltre, gestisce meglio i dati ad alta 
     dimensionalità, poiché è meno sensibile al "curse of dimensionality". 
