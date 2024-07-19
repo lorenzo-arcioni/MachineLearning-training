@@ -53,10 +53,66 @@ parametrici che riducono il problema a un numero limitato di parametri.
 
 Per determinare i \( K \) vicini più prossimi, è necessario definire 
 una metrica di distanza \( d(\mathbf{x}, \mathbf{z}) \) tra due vettori (punti dati) 
-\( \mathbf{x} \) e \( \mathbf{z} \). Le metriche comunemente utilizzate includono:
+\( \mathbf{x} \) e \( \mathbf{z} \). Prima di parlare di metriche di distanza, è doveroso fare un'introduzione riguardo alla
+norma.\\
+
+Una \textbf{norma} è una funzione che associa a ciascun vettore di uno spazio vettoriale un 
+numero reale non negativo e soddisfa specifiche proprietà di compatibilità con la 
+struttura dello spazio vettoriale. L'obiettivo principale di una norma è fornire una 
+nozione di "lunghezza" dei vettori nello spazio vettoriale considerato. Le proprietà di 
+compatibilità con la struttura di spazio vettoriale sono pensate per riflettere alcune 
+caratteristiche intuitive della "lunghezza" quando si effettuano operazioni come 
+l'addizione di vettori o la moltiplicazione di un vettore per uno scalare.
+
+Una norma su uno spazio vettoriale reale o complesso $\mathcal{X}$, è una funzione:
+
+\begin{align*}
+\|\cdot\| \colon \mathcal{X} &\to \mathbb{R}\\
+\mathbf{x} &\mapsto \|\mathbf{x}\|
+\end{align*}
+
+che verifica le seguenti condizioni:
+
+\begin{itemize}
+    \item $\|\mathbf{x}\| \geq 0$, per ogni $\mathbf{x} \in \mathcal{X}$;
+    \item $\|\mathbf{x}\| = 0$ se e solo se $\mathbf{x} = 0$;
+    \item $\|\lambda \mathbf{x}\| = |\lambda| \|\mathbf{x}\|$, per ogni scalare $\lambda$ (omogeneità);
+    \item $\|\mathbf{x} + \mathbf{y}\| \leq \|\mathbf{x}\| + \|\mathbf{y}\|$, per ogni $\mathbf{x}, \mathbf{y} \in \mathcal{X}$ (disuguaglianza triangolare).
+\end{itemize}
+
+La coppia $(\mathcal{X}, \|\cdot\|)$ costituisce uno spazio normato.\\
+
+Sono norme di $\mathbb{R}^n$ e di $\mathbb{C}^n$ le funzioni:
+
+\[
+\|\mathbf{x}\|_p := \left(\sum_{i=1}^{n} |x_i|^p \right)^{\frac{1}{p}},
+\]
+
+con $p \in [1, +\infty)$. In dimensione $n=1$ tutte queste norme coincidono col valore assoluto. Per $p \in (0, 1)$ non è rispettata la disuguaglianza triangolare quindi essa non potrà essere una norma.
+
+La norma $L_1$ è banalmente la somma dei valori assoluti dei componenti, solitamente indicata secondo la contrazione tensoriale con:
+
+\[
+|\mathbf{x}| := \sum_{i=1}^{n} |x_i|,
+\]
+
+indicando esplicitamente come questa generalizzi il valore assoluto al caso vettoriale.
+
+L'esempio più noto è invece la norma $L_2$, detta anche norma euclidea, che nello spazio euclideo $n$-dimensionale $\mathbb{R}^n$ diventa:
+
+\[
+\|\mathbf{x}\|_2 := \sqrt{\sum_{i=1}^{n} x_i^2}.
+\]
+
+La norma $L_\infty$ è (impiegando la nozione di limite di una funzione) il massimo dei valori delle componenti in valore assoluto:
+
+\[
+\|\mathbf{x}\|_\infty := \left(\sum_{i=1}^{n} |x_i|^\infty \right)^{\frac{1}{\infty}} = \max_{i \in [n]} |x_i|.
+\]
+
 
 \subsubsection{Distanza Euclidea} 
-La distaza Euclidea (chiamata anche norma $L^2$) calcola la distanza diretta tra punti in uno spazio multidimensionale. 
+La distaza Euclidea (chiamata anche norma $L_2$) calcola la distanza diretta tra punti in uno spazio multidimensionale. 
 È adatta per dati 
 che presentano caratteristiche continue e numeriche con scale e intervalli simili. 
 Può anche gestire bene gli outlier e il rumore, poiché dà più peso alle differenze più grandi. 
@@ -67,21 +123,9 @@ Inoltre, può essere influenzata dall'orientamento e dalla scala delle
     importanti e che abbiano tutte una stessa scala.
     \[
     d(\mathbf{x}, \mathbf{z}) = ||\mathbf{x} - \mathbf{z}|| = \sqrt{\sum_{j=1}^d (x_j - z_j)^2}
-    \]
-Ad esempio, per due vettori in \( \mathbb{R}^2 \) \(\mathbf{x} = (x_1, x_2)\) e \(\mathbf{z} = (z_1, z_2)\), la distanza euclidea è calcolata come segue:
+    \]    
 
-\[
-d(\mathbf{x}, \mathbf{z}) = \sqrt{(x_1 - z_1)^2 + (x_2 - z_2)^2}
-\]
-
-Supponiamo che i vettori siano \(\mathbf{x} = (1, 2)\) e \(\mathbf{z} = (4, 6)\), allora la distanza euclidea è:
-
-\[
-d(\mathbf{x}, \mathbf{z}) = \sqrt{(1 - 4)^2 + (2 - 6)^2} = \sqrt{(-3)^2 + (-4)^2} = \sqrt{9 + 16} = \sqrt{25} = 5
-\]
-    
-
-\subsubsection{Distanza Manhattan} La distanza Manhattan (chiamata anche norma $L^1$) 
+\subsubsection{Distanza Manhattan} La distanza Manhattan (chiamata anche norma $L_1$) 
     è una metrica adatta per dati che presentano caratteristiche discrete e 
     categoriali, poiché non penalizza tanto le piccole differenze 
     quanto la distanza euclidea. Inoltre, gestisce meglio i dati ad alta 
@@ -93,7 +137,7 @@ d(\mathbf{x}, \mathbf{z}) = \sqrt{(1 - 4)^2 + (2 - 6)^2} = \sqrt{(-3)^2 + (-4)^2
     d(\mathbf{x}, \mathbf{z}) = \sum_{j=1}^d |x_j - z_j|
     \]
 
-\subsubsection{Distanza Chebyshev} La distanza Chebyshev (chiamata anche norma $L^{\infty}$) 
+\subsubsection{Distanza Chebyshev} La distanza Chebyshev (chiamata anche norma $L_{\infty}$) 
     è adatta per dati che presentano caratteristiche discrete e 
     categoriali, poiché non penalizza tanto le piccole differenze 
     quanto la distanza euclidea. Inoltre, gestisce meglio i dati ad alta 
@@ -127,7 +171,7 @@ d(\mathbf{x}, \mathbf{z}) = \sqrt{(1 - 4)^2 + (2 - 6)^2} = \sqrt{(-3)^2 + (-4)^2
 
     Quindi, per il teorema del confronto, $\lim_{p \to \infty} (a^p_1 + \ldots + a^p_d)^{1/p} = \max_{j=1}^d |x_j - z_j|$. $\square$
 
-\subsubsection{Distanza Minkowski} La distanza Minkowski (chiamata anche norma $L^p$) è
+\subsubsection{Distanza Minkowski} La distanza Minkowski (chiamata anche norma $L_p$) è
     una generalizzazione delle distanze Euclidea, Manhattan e Chebyshev. 
     È definita da un parametro $p$ che controlla quanto peso viene dato alle differenze più 
     grandi o più piccole tra le coordinate.
