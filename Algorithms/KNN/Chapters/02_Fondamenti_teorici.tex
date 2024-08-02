@@ -82,34 +82,14 @@ che verifica le seguenti condizioni:
 
 La coppia $(\mathcal{X}, \|\cdot\|)$ costituisce uno spazio normato.\\
 
-Sono norme di $\mathbb{R}^n$ e di $\mathbb{C}^n$ le funzioni:
+Una metrica di distanza è una funzione che misura la distanza tra due punti in uno spazio. Formalmente, una funzione \( d(\mathbf{x}, \mathbf{z}) \) è una metrica se soddisfa le seguenti proprietà:
 
-\[
-\|\mathbf{x}\|_p := \left(\sum_{i=1}^{n} |x_i|^p \right)^{\frac{1}{p}},
-\]
-
-con $p \in [1, +\infty)$. In dimensione $n=1$ tutte queste norme coincidono col valore assoluto. Per $p \in (0, 1)$ non è rispettata la disuguaglianza triangolare quindi essa non potrà essere una norma.
-
-La norma $L_1$ è banalmente la somma dei valori assoluti dei componenti, solitamente indicata secondo la contrazione tensoriale con:
-
-\[
-|\mathbf{x}| := \sum_{i=1}^{n} |x_i|,
-\]
-
-indicando esplicitamente come questa generalizzi il valore assoluto al caso vettoriale.
-
-L'esempio più noto è invece la norma $L_2$, detta anche norma euclidea, che nello spazio euclideo $n$-dimensionale $\mathbb{R}^n$ diventa:
-
-\[
-\|\mathbf{x}\|_2 := \sqrt{\sum_{i=1}^{n} x_i^2}.
-\]
-
-La norma $L_\infty$ è (impiegando la nozione di limite di una funzione) il massimo dei valori delle componenti in valore assoluto:
-
-\[
-\|\mathbf{x}\|_\infty := \left(\sum_{i=1}^{n} |x_i|^\infty \right)^{\frac{1}{\infty}} = \max_{i \in [n]} |x_i|.
-\]
-
+\begin{itemize}
+    \item \textbf{Non Negatività:} \( d(\mathbf{x}, \mathbf{z}) \geq 0 \) per ogni coppia di punti \( \mathbf{x} \) e \( \mathbf{z} \).
+    \item \textbf{Definizione Positiva:} \( d(\mathbf{x}, \mathbf{z}) = 0 \) se e solo se \( \mathbf{x} = \mathbf{z} \).
+    \item \textbf{Simmetria:} \( d(\mathbf{x}, \mathbf{z}) = d(\mathbf{z}, \mathbf{x}) \) per ogni coppia di punti \( \mathbf{x} \) e \( \mathbf{z} \).
+    \item \textbf{Disuguaglianza Triangolare:} \( d(\mathbf{x}, \mathbf{z}) \leq d(\mathbf{x}, \mathbf{y}) + d(\mathbf{y}, \mathbf{z}) \) per ogni trio di punti \( \mathbf{x} \), \( \mathbf{y} \), e \( \mathbf{z} \).
+\end{itemize}
 
 \subsubsection{Distanza Euclidea} 
 La distaza Euclidea (chiamata anche norma $L_2$) calcola la distanza diretta tra punti in uno spazio multidimensionale. 
