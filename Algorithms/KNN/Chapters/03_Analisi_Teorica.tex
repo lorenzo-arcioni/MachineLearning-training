@@ -101,7 +101,7 @@ Per affrontare il problema del costo computazionale, esistono diverse tecniche d
 
 In sintesi, sebbene KNN sia un algoritmo semplice e non richieda un costoso processo di addestramento, la sua fase di predizione può diventare molto costosa in termini di tempo di calcolo, specialmente con grandi dataset e in spazi ad alta dimensionalità. L'adozione di tecniche di ottimizzazione e accelerazione può aiutare a gestire e ridurre il costo computazionale associato a questo algoritmo.
 
-\subsection{Il Trade-Off Bias-Variance nel K-Nearest Neighbors}
+\subsection{Il Trade-Off Bias-Variance}
 
 Il trade-off bias-variance è un concetto cruciale nella valutazione e nel miglioramento delle prestazioni degli algoritmi di apprendimento automatico. Questo trade-off riguarda la relazione tra due tipi di errore che un modello può commettere: l'errore di bias e l'errore di varianza. Per l'algoritmo K-Nearest Neighbors (KNN), questo trade-off è particolarmente rilevante e si manifesta in modo distintivo a seconda del valore di \( K \), il numero di vicini utilizzati per la predizione.
 
@@ -122,7 +122,7 @@ Il trade-off bias-variance è essenziale per comprendere come il modello general
 Nel contesto di KNN, il valore di \( K \) gioca un ruolo cruciale nel determinare il trade-off bias-varianza:
 
 \begin{itemize}
-    \item \textbf{Basso Valore di \( K \) (Alta Complessità):} Quando \( K \) è molto basso (ad esempio, \( K = 1 \)), il modello di KNN è molto flessibile e si adatta strettamente ai dati di addestramento. Questo porta a una bassa bias e a una alta varianza. In altre parole, il modello ha una capacità di adattamento molto elevata ma rischia di sovradattarsi (overfitting) ai dati di addestramento, con prestazioni scadenti su nuovi dati non visti.
+    \item \textbf{Basso Valore di \( K \) (Alta Complessità):} Quando \( K \) è molto basso (ad esempio, \( K = 1 \)), il modello di KNN è molto flessibile e si adatta strettamente ai dati di addestramento. Questo porta a una basso bias e a una alta varianza. In altre parole, il modello ha una capacità di adattamento molto elevata ma rischia di sovradattarsi (overfitting) ai dati di addestramento, con prestazioni scadenti su nuovi dati non visti.
 
     \item \textbf{Valore Moderato di \( K \):} Un valore moderato di \( K \) trova un equilibrio tra bias e varianza. In questa situazione, KNN considera un numero ragionevole di vicini per fare previsioni, riducendo l'errore di varianza senza aumentare eccessivamente l'errore di bias. Questo valore di \( K \) è spesso scelto attraverso tecniche di validazione incrociata per ottenere il miglior compromesso tra adattamento e generalizzazione.
 

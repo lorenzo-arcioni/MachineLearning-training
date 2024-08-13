@@ -1,0 +1,33 @@
+    Quadrante in alto a sinistra (Low Bias, Low Variance):
+        Questo è il caso ideale dove il modello è preciso e stabile, prevedendo correttamente i valori (vicino al bersaglio) con poca variabilità.
+        
+    Quadrante in alto a destra (Low Bias, High Variance):
+        In questo caso, il modello tende a catturare bene la struttura dei dati (basso bias) ma è molto sensibile ai cambiamenti nei dati di training, il che provoca una grande dispersione delle previsioni.
+        
+    Quadrante in basso a sinistra (High Bias, Low Variance):
+        Qui, il modello è stabile ma non riesce a catturare correttamente la struttura dei dati (alto bias). Le previsioni sono consistenti, ma sbagliate.
+        
+    Quadrante in basso a destra (High Bias, High Variance):
+        Questo è il peggior scenario, dove il modello è sia inaccurato che instabile. Non solo le previsioni sono lontane dal bersaglio (alto bias), ma sono anche molto variabili (alta variance).
+        
+        
+        
+1. Selezione del valore di K
+
+    K piccolo (es. K=1):
+        Bias Basso, Variance Alta: Il modello diventa molto sensibile ai rumori nei dati, portando ad overfitting. Ogni singolo punto di training può influenzare molto il risultato.
+    K grande:
+        Bias Alto, Variance Bassa: Aumentando K, il modello diventa più stabile (bassa variance) ma meno accurato (alto bias) poiché considera un numero maggiore di punti vicini, potenzialmente includendo punti appartenenti a classi diverse.
+    Strategia: Effettua una ricerca cross-validata sui valori di K per identificare quello che minimizza l'errore di validazione.
+
+2. Ponderazione delle distanze
+
+    Ponderazione inversa della distanza:
+        Ponderando i vicini in base alla distanza (i più vicini hanno un peso maggiore), si può ridurre l'impatto dei punti lontani che potrebbero appartenere a classi diverse. Questo può aiutare a ridurre il bias senza aumentare eccessivamente la variance.
+    Strategia: Implementa la ponderazione della distanza per migliorare l'accuratezza senza aggiungere troppo rumore.
+
+3. Scelta della metrica di distanza
+
+    Metrica Euclidea vs Metrica di Manhattan:
+        La scelta della metrica di distanza può influenzare notevolmente il comportamento del KNN. Ad esempio, in spazi ad alta dimensionalità, la metrica Euclidea potrebbe soffrire dell’effetto "curse of dimensionality", portando a un aumento della variance.
+    Strategia: Prova diverse metriche (Euclidea, Manhattan, Minkowski) e scegli quella che offre il miglior tradeoff bias-variance.

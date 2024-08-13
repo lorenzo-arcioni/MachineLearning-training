@@ -33,7 +33,7 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Costo Computazionale durante la Predizione}{11}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Effetti della Maledizione della Dimensionalità}{11}{subsubsection.3.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.4}Ottimizzazione e Tecniche di Accelerazione}{11}{subsubsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.4}Il Trade-Off Bias-Variance nel K-Nearest Neighbors}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Il Trade-Off Bias-Variance}{12}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Errore di Bias e Errore di Varianza}{12}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Trade-Off Bias-Variance in K-Nearest Neighbors}{12}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Selezione del Valore Ottimale di \( K \)}{13}{subsubsection.3.4.3}%

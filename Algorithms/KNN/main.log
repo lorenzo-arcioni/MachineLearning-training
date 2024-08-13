@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.6.19)  30 JUL 2024 17:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.6.19)  10 AUG 2024 01:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1098,7 +1098,7 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0B9AA271093A489D67248EE833F801B2;8709.
+(rerunfilecheck)             Checksum: C0694FF3E176F2EC5C53BCF728A687AF;8580.
  ) 
 Here is how much of TeX's memory you used:
  30962 strings out of 477611
@@ -1128,7 +1128,7 @@ t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
 /public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1000.pfb>
-Output written on main.pdf (13 pages, 290993 bytes).
+Output written on main.pdf (13 pages, 291134 bytes).
 PDF statistics:
  417 PDF objects out of 1000 (max. 8388607)
  356 compressed objects within 4 object streams
