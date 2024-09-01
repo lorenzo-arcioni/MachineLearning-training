@@ -1,0 +1,151 @@
+\section{Analisi Teorica}
+
+\subsection{Interpretazione probabilistica}
+
+In teoria, per effettuare previsioni accurate, sarebbe ideale conoscere la distribuzione 
+condizionale dei dati. Tuttavia, nella pratica, questa distribuzione è generalmente sconosciuta, 
+rendendo impossibile una stima diretta basata su di essa. Nonostante ciò, metodi come il K-nearest 
+neighbors (KNN) riescono comunque a fare previsioni accurate stimando tale distribuzione in maniera non parametrica.
+
+Il KNN stima la distribuzione dei dati basandosi sui \( K \) punti di addestramento più vicini a un punto 
+di test \( \hat{\mathbf{x}} \). La probabilità condizionale viene calcolata come la frazione dei punti 
+in questo insieme che condividono la stessa caratteristica della variabile di interesse:
+
+\[
+Pr(Y = j \mid X = \mathbf{x}_0) = \frac{1}{K} \sum_{i \in N_0} I(y_i = j),
+\]
+
+dove \( N_0 \) rappresenta l'insieme dei \( K \) punti di addestramento più vicini a \( \mathbf{x}_0 \) e \( I(y_i = j) \) è una funzione indicatrice che vale 1 se \( y_i \) è uguale a \( j \) e 0 altrimenti.
+
+Nonostante la semplicità del metodo, il KNN può spesso produrre previsioni molto efficaci, avvicinandosi al comportamento ottimale in molti scenari. Tuttavia, la scelta del parametro \( K \) è cruciale: un valore troppo piccolo di \( K \) rende il modello troppo flessibile e sensibile al rumore nei dati, mentre un valore troppo grande può rendere il modello eccessivamente rigido e incapace di catturare la struttura sottostante dei dati.
+
+La relazione tra il tasso di errore di addestramento e quello di test non è sempre diretta. Aumentando la flessibilità del modello (diminuendo \( K \)), il tasso di errore di addestramento tende a diminuire, ma l'errore di test può aumentare se il modello soffre di overfitting. Questo comportamento è ben rappresentato dalla forma a U del grafico dell'errore di test in funzione di \( 1/K \).
+
+La scelta del giusto livello di flessibilità è fondamentale per il successo di qualsiasi metodo di apprendimento statistico. Nel Capitolo 5, torneremo su questo argomento e discuteremo vari metodi per stimare i tassi di errore di test, al fine di scegliere il livello ottimale di flessibilità per un determinato metodo di apprendimento statistico.
+
+\subsubsection{Convergenza}
+
+\subsection{La maledizione della dimensionalità}
+La \textit{maledizione della dimensionalità} è un concetto fondamentale in statistica e machine learning che descrive come la qualità delle analisi e delle previsioni possa deteriorarsi con l'aumento del numero di dimensioni (o variabili) nel dataset. Questo fenomeno diventa particolarmente rilevante quando si utilizzano algoritmi di apprendimento automatico come K-Nearest Neighbors (KNN).
+
+\subsubsection{Concetto di Maledizione della Dimensionalità}
+
+Quando i dati sono rappresentati in spazi ad alta dimensionalità, le distanze tra i punti tendono a diventare sempre più simili, il che complica la capacità di un algoritmo di distinguere tra punti vicini e lontani. Questo comportamento può influenzare negativamente la performance di molti algoritmi, inclusi i metodi basati sulla distanza come KNN.
+
+\subsubsection{Impatto della Maledizione della Dimensionalità su KNN}
+
+Quando il numero di dimensioni \(d\) aumenta, il volume dello spazio aumenta esponenzialmente. Questo comporta che la distanza tra tutti i punti aumenta, e la differenza tra le distanze dei vicini diventa meno pronunciata. In altre parole, in uno spazio ad alta dimensionalità, quasi tutti i punti sembrano equidistanti l'uno dall'altro. Questo ha le seguenti implicazioni per KNN:
+
+\begin{itemize}
+    \item \textbf{Distanza meno informativa:} Le distanze calcolate tra i punti diventano meno informative. In spazi ad alta dimensionalità, le distanze tra punti vicini e lontani tendono a convergere, rendendo difficile identificare i vicini più prossimi con precisione.
+    
+    \item \textbf{Sparsità dei dati:} I dati diventano sparsi in spazi ad alta dimensionalità. Questo significa che ogni punto di dati è relativamente lontano dagli altri punti, riducendo la densità del campione e aumentando l'incertezza nella classificazione o nella regressione.
+
+    \item \textbf{Maggiore costo computazionale:} Con l'aumento delle dimensioni, il costo computazionale per calcolare le distanze tra tutti i punti aumenta, rendendo l'algoritmo meno scalabile e più lento.
+\end{itemize}
+
+\subsubsection{Mitigazione della Maledizione della Dimensionalità}
+
+Per contrastare gli effetti negativi della maledizione della dimensionalità su KNN, è possibile adottare diverse strategie:
+
+\begin{itemize}
+    \item \textbf{Riduzione della dimensionalità:} Tecniche come l'Analisi delle Componenti Principali (PCA) o il t-Distributed Stochastic Neighbor Embedding (t-SNE) possono essere utilizzate per ridurre il numero di dimensioni mantenendo il più possibile la struttura originale dei dati.
+    
+    \item \textbf{Selezione delle caratteristiche:} Identificare e mantenere solo le caratteristiche più rilevanti può aiutare a ridurre la dimensionalità e migliorare la performance di KNN.
+
+    \item \textbf{Normazione dei dati:} Applicare tecniche di normazione o scalatura per uniformare le scale delle diverse dimensioni può aiutare a migliorare la coerenza delle distanze calcolate.
+\end{itemize}
+
+In conclusione, la maledizione della dimensionalità rappresenta una sfida significativa per algoritmi basati sulla distanza come KNN, ma l'adozione di tecniche adeguate di riduzione e selezione delle caratteristiche può mitigare questi effetti e migliorare la performance degli algoritmi in spazi ad alta dimensionalità.
+
+\subsection{Complessità computazionale}
+L'algoritmo K-Nearest Neighbors (KNN) è noto per la sua semplicità e facilità di implementazione, ma il suo costo computazionale può essere considerevole, specialmente con grandi volumi di dati e in spazi ad alta dimensionalità. In questa sottosezione, analizzeremo il costo computazionale di KNN sia durante la fase di addestramento che durante la fase di predizione.
+
+\subsubsection{Costo Computazionale durante l'Addestramento}
+
+Uno dei punti di forza di KNN è che non richiede una fase di addestramento vera e propria. In altre parole, l'algoritmo non costruisce un modello durante la fase di addestramento; invece, memorizza semplicemente i dati di addestramento. Di conseguenza, il costo computazionale dell'addestramento è:
+
+\begin{equation}
+O(1)
+\end{equation}
+
+Questo significa che il tempo richiesto per "addestrare" KNN è costante e non dipende dalla dimensione del dataset. Tuttavia, è importante notare che, anche se il costo di addestramento è trascurabile, le risorse di memoria devono essere sufficienti per memorizzare l'intero dataset di addestramento.
+
+\subsubsection{Costo Computazionale durante la Predizione}
+
+Il costo computazionale durante la fase di predizione è significativamente più elevato rispetto alla fase di addestramento. Per ogni nuovo punto di test, KNN deve calcolare la distanza tra il punto di test e tutti i punti di addestramento per determinare i K vicini più prossimi. Questo può essere espresso come segue:
+
+\begin{equation}
+O(n \cdot d)
+\end{equation}
+
+dove \( n \) è il numero di punti di addestramento e \( d \) è il numero di dimensioni. Questa complessità deriva dal fatto che l'algoritmo calcola la distanza Euclidea tra il punto di test e ogni punto di addestramento, e la distanza Euclidea ha una complessità di \( O(d) \) per ogni calcolo. Poiché questo calcolo deve essere effettuato per tutti i \( n \) punti, il costo totale è \( O(n \cdot d) \).
+
+\subsubsection{Effetti della Maledizione della Dimensionalità}
+
+La maledizione della dimensionalità amplifica ulteriormente il costo computazionale di KNN. Con l'aumento del numero di dimensioni \( d \), il costo di calcolo delle distanze aumenta linearmente, e la distanza tra i punti diventa meno informativa. Questo porta a una maggiore difficoltà nel trovare i veri vicini più prossimi e, di conseguenza, a una maggiore richiesta di calcoli. In spazi ad alta dimensionalità, il costo computazionale può crescere in modo esponenziale con il numero di dimensioni.
+
+\subsubsection{Ottimizzazione e Tecniche di Accelerazione}
+
+Per affrontare il problema del costo computazionale, esistono diverse tecniche di ottimizzazione e accelerazione che possono essere applicate:
+
+\begin{itemize}
+    \item \textbf{Strutture di Dati di Indice:} L'uso di strutture di dati come gli alberi k-d, gli alberi di ricerca spaziale o i grafi di prossimità può ridurre significativamente il costo computazionale. Queste strutture permettono di eseguire query di vicinanza più velocemente rispetto a una ricerca esaustiva.
+    
+    \item \textbf{Approssimazione:} Algoritmi di ricerca approssimativa dei vicini più prossimi, come l'Approximate Nearest Neighbors (ANN), possono fornire risultati vicini a quelli esatti con un costo computazionale ridotto. Tecniche come Locality Sensitive Hashing (LSH) sono utilizzate per trovare vicini approssimativi in modo più efficiente.
+
+    \item \textbf{Riduzione della Dimensionalità:} Tecniche di riduzione della dimensionalità, come PCA o t-SNE, possono essere utilizzate per ridurre il numero di dimensioni \( d \), diminuendo così il costo di calcolo delle distanze e migliorando la performance dell'algoritmo.
+
+    \item \textbf{Parallelizzazione:} L'algoritmo può essere parallelizzato per sfruttare più core di CPU o GPU, accelerando i calcoli delle distanze per punti di test multipli.
+\end{itemize}
+
+In sintesi, sebbene KNN sia un algoritmo semplice e non richieda un costoso processo di addestramento, la sua fase di predizione può diventare molto costosa in termini di tempo di calcolo, specialmente con grandi dataset e in spazi ad alta dimensionalità. L'adozione di tecniche di ottimizzazione e accelerazione può aiutare a gestire e ridurre il costo computazionale associato a questo algoritmo.
+
+\subsection{Il Trade-Off Bias-Variance}
+
+Il trade-off bias-variance è un concetto cruciale nella valutazione e nel miglioramento delle prestazioni degli algoritmi di apprendimento automatico. Questo trade-off riguarda la relazione tra due tipi di errore che un modello può commettere: l'errore di bias e l'errore di varianza. Per l'algoritmo K-Nearest Neighbors (KNN), questo trade-off è particolarmente rilevante e si manifesta in modo distintivo a seconda del valore di \( K \), il numero di vicini utilizzati per la predizione.
+
+\subsubsection{Errore di Bias e Errore di Varianza}
+
+Prima di esaminare il trade-off nel contesto di KNN, è utile definire i concetti di bias e varianza:
+
+\begin{itemize}
+    \item \textbf{Errore di Bias:} Il bias rappresenta l'errore introdotto dalla semplificazione del modello rispetto alla vera funzione sottostante. Un modello con un alto bias è troppo semplice e può non catturare la complessità dei dati, portando a un errore sistematico. In altre parole, il bias è il differenziale tra il valore medio delle predizioni del modello e il valore reale.
+
+    \item \textbf{Errore di Varianza:} La varianza rappresenta l'errore introdotto dalla sensibilità del modello alle fluttuazioni nel dataset di addestramento. Un modello con alta varianza si adatta troppo ai dati di addestramento e può avere performance scadenti su nuovi dati, portando a un'instabilità nelle predizioni. In altre parole, la varianza è la variabilità delle predizioni del modello per diversi set di addestramento.
+\end{itemize}
+
+Il trade-off bias-variance è essenziale per comprendere come il modello generalizza sui dati non visti. Idealmente, si cerca di bilanciare questi due errori per ottenere il miglior compromesso tra la capacità di adattamento e la generalizzazione.
+
+\subsubsection{Trade-Off Bias-Variance in K-Nearest Neighbors}
+
+Nel contesto di KNN, il valore di \( K \) gioca un ruolo cruciale nel determinare il trade-off bias-varianza:
+
+\begin{itemize}
+    \item \textbf{Basso Valore di \( K \) (Alta Complessità):} Quando \( K \) è molto basso (ad esempio, \( K = 1 \)), il modello di KNN è molto flessibile e si adatta strettamente ai dati di addestramento. Questo porta a una basso bias e a una alta varianza. In altre parole, il modello ha una capacità di adattamento molto elevata ma rischia di sovradattarsi (overfitting) ai dati di addestramento, con prestazioni scadenti su nuovi dati non visti.
+
+    \item \textbf{Valore Moderato di \( K \):} Un valore moderato di \( K \) trova un equilibrio tra bias e varianza. In questa situazione, KNN considera un numero ragionevole di vicini per fare previsioni, riducendo l'errore di varianza senza aumentare eccessivamente l'errore di bias. Questo valore di \( K \) è spesso scelto attraverso tecniche di validazione incrociata per ottenere il miglior compromesso tra adattamento e generalizzazione.
+
+    \item \textbf{Alto Valore di \( K \) (Bassa Complessità):} Quando \( K \) è molto alto, il modello di KNN diventa meno sensibile ai dati specifici e si adatta a una media dei vicini. Questo porta a un aumento del bias e a una diminuzione della varianza. Il modello diventa meno complesso e può generalizzare meglio su dati non visti, ma rischia di non catturare dettagli significativi nel dataset di addestramento, portando a un errore di bias più elevato e potenzialmente a un sottoadattamento (underfitting).
+
+\end{itemize}
+
+\subsubsection{Selezione del Valore Ottimale di \( K \)}
+
+La scelta del valore ottimale di \( K \) è cruciale per gestire il trade-off bias-varianza. Ecco alcuni metodi per selezionare un valore appropriato:
+
+\begin{itemize}
+    \item \textbf{Validazione Incrociata:} Utilizzare tecniche di validazione incrociata, come la k-fold cross-validation, per testare vari valori di \( K \) e selezionare quello che minimizza l'errore di generalizzazione sul set di validazione.
+    In questa tecnica, 
+il dataset viene diviso in $k$-folds (sottogruppi), e il modello 
+viene addestrato e valutato $k$ volte, ogni volta utilizzando un 
+diverso fold come set di validazione e il resto come set di addestramento. 
+La media degli errori di validazione per ciascun valore di $K$ viene quindi 
+utilizzata per selezionare il valore di $K$ che minimizza l'errore.
+
+    \item \textbf{Curva di Apprendimento:} Analizzare le curve di apprendimento per valori differenti di \( K \) può fornire indicazioni su come il bias e la varianza cambiano. Questo approccio può aiutare a visualizzare il trade-off e scegliere un valore di \( K \) che offre un buon compromesso tra overfitting e underfitting.
+
+    \item \textbf{Euristiche:} In pratica, è comune utilizzare valori dispari per \( K \) per evitare ambiguità nella decisione di classificazione e iniziare con valori più piccoli e incrementare gradualmente per osservare come cambia la performance del modello.
+\end{itemize}
+
+In sintesi, il trade-off bias-variance in KNN è influenzato principalmente dal valore di \( K \). Un valore troppo basso di \( K \) può portare a un'elevata varianza e a overfitting, mentre un valore troppo alto può portare a un alto bias e a underfitting. La selezione di un valore ottimale di \( K \) è essenziale per ottenere un buon equilibrio tra la capacità di adattamento e la generalizzazione del modello.

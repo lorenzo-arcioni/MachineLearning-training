@@ -1,0 +1,40 @@
+Slide 1:
+
+    "Salve a tutti e benvenuti. In questa sessione, ci concentreremo sull'applicazione pratica dell'algoritmo KNN, mostrando come può essere utilizzato per risolvere problemi reali."
+
+Slide 2:
+
+    "Immaginiamo di avere a disposizione dei dati su vari pazienti e di dover predire il rischio di una malattia cardiaca di un nuovo paziente che abbiamo visitato. Qui ci troviamo di fronte a un problema di classificazione. Il nostro obiettivo è predire se un paziente è a rischio di malattia cardiaca oppure no, basandoci su un insieme di caratteristiche cliniche, la pressione sanguigna e i livelli di colesterolo.
+    
+    Questo è un problema molto comune nell'ambito della salute pubblica, dove la prevenzione è fondamentale. Da notare che in questo esempio in particolare non è necessario l'utilizzo di un modello di machine learning,
+    in quanto per la predizione basta affidarsi ai valori di riferimento stabiliti per i vari parametri. Ma per i nostri scopi, che sono per lo più didattici, questa semplificazione ci aiuta notevolmente nella conprensione del funzionamento dell'algoritmo."
+
+Slide 3:
+
+    "Il KNN è un algoritmo che prende decisioni basate sulla distanza. Ad ogni paziente viene associato un vettore di caratteristiche, chiamato feature vector. Questo vettore contiene tutte le informazioni che abbiamo sul paziente."
+
+Slide 4:
+
+    "Oltre al feature vector, abbiamo anche una variabile target, che rappresenta il risultato che vogliamo predire. Nel nostro esempio, la variabile target è la presenza o assenza di rischio di malattia cardiaca."
+
+Slide 5: 
+
+Questa è la rappresentazione grafica dei dati a nostra disposizione (il cosidetto dataset di addestramento), cioè i dati su cui ci baseremo per effettuare le previsioni. Vediamo che la istanze verdi rappresentano i pazienti non a rischio
+mentre le istanze blu rappresentano i pazienti a rischio.
+
+Slide 6: 
+
+Immagginiamo ora di dover stabilire se un nuovo paziente (indicato dal quadratino in rosso), sia da considerare a rischio oppure no. Il processo decisionale del KNN si basa su un concetto molto semplice: la somiglianza. L'algoritmo cerca i pazienti più simili a quello che stiamo esaminando, utilizzando una metrica di distanza (in questo caso particolare, la distanza euclidea) e un parametro K stabilito a priori.
+
+Slide 7:
+
+Quindi in questo caso l'algoritmo confronta le caratteristiche del nuovo paziente con quelle dei pazienti già classificati, cercando di trovare il gruppo a cui appartiene. Maggiore è la somiglianza (minore è la distanza), maggiore è la probabilità che il nuovo paziente condivida lo stesso risultato. In questo caso quindi l'algoritmo (inizializzato con parametro K=5) ha trovato i primi 5 punti piu vicini al nuovo paziente rosso. E come vediamo c'è una maggioranza di pazienti a rischio
+    tra questi 5 punti."
+
+Slide 8:
+
+Di conseguenza, come possiamo osservare, il modello classifica il nuovo punto come paziente a rischio.
+
+Slide 9:
+
+    "Con questo concludiamo la nostra panoramica sull'applicazione del KNN in un contesto reale. Anche se questo esempio può risultare banale, è importante ricordare che modelli di questo tipo, quando vengono alimentati con enormi quantità di dati e informazioni aggiuntive, diventano strumenti fondamentali in ambiti critici come la medicina. In questi contesti, la capacità di analizzare e interpretare dati complessi (che una persona umana difficilmente è in grado di interpretare in maniera corretta e immediata) può fare la differenza tra una diagnosi tempestiva e una mancata individuazione di una patologia.  Spero che questo esempio abbia chiarito come questo algoritmo può essere utilizzato nella pratica. Se avete domande, non esitate a contattarmi all'indirizzo email indicato. Quindi grazie a tutti e ci vediamo nella prossima lezione."

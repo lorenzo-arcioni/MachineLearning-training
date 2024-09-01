@@ -1,0 +1,20 @@
+Salve a tutti e benvenuti. In questa lezione andremo a capire l'importanza della scelta del valore ottimale di k (il numero di vicini) nel modello KNN. 
+In particolare vedremo come K influisce nel tradeoff bias variance (di cui abbiamo iniziato a parlare nella lezione scorsa) e come trovare 
+un valore di K ottimale in modo da trovare un giusto compromesso tra bias e varianza.
+
+Come abbiamo visto nei video precedenti, le features meno informative del dataset Iris sono 
+le dimensioni del sepalo. Se abbiamo a disposizione tutte le features
+del dataset originale, il problema di classificazione è molto semplice da risolvere. 
+Quindi, per rendere piu challenging il problema di classificazione,
+utilizzeremo solamente queste due informazioni. E vedremo come al variare di K,
+varia anche l'accuracy del modello.
+
+
+Ora eseguiamo un'analisi di cross-validazione su un modello K-Nearest Neighbors (KNN) per diversi valori di kk, 
+e visualizziamo come varia l'accuracy del modello in funzione di kk.
+
+Andiamo ora a vedere come questo problema della scelta ottimale del valore di K si rifletta anche sul problema della regressione.
+Quindi costruiremo un grafico con l'obiettivo di visualizzare come il valore del parametro kk (numero di vicini) influisce sulla qualità della regressione.
+
+
+

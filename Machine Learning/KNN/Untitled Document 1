@@ -1,0 +1,31 @@
+Salve a tutti e benvenuti, oggi vediamo come implementare l'algoritmo KNN tramite la libreria skleanr (una delle piu famose librerie per il machine learning), esploreremo un famoso dataset chiamato Iris e utilizzeremo l'algoritmo k-Nearest Neighbors per classificare le diverse specie di fiori presenti nel dataset.
+
+Per chi non conosce questo tipo di dataset, consiglio la visione del video relativo sul mio canale YouTube, dove effettuo un'exploratory data analysis proprio sul dataset Iris.
+
+Il dataset Iris è uno dei più noti nel campo dell'apprendimento automatico. Contiene informazioni su tre specie diverse di iris: Iris setosa, Iris versicolor e Iris virginica. Il dataset include 150 osservazioni con quattro caratteristiche ciascuna: lunghezza del sepalo, larghezza del sepalo, lunghezza del petalo e larghezza del petalo. Ogni fiore è etichettato con una delle tre specie possibili.
+
+Per iniziare, importiamo le librerie necessarie. Utilizzeremo NumPy, Pandas. Queste librerie ci permetteranno di gestire i dati, creare visualizzazioni e costruire il nostro modello di apprendimento automatico.
+
+Carichiamo il dataset Iris direttamente da scikit-learn e creiamo un DataFrame per una migliore gestione dei dati. Questo ci permette di vedere subito le prime righe del dataset e avere un'idea delle informazioni contenute.
+
+Dividiamo il dataset in un set di training e un set di test. Utilizziamo il 30% dei dati per il test. Questa divisione è importante per poter valutare il modello su dati che non ha mai visto durante l'addestramento.
+
+Creiamo un modello k-NN con k=3 e lo addestriamo con il set di training. L'algoritmo k-NN classifica un nuovo punto dati basandosi sui k punti dati più vicini nel set di training. In questo caso, abbiamo scelto k=3.
+
+Utilizziamo il modello addestrato per fare previsioni sui dati di test. Questo ci permetterà di vedere come il modello si comporta su dati nuovi.
+
+Generiamo un report di classificazione per valutare le performance del modello. Questo report include metriche come la precisione, il richiamo e il punteggio F1 per ciascuna delle tre classi.
+
+Ora passiamo alla visualizzazione dei risultati. Definiamo una funzione per visualizzare i confini di classificazione. Questa funzione ci permette di vedere come il modello separa le diverse classi nel piano delle caratteristiche.
+
+Creiamo i grafici per visualizzare i confini di classificazione per il set di training e il set di test. Come possiamo vedere nei grafici, i confini di classificazione sono ben definiti per separare le tre specie di iris. Nel grafico a sinistra, che rappresenta il set di training, possiamo vedere che le tre specie sono ben separate con pochi punti sovrapposti nei confini. Nel grafico a destra, che rappresenta il set di test, possiamo osservare un comportamento simile, indicando che il modello ha generalizzato bene dai dati di training ai dati di test. Tuttavia, vediamo qualche sovrapposizione, il che è normale e riflette la complessità del problema di classificazione.
+
+Ora visualizziamo la matrice di confusione per avere un'idea chiara di come il modello ha performato. La matrice di confusione ci mostra che il modello ha classificato correttamente tutte le istanze nel set di test. In particolare, possiamo osservare che:
+
+    Iris setosa è stata classificata correttamente 19 volte.
+    Iris versicolor è stata classificata correttamente 13 volte.
+    Iris virginica è stata classificata correttamente 13 volte.
+
+Questo indica che il nostro modello k-NN con k=3 è molto preciso nel classificare le specie di iris nel set di test.
+
+In questa lezione, abbiamo esplorato il dataset Iris, creato un modello k-NN, e valutato le sue performance. Abbiamo anche visualizzato i confini di classificazione per capire meglio come il modello separa le diverse classi e analizzato la matrice di confusione per vedere la precisione delle nostre previsioni. Grazie per aver seguito la lezione!

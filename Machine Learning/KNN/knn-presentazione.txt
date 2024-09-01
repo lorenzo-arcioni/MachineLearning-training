@@ -1,0 +1,107 @@
+Slide 1:
+Salve a tutti e Benvenuti in questa prima presentazione
+sull'algoritmo K-Nearest Neighbors, o più semplicemente KNN. Questo algoritmo è uno dei
+metodi di apprendimento automatico più intuitivi e utilizzati sia per problemi di
+classificazione che di regressione. Durante questa presentazione, esploreremo i fondamenti
+teorici del KNN, come funziona nella pratica, le sue principali applicazioni, nonché i
+suoi vantaggi e svantaggi. Alla fine, vedremo anche un esempio visivo di come
+questo algoritmo prende le decisioni.  
+
+Slide 2:
+K-Nearest Neighbors è un algoritmo che si basa su un principio molto
+semplice: quando dobbiamo prendere una decisione su un nuovo punto dati, guardiamo ai
+punti dati più vicini per vedere a quali classi appartengono. L'idea è che i dati
+simili siano vicini tra loro nello spazio delle caratteristiche. Questo algoritmo non
+richiede un modello addestrato a priori; invece, durante la fase di predizione,
+confronta il nuovo punto con i dati già presenti per fare la sua previsione. Il KNN è
+molto versatile e può essere utilizzato in diversi campi, come il riconoscimento
+facciale, la diagnosi medica e le raccomandazioni personalizzate. Vedremo ora come si
+articola questo processo."  
+
+Slide 3: 
+KNN è un algoritmo non
+parametrico, il che significa che non assume nessuna distribuzione specifica dei dati.
+Questo lo rende molto flessibile, ma al contempo lo espone ad alcune difficoltà, come
+la sensibilità al rumore nei dati. Il cuore del KNN è la misura della distanza,
+che può essere calcolata in diversi modi che vedremo in dettaglio nelle prossime lezioni.
+
+Slide 4: La scelta del valore di K è cruciale per il successo
+dell'algoritmo KNN. Se K è troppo piccolo, ad esempio pari a 1, l'algoritmo può essere molto
+sensibile al rumore nei dati, portando a decisioni errate influenzate da outlier, un
+fenomeno noto come overfitting. Invece, se K è troppo grande, l'algoritmo può rischiare di perdere
+dettagli importanti e finendo per ignorare le variazioni
+locali nei dati. Questo fenomeno si chiama underfitting. Nelle prossime lezioni vedremo le tecniche 
+migliori per la scelta del parametro K. È importante notare che il
+valore ottimale di K può variare a seconda del dataset e della specifica
+applicazione.
+
+Slide 5:
+KNN trova applicazioni in moltissimi campi
+grazie alla sua semplicità e flessibilità. Uno degli usi più noti è nel
+riconoscimento facciale, dove KNN può essere utilizzato per identificare una persona
+confrontando la sua immagine con un database di volti noti. Un altro esempio è nelle
+raccomandazioni di prodotti: l'algoritmo può suggerire articoli simili a quelli già acquistati
+o visualizzati da un utente, basandosi sulle preferenze di altri utenti con
+gusti simili. KNN è anche utilizzato nell'analisi di dati in biomedicina, per
+esempio, per classificare cellule come sane o cancerogene in base a caratteristiche
+morfologiche. Sebbene KNN sia relativamente semplice, la sua efficacia lo rende una scelta
+popolare per una vasta gamma di problemi di classificazione e regressione, soprattutto
+in contesti dove la velocità di implementazione e l'interpretabilità sono
+importanti.
+
+Slide 6: 
+Tra i principali vantaggi del KNN, spiccano la sua
+semplicità e facilità di implementazione. Non richiede un addestramento complesso, poiché
+non si basa su un modello predefinito. Questo significa che non è necessario
+effettuare un lungo processo di ottimizzazione prima di poter utilizzare l'algoritmo.
+Inoltre, KNN è intuitivo: la logica che lo governa è facilmente comprensibile, anche da
+persone che non sono esperte di apprendimento automatico.
+
+Slide 7:
+Sebbene il KNN sia semplice e
+flessibile, presenta anche diversi svantaggi che è importante considerare. Primo fra
+tutti, è computazionalmente costoso. Poiché l'algoritmo deve calcolare la distanza
+tra il nuovo punto e tutti i punti esistenti nel dataset, l'operazione può
+diventare molto lenta, specialmente quando il numero di dati (e dimensioni) 
+è elevato. Inoltre, KNN
+soffre in presenza di dati sbilanciati: se una classe è molto più rappresentata
+rispetto alle altre, l'algoritmo può avere difficoltà a classificare correttamente i
+punti della classe meno rappresentata. Inoltre, KNN è sensibile al rumore nei dati,
+poiché un singolo punto anomalo può influenzare notevolmente la decisione finale. Per
+mitigare questi problemi, è spesso necessaria una pre-elaborazione accurata dei dati,
+che può includere la normalizzazione, la riduzione del rumore, e la gestione dei
+dati sbilanciati attraverso tecniche come l'oversampling o il bilanciamento delle
+classi." 
+
+Slide 8:
+In questa slide, vediamo un esempio pratico di come KNN effettua una decisione basata
+sulla distanza. Immaginiamo di avere un nuovo punto dati, rappresentato dal quadrato
+giallo. Per classificare questo nuovo punto, l'algoritmo cerca i 'K' punti più vicini
+tra i dati già noti. Nell'esempio, vediamo che il nuovo punto è collegato ai suoi
+cinque vicini più prossimi. Questi vicini possono appartenere a diverse classi: nel
+caso di una classificazione, l'algoritmo conterà il numero di vicini per ciascuna
+classe e assegnerà al nuovo punto la classe che ha la maggioranza. Se, ad esempio,
+tra i cinque vicini, tre appartengono alla Classe B e due alla Classe A, il nuovo
+punto sarà classificato come Classe B. Questo semplice meccanismo rende il KNN
+particolarmente intuitivo, ma come abbiamo visto, è essenziale scegliere il giusto valore di K
+e gestire i dati in modo appropriato." 
+
+Slide 9:
+In conclusione,
+l'algoritmo KNN è uno strumento potente per la classificazione e la regressione,
+caratterizzato da un approccio semplice ma efficace. La sua logica basata sulla vicinanza dei
+dati lo rende intuitivo e facile da implementare, anche in applicazioni reali.
+Tuttavia, come abbiamo visto, la scelta del valore di K è cruciale per ottenere buone
+performance. Un'accurata pre-elaborazione dei dati e la gestione delle problematiche
+computazionali sono anch'esse essenziali per sfruttare al meglio le potenzialità del KNN.
+Sebbene presenti alcuni limiti, il KNN rimane una delle tecniche di machine learning
+più apprezzate per la sua semplicità e versatilità. 
+
+Slide 10: 
+
+Spero che la
+presentazione vi abbia dato un'idea iniziale di come funziona questo algoritmo e come
+può essere applicato in diversi contesti. Nelle prossime lezioni andremo ad approfondire i concetti teorici
+dietro al KNN accompagnati da un'ingente parte di attività pratica per assimilare al
+meglio tutti gli aspetti di questo algoritmo. Detto questo, vi ringrazio
+per l'attenzione e ci vediamo nelle prossime lezioni.
