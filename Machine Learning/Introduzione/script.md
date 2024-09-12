@@ -11,7 +11,7 @@
 
   Benvenuti al corso introduttivo sul Machine Learning. In questo corso esploreremo uno dei campi più innovativi e promettenti dell'intelligenza artificiale. Il Machine Learning sta cambiando il modo in cui interagiamo con la tecnologia, permettendo alle macchine di apprendere dai dati e di migliorare autonomamente nel tempo.
 
-  Io sono **Lorenzo Arcioni**, e oggi vi guiderò attraverso i concetti fondamentali del Machine Learning, con esempi pratici e applicazioni concrete. Il nostro obiettivo sarà quello di comprendere cos'è il Machine Learning, come funziona e perché è così importante nel mondo di oggi e del futuro.
+  Io sono **Lorenzo Arcioni**, e oggi vi guiderò attraverso i concetti fondamentali del Machine Learning. L'obiettivo di questo corso introduttivo è quello di comprendere cos'è il Machine Learning, come funziona e perché è così importante nel mondo di oggi e del futuro.
 
   Iniziamo!
 
