@@ -1,7 +1,7 @@
 # Curriculum del Corso Introduttivo al Machine Learning
 
 ## Lezione 1: Introduzione al Machine Learning  
-**Durata: 15 minuti**
+**Durata: 10 minuti**
 
 ---
 
@@ -176,81 +176,186 @@ Ci vediamo nella prossima lezione!
 
 ---
 
-## Lezione 2: Tipi di Machine Learning
-**Durata: 15 minuti**
-
-- **2.1 Apprendimento Supervisionato (5 minuti)**
-
-  - Definizione e principi di base.
-
-    L'apprendimento supervisionato è il tipo più 
-    comune di Machine Learning. In questo approccio, 
-    forniamo al modello un set di dati etichettati, 
-    dove il risultato desiderato è già noto. Il 
-    modello impara a mappare input a output corretti 
-    basandosi su questi esempi. Questo è utile per 
-    problemi in cui abbiamo una chiara definizione di 
-    quali sono le risposte corrette.
-
-  - Esempi: Classificazione e regressione.
-
-    Due esempi chiave di apprendimento supervisionato 
-    sono la **classificazione** e la **regressione**. 
-    Nella classificazione, l'obiettivo è assegnare una 
-    categoria o etichetta a un input, come ad esempio 
-    distinguere tra email spam e non spam. Nella 
-    regressione, l'obiettivo è prevedere un valore 
-    numerico continuo, come il prezzo di una casa in 
-    base a sue caratteristiche come la superficie o la 
-    posizione.
-
-- **2.2 Apprendimento Non Supervisionato (5 minuti)**
-
-  - Definizione e principi di base.
-
-    Nell'apprendimento non supervisionato, il modello 
-    lavora con dati che non sono etichettati. Invece 
-    di prevedere un risultato specifico, il modello 
-    cerca di trovare pattern o strutture nascoste nei 
-    dati. Questo approccio è utile quando i dati non 
-    sono etichettati o quando non sappiamo esattamente 
-    cosa cercare.
-
-  - Esempi: Clustering, riduzione della dimensionalità.
-
-    Un esempio comune di apprendimento non 
-    supervisionato è il **clustering**, dove il 
-    modello raggruppa i dati in cluster basati sulla 
-    loro somiglianza. Un altro esempio è la **riduzione 
-    della dimensionalità**, che semplifica i dati 
-    mantenendo le informazioni più rilevanti, spesso 
-    utilizzata per la visualizzazione o la 
-    pre-elaborazione dei dati.
-
-- **2.3 Apprendimento Rinforzato (5 minuti)**
-
-  - Concetti chiave e meccanismi.
-
-    L'apprendimento rinforzato è un tipo di Machine 
-    Learning dove un agente apprende attraverso 
-    l'interazione con l'ambiente, eseguendo azioni e 
-    ricevendo feedback in forma di ricompense o 
-    penalità. L'obiettivo è imparare una strategia 
-    ottimale che massimizza la ricompensa accumulata 
-    nel tempo.
-
-  - Esempi pratici: Giochi, robotica.
-
-    Un esempio classico è un robot che impara a 
-    camminare. Il robot esegue movimenti casuali e 
-    riceve feedback dall'ambiente, come "sei caduto" 
-    o "hai fatto un passo corretto". Con il tempo, il 
-    robot impara quali azioni portano a ricompense 
-    positive e quali no. Un altro esempio famoso è 
-    **AlphaGo**, il programma che ha battuto il 
-    campione mondiale del gioco Go.
+## Lezione 2: Tipologie di Machine Learning  
+**Durata: 10 minuti**
 
 ---
+
+### 2.1 Introduzione al Machine Learning (2 minuti)
+
+Iniziamo con una definizione di base:  
+cos’è il **Machine Learning**? È una sottocategoria  
+dell'Intelligenza Artificiale (AI), che include  
+tecniche e approcci che permettono alle macchine  
+di eseguire **compiti intelligenti**. La differenza chiave  
+tra AI e Machine Learning è che, mentre l'AI si riferisce  
+a qualsiasi tecnica che permette alle macchine di  
+replicare comportamenti umani intelligenti,  
+il **Machine Learning** si focalizza sull'addestramento  
+delle macchine attraverso **l'apprendimento dai dati**.
+
+L'idea principale è che il sistema non viene  
+**programmato esplicitamente** per ogni singolo compito.  
+Invece, gli forniamo dati e il sistema impara  
+da essi, migliorando le sue capacità nel tempo.  
+Un esempio pratico potrebbe essere un'app di traduzione  
+automatica, che migliora le sue traduzioni basandosi  
+su nuove frasi che apprende dagli utenti o da altri  
+dati disponibili.
+
+Il Machine Learning è usato in molti ambiti:  
+dal riconoscimento facciale, alla medicina, alla finanza.  
+Ma come funziona effettivamente? Vediamo le tre  
+principali categorie di Machine Learning:  
+supervisionato, non supervisionato e rinforzato.
+
+---
+
+### 2.2 Tipologie di Machine Learning (10 minuti)
+
+#### Apprendimento Supervisionato (4 minuti)
+
+Cominciamo con l'apprendimento supervisionato,  
+che è forse la forma più diffusa di Machine Learning.  
+In questo caso, il modello riceve **dati etichettati**,  
+il che significa che ogni input è associato al suo  
+output corretto. È un po' come addestrare un bambino:  
+gli mostriamo esempi e gli diciamo quale è la risposta  
+giusta. Il modello utilizza questi esempi per imparare  
+a mappare input simili a output corretti.
+
+Prendiamo come esempio il riconoscimento delle immagini:  
+abbiamo un set di immagini di gatti e cani, etichettate  
+correttamente. Il modello impara da questi esempi e,  
+una volta addestrato, sarà in grado di riconoscere se  
+una nuova immagine contiene un gatto o un cane.  
+L'apprendimento supervisionato è ideale quando abbiamo  
+**grandi quantità di dati etichettati**, in quanto  
+questi forniscono al modello molte informazioni  
+su cui basare le sue previsioni future.
+
+### Esempi chiave
+
+1. **Classificazione**: L'obiettivo qui è assegnare  
+un'etichetta o una categoria a un input. Un esempio  
+tipico è distinguere tra email **spam** e **non spam**.  
+Nel settore della sanità, la classificazione potrebbe  
+essere utilizzata per diagnosticare malattie in base  
+ai sintomi del paziente o alle immagini mediche.
+
+2. **Regressione**: In questo caso, non stiamo cercando  
+una categoria, ma piuttosto un valore numerico continuo.  
+Ad esempio, potremmo voler prevedere il prezzo di  
+una casa basandoci sulle sue caratteristiche:  
+superficie, posizione, numero di stanze e così via.  
+Uno degli algoritmi più semplici è la **regressione lineare**,  
+ma esistono anche metodi più complessi, come le  
+**reti neurali** e gli **alberi decisionali**, che sono  
+capaci di gestire problemi più complessi e dataset più  
+grandi.
+
+L'apprendimento supervisionato è particolarmente utile  
+quando sappiamo già quale risultato vogliamo ottenere  
+e abbiamo accesso a molti dati etichettati. Tuttavia,  
+ci sono anche casi in cui non abbiamo dati etichettati  
+a disposizione, e qui entra in gioco l'apprendimento  
+non supervisionato.
+
+---
+
+#### Apprendimento Non Supervisionato (4 minuti)
+
+L'apprendimento non supervisionato è piuttosto  
+differente. In questo caso, il modello lavora con  
+dati che **non sono etichettati**. Non sappiamo  
+qual è il risultato corretto, e non lo sa neppure il  
+modello. Il suo compito è trovare pattern o strutture  
+nascoste all'interno dei dati, senza alcuna indicazione  
+precisa su quale debba essere la soluzione.
+
+Questo approccio è molto utile quando vogliamo  
+**esplorare i dati** e scoprire cosa possono dirci,  
+senza avere un'idea predefinita di quali siano  
+le risposte corrette. Spesso, l'apprendimento non  
+supervisionato viene usato come primo passo in  
+problemi complessi, in cui non sappiamo esattamente  
+cosa aspettarci dai dati.
+
+### Esempi principali
+
+1. **Clustering**: Un esempio tipico di apprendimento  
+non supervisionato è il clustering. Il modello divide  
+i dati in gruppi (o cluster) in base alla loro somiglianza.  
+Immaginate di avere dati sui clienti di un negozio online.  
+Il clustering potrebbe raggruppare i clienti in diversi  
+segmenti basati sul loro comportamento d'acquisto,  
+senza che abbiate fornito alcuna etichetta. Questo è  
+utile per scoprire **gruppi nascosti** all'interno dei dati,  
+ad esempio per campagne di marketing personalizzate.
+
+2. **Riduzione della dimensionalità**: Un altro esempio  
+è la riduzione della dimensionalità. A volte abbiamo  
+dataset molto complessi, con centinaia o migliaia di  
+variabili. Questo rende difficile sia l'analisi che la  
+visualizzazione dei dati. La riduzione della dimensionalità  
+è una tecnica che permette di **semplificare i dati**,  
+mantenendo solo le caratteristiche più rilevanti,  
+riducendo il "rumore" e facilitando la visualizzazione  
+o l'elaborazione da parte di altri modelli.
+
+Un esempio pratico di riduzione della dimensionalità  
+è l'uso di algoritmi come **PCA** (Principal Component Analysis),  
+che trovano le direzioni principali lungo cui i dati variano  
+maggiormente. Questo è spesso utilizzato come passo  
+preliminare per migliorare la velocità e l'efficacia  
+di altri algoritmi di Machine Learning.
+
+---
+
+#### Apprendimento Rinforzato (2 minuti)
+
+L'apprendimento rinforzato è diverso sia dal supervisionato  
+che dal non supervisionato. In questo caso, un **agente**  
+impara attraverso **l'interazione diretta** con l'ambiente.  
+L'agente esegue delle azioni e riceve feedback sotto  
+forma di **ricompense** o **penalità**. L'obiettivo è  
+che l'agente apprenda quali azioni portano a risultati  
+positivi e quali no, e sviluppi una strategia ottimale  
+per massimizzare la **ricompensa totale** nel tempo.
+
+Un esempio classico è un robot che impara a camminare.  
+Il robot prova diversi movimenti, e ogni volta riceve  
+un feedback: se cade, riceve una penalità; se riesce a  
+fare un passo corretto, ottiene una ricompensa. Nel  
+tempo, il robot apprende come camminare in modo  
+efficace, migliorando sempre di più con la pratica.
+
+Un esempio avanzato di apprendimento rinforzato è  
+**AlphaZero**, il programma sviluppato da DeepMind  
+per giocare a scacchi. AlphaZero ha imparato a giocare  
+a scacchi senza ricevere alcuna istruzione specifica  
+sulle strategie migliori. Ha semplicemente giocato  
+contro se stesso milioni di volte, apprendendo dalle  
+partite giocate e migliorando progressivamente.  
+Alla fine, AlphaZero è diventato così forte da battere  
+anche i migliori programmi di scacchi tradizionali,  
+come Stockfish, dimostrando la potenza dell'apprendimento  
+rinforzato in situazioni dove l'esplorazione e il feedback  
+costante sono fondamentali.
+
+---
+
+### Conclusione (1 minuto)
+
+In questa lezione, abbiamo esplorato le tre principali  
+tipologie di Machine Learning: **supervisionato**,  
+**non supervisionato** e **rinforzato**. Ognuno di questi  
+approcci ha un suo campo di applicazione specifico,  
+e la scelta di quale utilizzare dipende dal tipo di  
+dati che abbiamo e dagli obiettivi del progetto. Nella prossima lezione
+approfondiremo le componenti fondamentali del Machine Learning. 
+Detto questo vi ringrazio per l'attenzione e se avete domande non esitate a contattami via email.
+Ci vediamo nella prossima lezione!
 
 ## Lezione 3: Componenti Fondamentali del Machine Learning
 **Durata: 15 minuti**
@@ -490,58 +595,5 @@ Ci vediamo nella prossima lezione!
     cruciali, come l'approvazione di prestiti, ma 
     possono anche escludere ingiustamente persone a 
     causa di bias nei dati.
-
----
-
-## Lezione 6: Conclusione e Prossimi Passi
-**Durata: 10 minuti**
-
-- **6.1 Riepilogo dei Concetti Chiave (5 minuti)**
-
-  - Ricapitolazione dei principali concetti trattati.
-
-    In questa lezione finale, riepiloghiamo i concetti 
-    chiave che abbiamo trattato. Abbiamo esplorato 
-    cosa sia il Machine Learning, i diversi tipi di 
-    apprendimento, e le componenti fondamentali che 
-    influenzano le prestazioni dei modelli.
-
-  - **Contenuto Aggiunto**: Revisione delle sfide principali nel ML (overfitting, underfitting, bias).
-
-    Abbiamo anche discusso le principali sfide, come 
-    l'overfitting, l'underfitting e il bias, e 
-    l'importanza di valutare e monitorare attentamente 
-    i modelli per garantire che siano robusti, equi e 
-    in grado di generalizzare bene su dati nuovi.
-
-- **6.2 Introduzione agli Algoritmi e Risorse Aggiuntive (5 minuti)**
-
-  - Introduzione alle lezioni future sui singoli algoritmi.
-
-    Guardando avanti, nelle prossime lezioni ci 
-    concentreremo su algoritmi specifici di Machine 
-    Learning, esplorando in dettaglio come funzionano e 
-    come possono essere applicati a problemi reali. 
-    Questi algoritmi includono la regressione lineare, 
-    le reti neurali, gli alberi decisionali, e molti 
-    altri.
-
-  - Suggerimenti per approfondimenti e risorse.
-
-    Vi incoraggio a esplorare ulteriori risorse per 
-    approfondire i concetti appresi. Libri, corsi 
-    online e progetti di Machine Learning pratici sono 
-    ottimi modi per consolidare le vostre conoscenze e 
-    sviluppare competenze pratiche.
-
-  - **Contenuto Aggiunto**: Importanza dell'esperienza pratica con progetti reali.
-
-    L'esperienza pratica è fondamentale in questo 
-    campo. Vi incoraggio a lavorare su progetti 
-    concreti, partecipare a competizioni di Machine 
-    Learning come quelle su Kaggle, e continuare a 
-    sperimentare e imparare. Grazie per aver seguito 
-    questo corso introduttivo, e auguro a tutti voi il 
-    meglio nel vostro viaggio nel Machine Learning.
 
 ---
