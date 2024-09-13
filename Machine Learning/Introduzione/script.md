@@ -211,9 +211,9 @@ supervisionato, non supervisionato e rinforzato.
 
 ---
 
-### 2.2 Tipologie di Machine Learning (10 minuti)
+### 2.2 Tipologie di Machine Learning (6 minuti)
 
-#### Apprendimento Supervisionato (4 minuti)
+#### Apprendimento Supervisionato (2.5 minuti)
 
 Cominciamo con l'apprendimento supervisionato,  
 che è forse la forma più diffusa di Machine Learning.  
@@ -263,7 +263,7 @@ non supervisionato.
 
 ---
 
-#### Apprendimento Non Supervisionato (4 minuti)
+#### Apprendimento Non Supervisionato (2 minuti)
 
 L'apprendimento non supervisionato è piuttosto  
 differente. In questo caso, il modello lavora con  
@@ -312,7 +312,7 @@ di altri algoritmi di Machine Learning.
 
 ---
 
-#### Apprendimento Rinforzato (2 minuti)
+#### Apprendimento Rinforzato (1.5 minuti)
 
 L'apprendimento rinforzato è diverso sia dal supervisionato  
 che dal non supervisionato. In questo caso, un **agente**  
@@ -323,12 +323,7 @@ che l'agente apprenda quali azioni portano a risultati
 positivi e quali no, e sviluppi una strategia ottimale  
 per massimizzare la **ricompensa totale** nel tempo.
 
-Un esempio classico è un robot che impara a camminare.  
-Il robot prova diversi movimenti, e ogni volta riceve  
-un feedback: se cade, riceve una penalità; se riesce a  
-fare un passo corretto, ottiene una ricompensa. Nel  
-tempo, il robot apprende come camminare in modo  
-efficace, migliorando sempre di più con la pratica.
+In figura, viene mostrato il Deep Q-Learning negli scacchi, che utilizza reti neurali profonde per stimare la Q-function, ossia il valore delle mosse possibili in una data posizione, guidando il motore di gioco verso quelle con la ricompensa attesa più alta. Durante l'addestramento, il motore impara attraverso l'esplorazione delle mosse e il feedback delle partite giocate, migliorando progressivamente la sua strategia.
 
 Un esempio avanzato di apprendimento rinforzato è  
 **AlphaZero**, il programma sviluppato da DeepMind  
@@ -349,7 +344,7 @@ costante sono fondamentali.
 
 In questa lezione, abbiamo esplorato le tre principali  
 tipologie di Machine Learning: **supervisionato**,  
-**non supervisionato** e **rinforzato**. Ognuno di questi  
+**non supervisionato** e **rinforzato**. Nella realtà ci sono varie altre categorie e zone grige, ma queste tre sono sicuramente le più importanti. Ognuno di questi  
 approcci ha un suo campo di applicazione specifico,  
 e la scelta di quale utilizzare dipende dal tipo di  
 dati che abbiamo e dagli obiettivi del progetto. Nella prossima lezione
