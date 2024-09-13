@@ -184,7 +184,7 @@ Ci vediamo nella prossima lezione!
 ### 2.1 Introduzione al Machine Learning (2 minuti)
 
 Iniziamo con una definizione di base:  
-cos’è il **Machine Learning**? È una sottocategoria  
+cos’è il **Machine Learning**? Il **Machine Learning** è una sottocategoria
 dell'Intelligenza Artificiale (AI), che include  
 tecniche e approcci che permettono alle macchine  
 di eseguire **compiti intelligenti**. La differenza chiave  
