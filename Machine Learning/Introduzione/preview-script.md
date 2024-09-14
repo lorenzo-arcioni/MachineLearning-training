@@ -1,10 +1,10 @@
 # Introduzione al Corso Introduttivo sul Machine Learning
 
-Salve a tutti. Oggi vi presento il mio corso  
+Salve a tutti e benvenuti. Oggi vi presento il mio corso  
 introduttivo sul Machine Learning, pensato per chi  
 vuole acquisire una solida base teorica su questo  
 tema più che mai attuale. Questo corso offre una  
-panoramica generale sui concetti fondamentali,  
+panoramica generale sui concetti fondamentali del Machine Learning,  
 mentre le applicazioni pratiche verranno trattate  
 nei miei corsi più avanzati.
 
@@ -55,7 +55,7 @@ i problemi sulla privacy.
 
 ---
 
-In sintesi, questo corso offre una panoramica ad alto  
+Questo corso offre una panoramica ad alto  
 livello sul Machine Learning, preparando il terreno  
 per approfondimenti successivi. Vi invito quindi ad iscrivervi  
 e a seguire il percorso formativo completo. Grazie  
