@@ -24,7 +24,7 @@ bene i dati rappresentano il problema che stiamo cercando di risolvere.
 Dati di alta qualità sono cruciali per ottenere modelli accurati e  
 affidabili. Se i dati sono incompleti, rumorosi o inaccurati,  
 il modello potrebbe non riuscire a catturare i pattern corretti,  
-portando a risultati errati o poco utili.
+portando a risultati errati o comunque poco utili.
 
 La quantità dei dati è altrettanto importante. Modelli complessi, come  
 le reti neurali profonde, richiedono grandi quantità di dati per  
@@ -37,12 +37,11 @@ Nel contesto del Machine Learning, i dati vengono generalmente divisi
 in feature e target variables. Le feature, o variabili indipendenti, sono  
 gli input del modello, i dati su cui viene addestrato. Al contrario, le  
 target variables, o variabili dipendenti, rappresentano l'output che il  
-modello cerca di prevedere. Ad esempio, in un modello di previsione  
-delle vendite, le feature potrebbero includere il prezzo e le spese di  
-marketing, mentre il target potrebbe essere il numero di unità vendute.
+modello cerca di prevedere.
 
 La tabella sopra fornisce un esempio pratico di come le feature e la variabile target  
-vengono utilizzate nella previsione dei prezzi delle case.  
+vengono utilizzate nella previsione dei prezzi delle case. 
+ 
 Le variabili indipendenti, o feature, includono la superficie della casa,  
 il numero di stanze, l'anno di costruzione, la posizione (quartiere) e la  
 presenza di un giardino. Questi elementi sono utilizzati come input per il  
