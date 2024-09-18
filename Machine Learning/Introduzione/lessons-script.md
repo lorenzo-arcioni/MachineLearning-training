@@ -323,7 +323,13 @@ che l'agente apprenda quali azioni portano a risultati
 positivi e quali no, e sviluppi una strategia ottimale  
 per massimizzare la **ricompensa totale** nel tempo.
 
-In figura, viene mostrato il Deep Q-Learning negli scacchi, che utilizza reti neurali profonde per stimare la Q-function, ossia il valore delle mosse possibili in una data posizione, guidando il motore di gioco verso quelle con la ricompensa attesa più alta. Durante l'addestramento, il motore impara attraverso l'esplorazione delle mosse e il feedback delle partite giocate, migliorando progressivamente la sua strategia.
+In figura, viene mostrato il Deep Q-Learning negli scacchi, 
+che utilizza reti neurali profonde per stimare la Q-function, 
+ossia il valore delle mosse possibili in una data posizione, 
+guidando il motore di gioco verso quelle con la ricompensa attesa 
+più alta. Durante l'addestramento, il motore impara attraverso 
+l'esplorazione delle mosse e il feedback delle partite giocate, 
+migliorando progressivamente la sua strategia.
 
 Un esempio avanzato di apprendimento rinforzato è  
 **AlphaZero**, il programma sviluppato da DeepMind  
@@ -418,15 +424,19 @@ Ci vediamo nella prossima lezione!
 
 - **3.3 Valutazione dei Modelli (5 minuti)**
 
-  - Metriche di performance: Accuratezza, precisione, richiamo.
+  Dopo l'addestramento, è importante valutare le 
+  prestazioni del modello utilizzando dati non visti.
 
-    Dopo l'addestramento, è importante valutare le 
-    prestazioni del modello utilizzando dati non visti. 
+  - Metriche di performance per la Classificazione: Accuratezza, precisione, recall e F1-score.
+ 
     Metriche comuni includono l'accuratezza, la 
     precisione, il richiamo e il F1-score per problemi 
-    di classificazione. Per problemi di regressione, 
-    si utilizzano metriche come RMSE (Root Mean Square 
-    Error).
+    di classificazione.
+  
+  - Metriche di performance per la Regressione: Errore medio assoluto e errore quadratico medio.
+  
+    MAE, MSE, RMSE.
+
 
   - Concetti di overfitting e underfitting.
 
