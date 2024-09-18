@@ -102,20 +102,44 @@ questa complessità comporta anche rischi. I modelli complessi possono
 essere meno interpretabili e sono più soggetti a overfitting,  
 specialmente se non hanno abbastanza dati di addestramento.
 
-Per fare un confronto concreto, consideriamo la regressione lineare  
-versus una rete neurale profonda. La regressione lineare potrebbe  
-essere utilizzata per prevedere il prezzo di una casa basandosi su  
-caratteristiche come la dimensione e la posizione. Invece, una rete  
-neurale profonda potrebbe essere usata per riconoscere volti nelle  
-immagini, catturando dettagli sottili e complessi che una regressione  
-lineare non riuscirebbe a identificare. Tuttavia, la rete neurale  
-potrebbe imparare a riconoscere rumore specifico delle immagini di  
-addestramento, eccessivamente specializzandosi su quei dati.
+---
+
+### Slide 11: La Funzione Reale $f$
+
+La **funzione reale $f$** descrive la relazione tra le variabili in ingresso, o feature, $x$ e i risultati, o target, $y$.  
+In altre parole, rappresenta il processo o fenomeno reale che genera i dati che osserviamo.  
+Questa funzione esiste, ma nel contesto del Machine Learning non la conosciamo mai con certezza a priori.  
+Il nostro obiettivo è quindi quello di avvicinarci il più possibile a questa funzione reale, attraverso l'uso di modelli di apprendimento.
+
+Ad esempio, se consideriamo il prezzo delle case, la funzione reale rappresenterebbe come le caratteristiche della casa, come la dimensione o la posizione, determinano il prezzo finale.
+
+---
+
+### Slide 12: La Funzione Stimata $\hat{f}$
+
+La **funzione stimata $\hat{f}$** è ciò che il nostro modello apprende dai dati disponibili.  
+Essa cerca di approssimare la funzione reale $f$, che non è nota.  
+L'obiettivo è che la funzione stimata sia il più vicina possibile alla funzione reale, in modo che le previsioni fatte dal modello siano accurate e riflettano il più possibile la realtà.
+
+Nel contesto dell'esempio sul prezzo delle case, la funzione stimata prende le caratteristiche della casa e cerca di predire il prezzo. Più $\hat{f}$ è vicina a $f$, migliori saranno le previsioni del modello.
+
+---
+
+### Slide 14: Misurare la Qualità della Funzione Stimata
+
+Per valutare la **qualità della funzione stimata**, dobbiamo minimizzare l'errore tra $\hat{f}$ e $f$.  
+Questo errore può essere misurato in vari modi, a seconda del tipo di problema.
+
+Ad esempio, in un problema di regressione potremmo utilizzare l'Errore Quadratico Medio (MSE), mentre per problemi di classificazione potremmo usare metriche come precisione, recall o F1-score. Vedremo queste metriche in dettaglio in seguito.
+
+In ogni caso, il nostro obiettivo è sempre lo stesso: trovare un modello che minimizzi l'errore e che sia capace di fare previsioni accurate su nuovi dati, non visti in fase di addestramento.
 
 ---
 
 In questa lezione abbiamo trattato i componenti fondamentali del  
 Machine Learning: il ruolo dei dati, i modelli e le loro valutazioni.  
-Grazie per l'attenzione e ci vediamo nella prossima  
+Abbiamo esplorato i concetti di **funzione reale** e **funzione stimata**, fondamentali per comprendere il funzionamento dei modelli di Machine Learning.  
+Abbiamo visto che la funzione reale $f$ rappresenta la vera relazione tra input e output, mentre la funzione stimata $\hat{f}$ è ciò che apprendiamo dai dati per fare previsioni.
+Detto questo vi ringrazio per l'attenzione e ci vediamo nella prossima  
 lezione, dove approfondiremo ulteriormente il processo di valutazione  
 di un modello di Machine Learning.
