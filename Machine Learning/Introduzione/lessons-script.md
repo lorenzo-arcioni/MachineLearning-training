@@ -422,43 +422,6 @@ Ci vediamo nella prossima lezione!
     imparando dettagli specifici del dataset di 
     addestramento piuttosto che i pattern generali.
 
-- **3.3 Valutazione dei Modelli (5 minuti)**
-
-  Dopo l'addestramento, è importante valutare le 
-  prestazioni del modello utilizzando dati non visti.
-
-  - Metriche di performance per la Classificazione: Accuratezza, precisione, recall e F1-score.
- 
-    Metriche comuni includono l'accuratezza, la 
-    precisione, il richiamo e il F1-score per problemi 
-    di classificazione.
-  
-  - Metriche di performance per la Regressione: Errore medio assoluto e errore quadratico medio.
-  
-    MAE, MSE, RMSE.
-
-
-  - Concetti di overfitting e underfitting.
-
-    L'overfitting si verifica quando un modello impara 
-    troppo bene i dettagli e il rumore del dataset di 
-    addestramento, perdendo la capacità di 
-    generalizzare a dati nuovi. L'underfitting si 
-    verifica quando il modello è troppo semplice per 
-    catturare i pattern nei dati.
-
-  - **Contenuto Aggiunto**: Validazione incrociata e importanza della suddivisione tra set di addestramento, validazione e test.
-
-    La validazione incrociata è una tecnica per 
-    valutare la robustezza di un modello, dividendo il 
-    dataset in più parti e addestrando il modello su 
-    diverse combinazioni di queste parti. Inoltre, è 
-    essenziale suddividere i dati in set di 
-    addestramento, validazione e test per evitare 
-    overfitting e ottenere una stima accurata delle 
-    prestazioni del modello su dati non visti.
-
----
 
 ## Lezione 4: Il Processo di Sviluppo di un Progetto di Machine Learning
 **Durata: 15 minuti**
@@ -470,10 +433,8 @@ Ci vediamo nella prossima lezione!
     La definizione del problema è il primo passo in 
     qualsiasi progetto di Machine Learning. È 
     fondamentale capire esattamente cosa si sta 
-    cercando di risolvere. Questo include la 
-    determinazione se il problema è di classificazione, 
-    regressione, clustering, o un altro tipo di 
-    apprendimento.
+    cercando di risolvere. Questo include determinare se il problema è di classificazione, 
+    regressione, clustering, o di altro tipo.
 
   - **Contenuto Aggiunto**: Differenza tra problemi di classificazione, regressione e clustering.
 
@@ -496,17 +457,6 @@ Ci vediamo nella prossima lezione!
     training e test per addestrare e valutare il 
     modello.
 
-  - **Contenuto Aggiunto**: L'importanza di avere un dataset rappresentativo e l'uso di tecniche di riduzione della dimensionalità.
-
-    Un dataset rappresentativo è cruciale per 
-    l'efficacia del modello. Dati non rappresentativi 
-    possono introdurre bias che distorcono le 
-    predizioni del modello. La riduzione della 
-    dimensionalità, come PCA, può essere utile per 
-    semplificare dataset complessi, eliminando feature 
-    ridondanti e migliorando la velocità di 
-    addestramento senza perdere informazioni importanti.
-
 - **4.3 Selezione del Modello e Deployment (5 minuti)**
 
   - Criteri di selezione del modello.
@@ -518,26 +468,17 @@ Ci vediamo nella prossima lezione!
     più interpretabili, mentre modelli complessi come 
     le reti neurali profonde possono fornire migliori 
     prestazioni su problemi complessi.
+  
+  - Fase Di Testing del Modello
 
-  - Breve introduzione al deployment e monitoraggio.
+  - Deployment e monitoraggio.
 
-    Una volta addestrato il modello, deve essere 
+    Una volta addestrato e testato il modello, deve essere 
     integrato nell'ambiente di produzione, un processo 
     noto come deployment. Il modello deve essere 
     monitorato nel tempo per garantire che le sue 
     prestazioni rimangano stabili e che continui a 
     fornire predizioni accurate con nuovi dati.
-
-  - **Contenuto Aggiunto**: Differenza tra apprendimento batch e online, e quando usare ciascuno.
-
-    Nell'apprendimento batch, il modello viene 
-    addestrato periodicamente su un set di dati 
-    statico, mentre nell'apprendimento online, il 
-    modello viene continuamente aggiornato con nuovi 
-    dati. L'apprendimento online è utile in ambienti 
-    dinamici dove i dati cambiano frequentemente, 
-    mentre l'apprendimento batch è più comune in 
-    situazioni dove i dati sono relativamente stabili.
 
 ---
 
