@@ -1,6 +1,6 @@
 ## Slide 1: Funzione Reale e Funzione Stimata
 
-In machine learning, ci concentriamo sull'approssimazione 
+Come abbiamo visto nella scorsa lezione, nel machine learning ci concentriamo sull'approssimazione 
 di una funzione reale che descrive la relazione tra input e output. 
 Questa relazione può essere espressa come:
 
@@ -126,23 +126,6 @@ Questo valore ci indica, in media, di quanto le
 previsioni del modello differiscono dai valori reali, 
 tenendo conto delle unità della variabile predetta.
 
-### 4. **Coefficiente di Determinazione (R²)**
-L'R², o **coefficiente di determinazione**, misura la 
-proporzione della varianza nel target che può essere 
-spiegata dalle feature del modello. La formula è:
-$$
-R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y_i})^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}
-$$
-Dove:
-- $y_i$ è il valore reale,
-- $\hat{y_i}$ è il valore predetto dal modello,
-- $\bar{y}$ è la media dei valori reali.
-
-Un R² vicino a 1 indica che il modello spiega quasi 
-tutta la varianza presente nei dati, mentre un R² 
-vicino a 0 significa che il modello non è migliore di 
-una semplice media delle osservazioni.
-
 ---
 
 ## Slide 4: Introduzione alla Classificazione
@@ -194,7 +177,7 @@ L'accuratezza è la proporzione di previsioni corrette
 rispetto al totale delle previsioni effettuate. Si 
 calcola come:
 $$
-Accuratezza = \frac{TP + TN}{TP + TN + FP + FN}
+Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
 $$
 Dove:
 - **TP** sono i veri positivi (previsioni corrette di 
@@ -214,7 +197,7 @@ La precisione misura la proporzione di previsioni
 positive corrette rispetto al totale delle previsioni 
 positive effettuate. La formula è:
 $$
-Precisione = \frac{TP}{TP + FP}
+Precision = \frac{TP}{TP + FP}
 $$
 
 È particolarmente utile quando il costo di un falso 
