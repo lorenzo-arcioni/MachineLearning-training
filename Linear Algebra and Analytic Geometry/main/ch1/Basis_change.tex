@@ -1,0 +1,82 @@
+\section{Intuitive Approach to Basis Change}
+
+Let $B = \{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}$ and $B' = \{\vec{u}_1, \vec{u}_2, \ldots, \vec{u}_n\}$ be two bases for a vector space $V$.
+
+Compute the coordinates of a vector with respect to a basis is a way to represent a vector as a linear combination of the basis vectors, finding the coefficient to apply to each basis vector.
+
+We can find a way to "translate" the coordinates of a vector $\vec{x}$ from a basis $B$ to a basis $B'$ (holding the same vector). Suppose $\vec{x}$ has coordinates $[\vec x]_B$ with respect to $B$ and coordinates $[\vec x]_{B'}$ with respect to $B'$. Then, there exists a matrix $P$, such that:
+
+\[
+[ \ \vec x \ ]_{B'} = P[\ \vec x \ ]_B
+\]
+
+where $P$ is the transition matrix from $B$ to $B'$.
+
+To find out how the vector coordinates change from a basis to an other, we must know the coordinates of the basis $B$ vectors with respect to $B'$ basis.
+\\
+
+Let $\vec x = d_1 \vec v_1 + d_2 \vec v_2 + \ldots + d_n \vec v_n$ be an arbitrary vector in $V$. The coordinate vector of $\vec x$ with respect to the basis $B$ is
+
+\[
+[\ \vec x \ ]_B = \begin{bmatrix}
+    d_1 \\
+    d_2 \\
+    \vdots \\
+    d_n
+\end{bmatrix}.
+\]
+
+If
+
+\[
+\begin{aligned}
+    \vec v_1 &= c_{1,1} \vec u_1 + c_{2,1} \vec u_2 + \ldots + c_{n,1} \vec u_n \\
+    \vec v_2 &= c_{1,2} \vec u_1 + c_{2,2} \vec u_2 + \ldots + c_{n,2} \vec u_n \\
+    & \vdots \\
+    \vec v_n &= c_{1,n} \vec u_1 + c_{2,n} \vec u_2 + \ldots + c_{n,n} \vec u_n,
+\end{aligned}
+\]
+
+then you can write
+
+\[
+\begin{aligned}
+    \vec x &= d_1 \vec v_1 + d_2 \vec v_2 + \ldots + d_n \vec v_n \\
+    &= d_1(c_{1,1} \vec u_1 + \ldots + c_{n,1} \vec u_n) + \ldots + d_n(c_{1,n} \vec u_1 + \ldots + c_{n,n} \vec u_n) \\
+    &= (d_1 c_{1,1} + \ldots + d_n c_{1,n}) \vec u_1 + \ldots + (d_1 c_{n,1} + \ldots + d_n c_{n,n}) \vec u_n,
+\end{aligned}
+\]
+
+which implies
+
+\[
+[ \ \vec x \ ]_{B'} =\begin{bmatrix}
+    c_{1,1}d_1 + c_{12,}d_2 + \cdots + c_{1,n}d_n \\
+    c_{2,1}d_1 + c_{2,2}d_2 + \cdots + c_{2,n}d_n \\
+    \vdots \\
+    c_{n,1}d_1 + c_{n,2}d_2 + \cdots + c_{n,n}d_n
+\end{bmatrix} = \begin{bmatrix}
+    c_{1,1} & c_{1,2} & \cdots & c_{1,n} \\
+    c_{2,1} & c_{2,2} & \cdots & c_{2,n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    c_{n,1} & c_{n,2} & \cdots & c_{n,n}
+\end{bmatrix} \begin{bmatrix}
+    d_1 \\
+    d_2 \\
+    \vdots \\
+    d_n
+\end{bmatrix} = P[ \ \vec x \ ]_B.
+\]
+
+So, the transition matrix from $B$ to $B'$ is
+
+\[
+P = \begin{bmatrix}
+    c_{1,1} & c_{1,2} & \cdots & c_{1,n} \\
+    c_{2,1} & c_{2,2} & \cdots & c_{2,n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    c_{n,1} & c_{n,2} & \cdots & c_{n,n}
+\end{bmatrix}.
+\]
+
+In the section \ref{subsection:indepth-basis-change} of the next chapter, we introduce a general method to compute the transition matrices between two coordinate systems of a vector space.

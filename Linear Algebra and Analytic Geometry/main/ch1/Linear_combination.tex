@@ -1,0 +1,44 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%LINEAR-COMBINATIONS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Linear Combinations}
+
+In the realm of vector spaces, the concept of a \emph{linear combination} holds significant importance. A \emph{linear combination} involves combining vectors in a space by scaling each vector by a scalar and then summing them up. 
+
+
+    Let $V$ be a vector space over the field $\mathbb F$. If $\vec{v}_1, . \ . \ ., \vec v_s \in V$ are vectors and $a_1, . \ . \ ., a_s \in \mathbb F$ are scalars, then the \textbf{linear combination} of those vectors with those scalars as coefficients is 
+
+$$
+a_1 \vec v_1 + \dots + a_s \vec v_s \ \in V, \quad a_1, . \ . \ ., a_s \in \mathbb F.
+$$
+
+\label{def:linear-combination}
+
+Understanding linear combinations is foundational in linear algebra, providing insights into the structure and properties of vector spaces. Linear combinations play a crucial role in defining concepts such as span, linear independence, and solutions to systems of linear equations.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SPAN%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Span}
+
+The \textbf{span} of a nonempty subset $S$ of a vector space $V$ over a field $\mathbb F$, is the set of all possible linear combinations of those vectors.
+
+$$
+\textit{span}(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k) = \left\{ \sum_{i=1}^k \lambda_i \vec{v}_i \ \middle| \ k \in \mathbb{N}, \vec{v}_i \in V, \lambda_i \in \mathbb F \right\}
+$$
+
+The span of the empty subset of a vector space is its trivial subspace.
+\\
+
+In simpler terms, the span is the set of all possible vectors that can be formed by linear combinations of the given vectors.
+\\
+
+Let $S \subseteq V$. The set $S$ is a \textbf{spanning set} of $V$ if \textit{every} $\vec v \in V$ can be written as linear combination of vectors in $S$.
+
+
+\subsubsection{The Span of a Subset of a Vector Space is a Vector Subspace}
+
+Let $S$ be a set of vectors of vector space $V$. The {\textit{span($S$)}} is a vector subspace.
+\\
+
+It is easy to show that the span of $S$ contain the $\vec 0$ and is closed under addition and scalar multiplication.
+
+All the other axioms are inherited from $V$.
+\\
+
+The span plays a crucial role in determining the extent or reach of a set of vectors. If the span of a set of vectors is the entire vector space $V$, then the vectors are said to \emph{span} the space.

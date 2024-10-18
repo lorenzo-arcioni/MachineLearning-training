@@ -1,0 +1,54 @@
+\section{Inverse of a Matrix}
+
+The Gauss-Jordan elimination method is a systematic way to find the inverse of a matrix by transforming it into reduced row-echelon form. Let's denote the given matrix as $A$:
+
+\[
+A = \begin{bmatrix}
+    a & b \\
+    c & d
+\end{bmatrix}
+\]
+
+To find the inverse of $A$ using Gauss-Jordan elimination, we will form an augmented matrix by appending the identity matrix of the same size next to $A$. Then, we will perform row operations until $A$ becomes the identity matrix, and the inverse of $A$ will be on the other side of the augmented matrix.
+
+\textbf{Example:} Let's find the inverse of the matrix $A = \begin{bmatrix} 2 & 3 \\ 1 & 2 \end{bmatrix}$ using Gauss-Jordan elimination.
+
+We start with the augmented matrix:
+
+\[
+\begin{bmatrix}
+    2 & 3 & | & 1 & 0 \\
+    1 & 2 & | & 0 & 1
+\end{bmatrix}
+\]
+
+We perform row operations to transform the left side of the matrix into the identity matrix:
+
+1. Subtract $\frac{1}{2}$ times the first row from the second row:
+
+\[
+\begin{bmatrix}
+    2 & 3 & | & 1 & 0 \\
+    0 & 1 & | & -\frac{1}{2} & 1
+\end{bmatrix}
+\]
+
+2. Subtract $3$ times the second row from the first row:
+
+\[
+\begin{bmatrix}
+    2 & 0 & | & \frac{7}{2} & -3 \\
+    0 & 1 & | & -\frac{1}{2} & 1
+\end{bmatrix}
+\]
+
+3. Divide the first row by $2$:
+
+\[
+\begin{bmatrix}
+    1 & 0 & | & \frac{7}{4} & -\frac{3}{2} \\
+    0 & 1 & | & -\frac{1}{2} & 1
+\end{bmatrix}
+\]
+
+Therefore, the inverse of matrix $A$ is $\begin{bmatrix} \frac{7}{4} & -\frac{3}{2} \\ -\frac{1}{2} & 1 \end{bmatrix}$.

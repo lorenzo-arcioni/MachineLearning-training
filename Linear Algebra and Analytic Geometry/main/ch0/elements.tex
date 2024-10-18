@@ -1,0 +1,115 @@
+\section{Objects}
+In the realm of mathematics, fundamental objects like scalars, vectors, matrices, and tensors serve as the building blocks for expressing a wide range of mathematical and scientific concepts. These entities encapsulate different levels of complexity, from singular values to multi-dimensional structures, each offering unique properties and applications.
+
+\subsection{Scalars}
+Scalars are elements of a field, like $\mathbb{R}$,that represent quantities that only have magnitude, such as temperature, mass, distance, or time. Scalars have zero dimensions. They are considered point values in a mathematical space.
+
+Since a scalar has no dimensions, its shape is represented as an empty set.
+
+Scalars are typically denoted by lowercase letters, e.g., $a,b,c$ and they are treated as constants; they can be real numbers, complex numbers, or elements from other mathematical fields.
+\\
+
+For example 
+
+$$
+a \in \mathbb{F}
+$$
+
+where is a scalar in a field $\mathbb{F}$.
+
+\subsection{Vectors}
+A vector is an ordered collection of elements of a field that represents a quantity with both magnitude and direction. Vectors are used to describe various physical quantities, such as displacement, velocity, and force.
+In a geometric sense, they can be visualized as directed line segments with a specific length and direction in space.
+
+Vectors have one dimension, so the shape of a vector is a 1-dimensional tuple $(n)$, where $n$ is the number of elements in the vector, also known as vector size. 
+\\
+
+Here are a few key points to understand about vectors:
+\begin{itemize}
+    \item \textbf{Magnitude:} This is the length of the vector.
+
+    \item \textbf{Direction:} This indicates the way the vector points.
+
+    \item \textbf{Components:} The individual parts that make up a vector.
+\end{itemize}
+
+They are typically denoted by a letter with an arrow above. For example
+
+$$
+\vec v =\begin{bmatrix}
+    v_1\\
+    v_2\\
+    \vdots\\
+    v_n
+\end{bmatrix} \in \mathbb{F}^n,
+$$
+
+where $\vec v$ is a vector in $\mathbb F^n$, $(n)$ is the vector shape, $n$ is the vector size and $v_1, v_2, \dots, v_n \in \mathbb{F}$ are vector components.
+
+If we wish to access the component within the vectors we can employ the following mathematical notation: 
+
+$$
+\vec v^{\ (1)} = v_1
+$$
+
+And to access all elements of a dimension we can use ":" instead of numerical indexes:
+
+$$
+\vec v^{\ (:)} = \vec v
+$$
+
+\subsection{Matrices}
+A matrix is a two-dimensional array of elements of a field, organized in rows and columns. It is used to represent and manipulate data in various applications, including linear transformations and systems of equations.
+
+The shape of a matrix is a 2-dimensional tuple $(m,n)$, where $m$ is the number of rows and $n$ is the number of columns. 
+
+Matrices are typically denoted by uppercase letters, e.g., $A, B, C$. For example 
+
+$$
+A_{m,n} = \begin{bmatrix} 
+    a_{11} & \dots  & a_{1n}\\
+    \vdots & \ddots & \vdots\\
+    a_{m1} & \dots  & a_{mn} 
+\end{bmatrix} \in \mathbb{F}^{m \times n}
+$$
+
+where $A_{m,n}$ is a matrix in $\mathbb{F}^{m \times n}$, $(m, n)$ is the matrix shape and $a_{i,j} \in \mathbb F$.
+
+If we wish to access the component within the matrix we can employ the following mathematical notation: 
+
+$$
+A_{m,n}^{(i, j)} = a_{i,j}
+$$
+
+And to access all elements of a dimension we can use ":" instead of numerical indexes:
+
+$$
+A_{m,n}^{(i, :)} = \begin{bmatrix}
+    a_{i,1}\\
+    a_{i, 2}\\
+    \vdots\\
+    a_{i, n}
+\end{bmatrix}, \quad A_{m,n}^{(:, j)} = \begin{bmatrix}
+    a_{1,j}\\
+    a_{2,j}\\
+    \vdots\\
+    a_{m,j}
+\end{bmatrix}, \quad  A_{m,n}^{(:, :)} = A_{m,n}
+$$
+
+
+\subsubsection{Square Matrices}
+
+A square matrix $A_{m,n}$ is a matrix with the same number of rows and columns, i.e., $m = n$.
+
+\subsubsection{Triangular Matrices}
+A lower triangular matrix $A$ is a square matrix where all entries above the main diagonal are zero, i.e., $a_{i,j} = 0$ for $i < j$.
+
+An upper triangular matrix $A$ is a square matrix where all entries below the main diagonal are zero, i.e., $a_{i,j} = 0$ for $i > j$.
+
+\subsubsection{Diagonal Matrices}
+
+A diagonal matrix $D$ is a square matrix where all entries outside the main diagonal are zero, i.e., $a_{i,j} = 0$ for $i \neq j$.
+
+\subsubsection{Symmetric Matrices}
+A symmetric matrix $A_{n,n}$ is a square matrix where the elements are symmetric with respect to the main diagonal. In other words, if $a_{i,j}$ is an entry in the matrix at the $i$-th row and $j$-th column, then $a_{i,j} = a_{j,i}$ for all $i$ and $j$ in the matrix. This symmetry implies that the values on one side of the main diagonal mirror the values on the other side.

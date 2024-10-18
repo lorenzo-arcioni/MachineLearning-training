@@ -1,0 +1,101 @@
+\section{Introduction to Linear Maps}
+
+A linear map \( T \) between vector spaces \( V \) and \( W \) is a function that preserves vector addition and scalar multiplication. Intuitively, this means that if you apply the linear map to a combination of vectors (either by adding them or scaling them), the result is the same as applying the linear map to each individual vector and then combining the results.
+\\
+
+Every linear transformation can be represented by a matrix. Let 
+
+\[ T: \mathbb{R}^n \rightarrow \mathbb{R}^m \]
+
+be a linear transformation. Then there exists an \( m \times n \) matrix \( A \) such that for any vector \( \vec {x} \) in \( \mathbb{R}^n \), \( T(\vec {x}) = A\vec {x} \).
+\\
+
+So, for any linear transformation $T$ that maps from an $n$-dimensional space to an $m$-dimensional space, there exists a specific $m \times n$ matrix $A$ such that when you multiply this matrix by any vector $\vec{x}$ from the original space, you get the transformed vector $T(\vec{x})$ in the new space. This matrix $A$ essentially encodes all the information about how the linear transformation $T$ operates on the vectors in the original space.
+\\
+
+The reason why this is true intuitively can be understood by considering how linear transformations operate on vectors and how matrices represent these transformations. 
+\\
+
+A matrix essentially encodes the action of the transformation on the basis vectors of the original space. When you multiply this matrix by a vector, you're essentially applying the transformation to each component of the vector and then combining the results. This process is consistent with the properties of linear transformations, as it preserves vector addition and scalar multiplication. 
+\\
+
+Therefore, the result in the new space is a combination of the transformed components, which accurately reflects the action of the linear transformation on the original vector.
+
+\section{Properties of Linear Maps}
+
+Consider a linear map 
+
+$$
+T : V \rightarrow W,
+$$
+where $V$ and $W$ are two vector spaces over the same field; and two vectors: $\vec v \in V$ and $\vec w \in W$.
+
+The linear map $T$ exhibit several important properties:
+
+\begin{itemize}
+  \item \textbf{Linearity}: A linear map preserves vector addition and scalar multiplication. In other words, for any vectors \( \vec {w} \) and \( \vec {v} \) and any scalar \( c \), we have:
+  \[
+  T(\vec {w} + \vec {v}) = T(\vec {w}) + T(\vec {v})
+  \]
+  \[
+  T(c \cdot \vec {w}) = c \cdot T(\vec {w})
+  \]
+  This property ensures that the structure of the vector space is preserved under the linear map.
+  
+  \item \textbf{Kernel}: The kernel (or null space) of a linear map \( T \) consists of all vectors \( \vec {v} \) such that \( T(\vec {v}) = \vec {0} \). Intuitively, the kernel represents the set of vectors that are mapped to the zero vector by \( T \). The kernel is a subspace of the domain vector space.
+  
+  \item \textbf{Image}: The image (or range) of a linear map \( T \) is the set of all vectors \( \vec {w} \) in \( W \) that can be expressed as \( T(\vec {v}) \) for some \( \vec {v} \) in \( V \). In other words, the image represents the set of all possible outputs of \( T \). It is a subspace of the codomain vector space.
+\end{itemize}
+
+\subsection{Find the Kernel of a Linear Map}
+
+To find the kernel of a linear map, we use homogeneous systems of linear equations. Let $T: V \rightarrow W$ be a linear map between vector spaces $V$ and $W$. The kernel of $T$, denoted $\text{ker}(T)$, is defined as the set of all vectors in $V$ that map to the zero vector in $W$.
+\\
+
+Consider the homogeneous system of linear equations associated with the linear map $T$:
+\[
+T(\mathbf{x}) = \mathbf{0}
+\]
+where $\mathbf{x}$ is a vector in $V$ and $\mathbf{0}$ is the zero vector in $W$.
+
+To find the kernel of $T$, we solve this system of equations. This can be done by expressing $T$ in terms of its matrix representation $A$ with respect to some basis of $V$ and $W$. Let $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n$ be a basis for $V$, and $\mathbf{w}_1, \mathbf{w}_2, \ldots, \mathbf{w}_m$ be a basis for $W$. Then the matrix representation of $T$ is given by:
+\[
+A = \begin{bmatrix}
+| & | & & | \\
+[T(\mathbf{v}_1)]_B & [T(\mathbf{v}_2)]_B & \cdots & [T(\mathbf{v}_n)]_B \\
+| & | & & |
+\end{bmatrix}
+\]
+where $[T(\mathbf{v}_i)]_B$ represents the coordinate vector of $T(\mathbf{v}_i)$ with respect to the basis $B$ of $W$.
+
+Once we have the matrix $A$, we solve the system of linear equations $A\mathbf{x} = \mathbf{0}$ to find a basis for the kernel of $T$. The solutions to this system represent the vectors $\mathbf{x}$ in $V$ that map to the zero vector in $W$, i.e., elements of $\text{ker}(T)$.
+
+\subsection{Find the Image of a Linear Map}
+
+To find the image of a linear map, we can utilize the transpose of the matrix representation of the linear transformation and row reduction techniques. Let $T: V \rightarrow W$ be a linear map between vector spaces $V$ and $W$. The image of $T$, denoted $\text{Im}(T)$, is defined as the set of all vectors in $W$ that are obtained by applying $T$ to vectors in $V$.
+
+To find the image of $T$, we first express $T$ in terms of its matrix representation $A$ with respect to some basis of $V$ and $W$. Let $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n$ be a basis for $V$, and $\mathbf{w}_1, \mathbf{w}_2, \ldots, \mathbf{w}_m$ be a basis for $W$. Then the matrix representation of $T$ is given by:
+
+\[
+A = \begin{bmatrix}
+| & | & & | \\
+[T(\mathbf{v}_1)]_B & [T(\mathbf{v}_2)]_B & \cdots & [T(\mathbf{v}_n)]_B \\
+| & | & & |
+\end{bmatrix}
+\]
+
+where $[T(\mathbf{v}_i)]_B$ represents the coordinate vector of $T(\mathbf{v}_i)$ with respect to the basis $B$ of $W$.
+\\
+
+Next, we perform row reduction on $A$ to obtain its row echelon form (or reduced row echelon form). This process helps us to identify the linearly independent columns of $A$.
+\\
+
+The image of $T$ is then given by the span of the pivot columns of $A$. These columns form a basis for the image of $T$, and thus, $\text{Im}(T)$ can be represented as:
+
+\[
+\text{Im}(T) = \text{span}\{\text{pivot columns of } A\}.
+\]
+
+To find a basis for Im($A$) you can also find $A^T$ first, and then perform the row-reduction. The first nonzero rows of $\textbf{RREF}(A^T)$ form a basis for Im($A$). This because with transposition we exchange the columns with rows, and then the row-reduction, that don’t change the row space of a matrix, allow us to find linearly independent rows.
+
+

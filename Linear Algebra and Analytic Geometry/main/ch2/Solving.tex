@@ -1,0 +1,73 @@
+\section{Solving Linear Systems}
+
+In this section, we will understand how the Gauss-Jordan algorithm can be a powerful method for solving linear systems by transforming the augmented matrix into reduced row-echelon form. We will walk through each step of the algorithm, providing detailed explanations and examples to illustrate its implementation and effectiveness in finding solutions to linear systems.
+\\
+
+Here's how the process works:
+\\
+
+\textbf{Step 1: Augmented Matrix}
+
+Start with the augmented matrix of the linear system, combining the coefficient matrix and the constants vector:
+
+\[
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} & | & b_1 \\
+a_{21} & a_{22} & \cdots & a_{2n} & | & b_2 \\
+\vdots & \vdots & \ddots & \vdots & | & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn} & | & b_m \\
+\end{bmatrix}
+\]
+
+\textbf{Step 2: Gaussian-Jordan Elimination}
+
+Perform row operations to transform the augmented matrix into reduced row-echelon form, similar to the Gaussian elimination method. The objective is to create leading ones (pivots) in each row and eliminate entries up and below the pivots:
+
+\begin{enumerate}
+    \item Start with the leftmost column.
+    \item Make the first nonzero entry in the column (the pivot) equal to 1 by scaling the row.
+    \item Use row operations to eliminate all entries up and below the pivot, making them zero.
+    \item Move to the next column and repeat the process until the matrix is in reduced row-echelon form.
+\end{enumerate}
+
+\textbf{Step 3: Determine the solution set}
+
+Once the matrix is in reduced row-echelon form, we have we have a clear understanding of the system's solution space and can easily determine the presence of unique solutions, infinite solutions, or inconsistency.
+
+In fact, at the end of the Gauss-Jordan elimination algorithm, there are a few possible outcomes that determine the nature of the solution set for the system of linear equations:
+
+\begin{itemize}
+    \item \textbf{Unique Solution:} If every column contains a leading 1 (pivot) and every other entry in the column is 0, then the system has a unique solution. In this case, there are no free variables, and the solution set consists of a single point in n-dimensional space. In this case, the rank of the coefficient matrix equals the number of unknowns (i.e., the number of columns), so the system has a unique solution. This occurs when the columns of the matrix are linearly independent, allowing us to uniquely determine the values of the unknowns.
+
+    \item \textbf{Inconsistent System:} If during the elimination process, a row of the form $[0 \cdots 0 \ | \ d]$, where $d \neq 0$, is encountered, then the system is inconsistent and has no solution. This indicates that the system of equations represents parallel planes in space, which do not intersect. In this case, the rank of the coefficient matrix is less than the number of unknowns and also less than the number of non-zero rows in the augmented matrix, so the system is inconsistent and has no solution. This occurs when the equations represented by the rows of the matrix are linearly dependent, leading to contradictory constraints.
+
+    \item \textbf{Infinite Solutions:} If there are one or more rows with a leading 1 followed by columns with non-leading entries (not all zeros), then the system has infinitely many solutions. These non-leading entries correspond to free variables. The solution set is expressed parametrically in terms of these free variables. In this case, the rank of the coefficient matrix is less than the number of unknowns but greater than the number of non-zero rows in the augmented matrix (indicating the presence of free variables after row reduction), so the system has infinitely many solutions. In this case, the rank deficiency corresponds to the dimension of the solution space's non-trivial part.
+    
+\end{itemize}
+
+In the first case, the solution set contain a single column vector called particular solution.
+\\
+
+Generally, the solution set can be expressed in terms of both a particular solution and the parameters corresponding to the free variables. This involves finding a particular solution by setting the free variables to arbitrary values and then expressing the general solution as a linear combination of the particular solution and the solutions corresponding to the free variables in a way that
+
+$$
+\textbf{General} = \textbf{Particular} + \textbf{Homogeneous}.
+$$
+
+\textbf{Remark.} The general solution is given by the sum of a particular solution and the homogeneous solution set. When the system has just one solution, the homogeneous solution set contain only the trivial solution.
+\\
+
+Let's denote the particular solution as \( \vec{p} \) and the solutions corresponding to the free variables as \( \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \). Then the general solution set can be expressed as:
+\[
+\{\vec{p} + c_1\vec{v}_1 + c_2\vec{v}_2 + \ldots + c_k\vec{v}_k \ | \ c_1,\dots,c_k \in \mathbb R \}
+\]
+where \( c_1, c_2, \ldots, c_k \) are arbitrary constants.
+\\
+
+So, the general solution set of a system of linear equation equals
+
+$$
+\{\vec p + \vec h \ | \  \vec h \ \ \text{satisfies the associated homogeneous system}\}.
+$$
+
+We can interpret solving linear systems as a way to find the coordinates of the constants vector with respect to a given column vectors span. When the column vectors are linearly independent, we have just one way to represent the constants vector, because we have a basis for the column-spanned vector space (due to the uniqueness of coordinates of a vector with respect to a basis). In the case of an inconsistent system, we have a column-spanned vector space that has a smaller dimension than vector dimension, so (except for the 0 case), we can't control all dimensions of the constants vector with the given vectors (matrix of coefficients). When we have infinitely many solutions, we have infinitely many ways to represent the constants vector, because the column vectors are linearly dependent. So, for example, if we have one free parameter in our solution set, it means that we can shrink the set of column vectors to obtain a basis. With respect to this basis, we can represent all vectors in the vector space spanned by it. With our solution set, because of the free parameter vector, we can achieve infinitely many vectors; so to obtain infinitely many vectors, we must have infinitely many coordinates/solutions.

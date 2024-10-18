@@ -1,0 +1,213 @@
+\section{Definition}
+A system of linear equations consists of a set of linear equations involving the same variables. Consider a set of $m$ linear equations in $n$ variables, a linear system can be defined as follows:
+
+\[
+\begin{cases}
+a_{1,1}x_1 + a_{1,2}x_2 + \ldots + a_{1,n}x_n = b_1 \\
+a_{2,1}x_1 + a_{2,2}x_2 + \ldots + a_{2,n}x_n = b_2 \\
+\ \ \ \vdots \\
+a_{m,1}x_1 + a_{m,2}x_2 + \ldots + a_{m,n}x_n = b_m \\
+\end{cases}
+\]
+
+where $x_1, x_2, \ldots, x_n$ are the variables, $a_{ij} \in \mathbb F$ are the coefficients, and $b_1, b_2, \ldots, b_m \in \mathbb F$ are the constants. Each equation in the system is a linear combination of the variables with coefficients $a_{ij}$, and the objective is to find values of the variables $x_1, x_2, \ldots, x_n$ that satisfy all equations simultaneously. These values are called the solutions to the linear system.
+
+A linear system can be represented in matrix form as $\textbf A \vec x = \vec b$, where $\textbf A$ is a $m \times n$ coefficient matrix, $\vec x$ is the column vector of variables, and $\vec b$ is the column vector of constants. 
+
+So it can be expressed in this form
+
+$$
+\begin{bmatrix}
+a_{1,1} & a_{1,2} & \ldots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \ldots & a_{2,n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m,1} & a_{m,2} & \ldots & a_{m,n} \\
+\end{bmatrix} \cdot \begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n \\
+\end{bmatrix} = \begin{bmatrix}
+b_1 \\
+b_2 \\
+\vdots \\
+b_m \\
+\end{bmatrix}.
+$$
+
+Our goal is to find values for each $x_i$ that satisfy the equality.
+
+When the constants vector, often referred to as the right-hand side vector or the vector of constants, is the zero vector ($\vec{0}$), the system is indeed called a homogeneous system of linear equations. In such a system, all equations are equal to zero.
+
+\subsection{Geometric Interpretation}
+In a geometric sense, each equation in the linear system represents a hyperplane in the $n$-dimensional space, where $n$ is the number of variables. For example, in two dimensions ($n=2$), each equation represents a line, while in three dimensions ($n=3$), each equation represents a plane.
+
+The solution to the linear system corresponds to the intersection of these hyper-planes. 
+
+So there are three main cases:
+
+\begin{itemize}
+    \item If all hyper-planes intersect at a single point, then the system has a unique solution.
+    \item If the hyper-planes are coincident in some way, then the system has infinitely many solutions. Geometrically, this means that the hyper-planes overlap, forming a line, plane, or higher-dimensional subspace of solutions.
+    \item If the hyper-planes do not intersect, then the system has no solution. This mean that there is no common solution to all equations.
+\end{itemize}
+
+Given a linear system of equations, just one of this cases can be satisfied.
+
+\subsection{Associated Homogeneous System}
+
+The associated homogeneous system to a system of linear equations is obtained from the original system by substituting all the known terms with zeros. 
+
+\[
+\text{For example, for the system:}
+\]
+
+\[
+\begin{bmatrix}
+    a_{1,1} & a_{1,2} & \ldots & a_{1,n} \\
+    a_{2,1} & a_{2,2} & \ldots & a_{2,n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m,1} & a_{m,2} & \ldots & a_{m,n}
+\end{bmatrix}
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_n
+\end{bmatrix}
+\]
+
+\[
+\text{the associated homogeneous system is:}
+\]
+
+\[
+\begin{bmatrix}
+    a_{1,1} & a_{1,2} & \ldots & a_{1,n} \\
+    a_{2,1} & a_{2,2} & \ldots & a_{2,n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m,1} & a_{m,2} & \ldots & a_{m,n}
+\end{bmatrix}
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+    0 \\
+    0 \\
+    \vdots \\
+    0
+\end{bmatrix}
+\]
+
+The solutions to a homogeneous system of linear equations can fall into one of two categories:
+
+\begin{itemize}
+    \item \textbf{The trivial solution:} In which all variables are equal to zero. This solution is always present in a homogeneous system.
+    \item \textbf{Non-trivial solutions:} In which at least one variable is not zero. The existence of non-trivial solutions depends on the properties of the coefficient matrix and is determined through techniques such as Gaussian elimination or matrix inversion.
+\end{itemize}
+
+If $A$ is an $m \times n$ matrix, then the set of all solutions of the homogeneous system of linear equations $\textbf A \vec x = \vec 0$ is a subspace of $\mathbb{R}^n$ called the \textit{nullspace} of $A$ and is denoted by $\text{N}(A)$. So,
+
+\[
+\text{N}(A) = \{\vec x \in \mathbb{R}^n : \textbf A \vec x = \vec 0\}.
+\]
+The dimension of the \textit{nullspace} of $A$ is called the \textbf{nullity} of $A$.
+\\
+
+Because $A$ is an $m \times n$ matrix, you know that $\vec x$ has size $n \times 1$. So, the set of all solutions of
+the system is a subset of $\mathbb{R}^n$. This set is clearly nonempty, because $A \vec 0 = \vec 0$. You can verify
+that it is a subspace of $\mathbb R^n$ by showing that it is closed under the operations of addition and scalar
+multiplication.
+\\
+
+If the rank of matrix $A$ is equal to $r$, then the dimension of the solution space of $Ax = 0$ is $n - r$. That is,
+\[
+n = \text{rank}(A) + \text{nullity}(A).
+\]
+
+Because $A$ has rank $r$, you know it is row-equivalent to a reduced row-echelon matrix $B$ with $r$ nonzero rows. No generality is lost by assuming that the upper left corner of $B$ has the form of the $r \times r$ identity matrix $I_r$ (sorting the columns if it's need). Moreover, because the zero rows of $B$ contribute nothing to the solution, you can discard them to form the $r \times n$ matrix $B'$, where $B' = \begin{bmatrix} I_r \ \vdots \ C \end{bmatrix}$. The matrix $C$ has $n - r$ columns corresponding to the variables $x_{r+1}, x_{r+2}, \dots, x_n$. 
+\\
+
+So, the solution space of $A \vec x = \vec 0$ can be represented by the system:
+
+\[
+\begin{aligned}
+x_1 \ +& & & c_{11}x_{r+1} + c_{12}x_{r+2} + \dots + c_{1,n-r}x_n = 0 \\
+&x_2 \ +& & c_{21}x_{r+1} + c_{22}x_{r+2} + \dots + c_{2,n-r}x_n = 0 \\
+&&&\vdots \\
+&&x_r \ + \ & c_{r1}x_{r+1} + c_{r2}x_{r+2} + \dots + c_{r,n-r}x_n = 0. \\
+\end{aligned}
+\]
+
+Solving for the first $r$ variables in terms of the last $n - r$ variables produces $n - r$ vectors in the basis of the solution space. Consequently, the solution space - the nullspace - has dimension $n - r$.
+\\
+
+Ok, but, intuitively, why is the nullity equals to $n-r$?
+
+When we write the pivot variables in terms of free variables:
+
+$$
+\begin{aligned}
+x_1 = a_{1,1}x_{r+1} + a_{1,2}x_{r+2} + \dots + a_{1,n-r}x_n\\
+x_2 = a_{2,1}x_{r+1} + a_{2,2}x_{r+2} + \dots + a_{2,n-r}x_n\\
+\vdots\\
+x_r = a_{r,1}x_{r+1} + a_{r,2}x_{r+2} + \dots + a_{r,n-r}x_n
+\end{aligned}.
+$$
+
+So we can write the solutions in this way
+
+$$\begin{bmatrix}
+    x_1\\
+    x_2\\
+    \vdots\\
+    x_r\\
+    x_{r+1}\\
+    \vdots\\
+    x_{n}
+\end{bmatrix}=
+x_{r+1} \begin{bmatrix}
+    a_{1,1}\\
+    a_{2,1}\\
+    \vdots\\
+    a_{r,1}\\
+    1\\
+    0\\
+    0\\
+    \vdots\\
+    0
+\end{bmatrix} + x_{r+2} \begin{bmatrix}
+    a_{1,2}\\
+    a_{2,2}\\
+    \vdots\\
+    a_{r,2}\\
+    0\\
+    1\\
+    0\\
+    \vdots\\
+    0
+\end{bmatrix} + \cdots + x_{n} \begin{bmatrix}
+    a_{1,n}\\
+    a_{2,n}\\
+    \vdots\\
+    a_{r,n}\\
+    0\\
+    1\\
+    0\\
+    \vdots\\
+    1
+\end{bmatrix}
+$$
+
+As you can see, the solution/null space is spanned by $n-r$ linearly independent vectors. Thus, this is a basis for nullspace, this means that the dimension/nullity of the solution space is $n-r$.

@@ -1,0 +1,47 @@
+\section{Gaussian Elimination}
+Gaussian elimination, also known as row reduction, is an algorithm primarily used for solving systems of linear equations. It involves a series of row-wise operations performed on the corresponding matrix of coefficients. This method can be extended to compute the rank of a matrix, the determinant of a square matrix, and the inverse of an invertible matrix. Named after Carl Friedrich Gauss (1777–1855), it serves as a fundamental technique in linear algebra.
+
+To perform row reduction on a matrix, one applies a sequence of elementary row operations to transform the matrix until the lower left-hand corner is filled with zeros, as much as possible. There are three types of elementary row operations:
+
+\begin{enumerate}
+    \item Swapping two rows,
+    \item Multiplying a row by a nonzero number,
+    \item Adding a multiple of one row to another row.
+\end{enumerate}
+
+Using these operations, a matrix can always be transformed into an upper triangular matrix, and indeed one that is in \textit{row-echelon form} (\textbf{REF}).
+
+\subsection{Gauss-Jordan Algorithm}
+
+The Gauss-Jordan algorithm is an extension of the Gaussian elimination method, aiming to transform matrix into \textit{reduced row-echelon form} (\textbf{RREF}).
+\\
+First of all we have to give the definition of \textit{row operation} and explain what the \textbf{RREF} is.
+\\
+
+\textbf{Reduced Row-echelon Form}
+
+Reduced row-echelon form is a specific form that a matrix can be transformed into through row operations. A matrix is in reduced row-echelon form if it satisfies the following conditions:
+
+\begin{enumerate}
+    \item In each row, the left-most nonzero entry is 1 and the column that contains this 1 has all other entries equal to 0. This 1 is called a leading 1.
+
+    \item The leading 1 in the second row or beyond is to the right of the leading 1 in the row just above.
+
+    \item Any row containing only 0s is at the bottom.
+\end{enumerate}
+
+For example
+
+\[
+\begin{bmatrix}
+0 \cdots 0 & 1_{1,j_1} \ 0 & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & 0\\
+0 \cdots 0 & \cdots  & 0 & 1_{2,j_2} \ 0 & \cdots & \cdots & \cdots & \cdots & 0\\
+\vdots&&\vdots&&\vdots&&\vdots\\
+0 \cdots 0 & \cdots & 0 & \cdots & 0 & \cdots & 1_{r,j_r} \ 0& \cdots & 0\\
+\vdots&&\vdots&&\vdots&&\vdots\\
+0 \cdots 0 &\cdots & \cdots & \cdots & \cdots & \cdots & \cdots & \cdots & 0\\
+\end{bmatrix}
+\]
+
+Where the first nonzero element of each row is equal to $1$ and has $j_k \geq i$; and all $a_{r,j_k}$ with $r \neq i$ are equal to zero.
+\\

@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%LINEAR-INDEPENDENCE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Linear (in)dependence}
+
+In a vector space $V$, a subset of vectors is deemed \emph{linearly independent} if no vector within the subset can be expressed as a linear combination of others in the same subset. Conversely, if such a linear combination exists, the subset is \emph{linearly dependent}.
+\\
+
+Now, let's explore some implications of these definitions!
+\\
+
+Consider a subset $S$ of vectors in a vector space $V$. If $S$ is linearly independent, then the only way to obtain the zero vector through a linear combination of its elements is by using all coefficients as zero:
+
+$$
+c_1 \vec s_1 + \dots +, c_n \vec s_n = \vec 0, \quad \text{with} \ \ c_1 = \dots = c_n = 0 .
+$$
+
+This condition serves as a hallmark of linear independence.
+\\
+
+Conversely, if a subset $S$ is not linearly independent, it implies the existence of at least one vector that can be expressed as a linear combination of the others. For example the vector 
+
+$$
+\vec s_i = c_1 \vec s_1 + \dots + c_{i-1} \vec s_{i-1} + c_{i+1} \vec s_{i+1} + \dots + c_n \vec s_n,
+$$
+
+is linearly dependent from vectors in $\{\vec s_1, \dots, \vec s_{i-1}, \vec s_{i+1}, \dots, \vec s_n\}$.
+
+In this case, the subset $\{\vec s_1, \dots, \vec s_n\}$ is termed linearly dependent. This dependence is evident when one of the vectors can be obtained by combining the rest.
+\\
+
+Furthermore, the span of a subset of vectors in a vector space, denoted as $span(S)$, encompasses all possible linear combinations of the vectors in $S$. Interestingly, the span itself forms a vector subspace of $V$, regardless of the choice of subset $S$. This property underscores the structural coherence of vector spaces under linear combinations.
+\\
+
+Moreover, adding a vector $\vec{v}$ to a set $S$ expands its span only if $\vec{v}$ is not already in the span of $S$. Conversely, removing a vector from a set $S$ shrinks its span if and only if the removed vector was not a linear combination of the others. In both this cases, the vector $\vec v$ is linearly independent from vectors in $S$. This observation leads to a significant corollary: in any vector space, every finite set of vectors possesses a linearly independent subset with the same span.
+\\
+
+Additionally, the removal of a vector from a linearly independent set preserves its linear independence. Conversely, any superset of a linearly dependent set inherits its linear dependence. These observations highlight the robustness of linear independence and dependence under subset and superset operations.
