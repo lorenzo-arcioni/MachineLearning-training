@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.27)  2 NOV 2024 20:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.27)  2 NOV 2024 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -759,4 +759,850 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \g__nicematrix_static_num_of_col_int=\count346
 \l__nicematrix_rounded_corners_dim=\dimen297
 \l__nicematrix_tab_rounded_corners_dim=\dimen298
-\l__nicematrix_offs
+\l__nicematrix_offset_dim=\dimen299
+\l__nicematrix_line_width_dim=\dimen300
+\g__nicematrix_block_box_int=\count347
+\l__nicematrix_submatrix_extra_height_dim=\dimen301
+\l__nicematrix_submatrix_left_xshift_dim=\dimen302
+\l__nicematrix_submatrix_right_xshift_dim=\dimen303
+\l__nicematrix_first_row_int=\count348
+\l__nicematrix_first_col_int=\count349
+\l__nicematrix_last_row_int=\count350
+\l__nicematrix_last_col_int=\count351
+\c@tabularnote=\count352
+\c@nicematrix_draft=\count353
+\l__nicematrix_cell_space_top_limit_dim=\dimen304
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen305
+\l__nicematrix_xdots_inter_dim=\dimen306
+\l__nicematrix_xdots_shorten_start_dim=\dimen307
+\l__nicematrix_xdots_shorten_end_dim=\dimen308
+\l__nicematrix_xdots_radius_dim=\dimen309
+\l__nicematrix_notes_above_space_dim=\dimen310
+\l__nicematrix_left_margin_dim=\dimen311
+\l__nicematrix_right_margin_dim=\dimen312
+\l__nicematrix_extra_left_margin_dim=\dimen313
+\l__nicematrix_extra_right_margin_dim=\dimen314
+\c__nicematrix_max_l_dim=\dimen315
+\l__nicematrix_position_int=\count354
+\l__nicematrix_multiplicity_int=\count355
+\l__nicematrix_brace_yshift_dim=\dimen316
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count356
+\calc@Bcount=\count357
+\calc@Adimen=\dimen317
+\calc@Bdimen=\dimen318
+\calc@Askip=\skip56
+\calc@Bskip=\skip57
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count358
+\calc@Cskip=\skip58
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count359
+\l_MT_multwidth_dim=\dimen319
+\origjot=\skip59
+\l_MT_shortvdotswithinadjustabove_dim=\dimen320
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen321
+\l_MT_above_intertext_sep=\dimen322
+\l_MT_below_intertext_sep=\dimen323
+\l_MT_above_shortintertext_sep=\dimen324
+\l_MT_below_shortintertext_sep=\dimen325
+\xmathstrut@box=\box82
+\xmathstrut@dim=\dimen326
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box83
+\beforetitleunit=\skip60
+\aftertitleunit=\skip61
+\ttl@plus=\dimen327
+\ttl@minus=\dimen328
+\ttl@toksa=\toks41
+\titlewidth=\dimen329
+\titlewidthlast=\dimen330
+\titlewidthfirst=\dimen331
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+Package hyperref Info: Option `colorlinks' set `false' on input line 35.
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen332
+\pgfarrowlength=\dimen333
+\pgfarrowwidth=\dimen334
+\pgfarrowlinewidth=\dimen335
+) (./my_definitions.tex
+\c@example=\count360
+\c@definition=\count361
+\c@theorem=\count362
+\c@corollary=\count363
+\c@lemma=\count364
+\c@proposition=\count365
+) (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count366
+\scratchdimen=\dimen336
+\scratchbox=\box84
+\nofMPsegments=\count367
+\nofMParguments=\count368
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count369
+\MPscratchDim=\dimen337
+\MPnumerator=\count370
+\makeMPintoPDFobject=\count371
+\everyMPtoPDFconversion=\toks43
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count372
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks44
+\inpenc@posthook=\toks45
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(95.39737pt, 642.66711pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=642.66711pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-8.74641pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=98.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring OFF on input line 48.
+(./main.out) (./main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+\c__nicematrix_shift_Ldots_last_row_dim=\dimen338
+\c__nicematrix_shift_exterior_Vdots_dim=\dimen339
+\c__nicematrix_innersep_middle_dim=\dimen340
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./preface.tex [2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+
+ []
+
+
+Underfull \vbox (badness 2096) has occurred while \output is active []
+
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+
+ []
+
+) (./prerequisites.tex [4]) [5
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [6
+
+]
+No file main.toc.
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+[7] (./ch0/ch0.tex [8
+
+]
+Chapter 0.
+[9]
+<Images/Linear_Algebra-map.png, id=283, 2948.01375pt x 1855.93375pt>
+File: Images/Linear_Algebra-map.png Graphic file (type png)
+<use Images/Linear_Algebra-map.png>
+Package pdftex.def Info: Images/Linear_Algebra-map.png  used on input line 21.
+(pdftex.def)             Requested size: 442.18298pt x 278.37805pt.
+ (./ch0/elements.tex
+Underfull \vbox (badness 2158) has occurred while \output is active []
+
+ [10 <./Images/Linear_Algebra-map.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--26
+
+ []
+
+[11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12])
+(./ch0/basic_operations.tex [13]
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 52--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
+
+ []
+
+<Images/Linear_Algebra-vector-sum1.png, id=315, 1996.45876pt x 687.56876pt>
+File: Images/Linear_Algebra-vector-sum1.png Graphic file (type png)
+<use Images/Linear_Algebra-vector-sum1.png>
+Package pdftex.def Info: Images/Linear_Algebra-vector-sum1.png  used on input l
+ine 72.
+(pdftex.def)             Requested size: 399.28468pt x 137.5113pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+<Images/Linear_Algebra-vector-sum2.png, id=321, 1100.11pt x 1101.11375pt>
+File: Images/Linear_Algebra-vector-sum2.png Graphic file (type png)
+<use Images/Linear_Algebra-vector-sum2.png>
+Package pdftex.def Info: Images/Linear_Algebra-vector-sum2.png  used on input l
+ine 106.
+(pdftex.def)             Requested size: 275.02682pt x 275.27777pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+
+ []
+
+[16 <./Images/Linear_Algebra-vector-sum1.png> <./Images/Linear_Algebra-vector-s
+um2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 153--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+[17]
+Overfull \hbox (10.24544pt too wide) detected at line 201
+\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 F[] 
+ [] \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = []
+ []
+
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--326
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 362--364
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+Underfull \hbox (badness 10000) in paragraph at lines 401--403
+
+ []
+
+) (./ch0/Gauss-elimination.tex [22]
+Underfull \hbox (badness 10000) in paragraph at lines 16--20
+
+ []
+
+) (./ch0/Inverse.tex
+Underfull \hbox (badness 10000) in paragraph at lines 46--1
+
+ []
+
+[23] [24])) (./ch1/ch1.tex [25] [26
+
+]
+Chapter 1.
+(./ch1/Vector_spaces.tex [27]
+Underfull \hbox (badness 10000) in paragraph at lines 24--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+
+ []
+
+<Images/vector-space-ex.png, id=392, 849.1725pt x 849.1725pt>
+File: Images/vector-space-ex.png Graphic file (type png)
+<use Images/vector-space-ex.png>
+Package pdftex.def Info: Images/vector-space-ex.png  used on input line 85.
+(pdftex.def)             Requested size: 331.17593pt x 331.17593pt.
+[29 <./Images/vector-space-ex.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--118
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 139--141
+
+ []
+
+<Images/vector-subspace-ex.png, id=410, 849.1725pt x 849.1725pt>
+File: Images/vector-subspace-ex.png Graphic file (type png)
+<use Images/vector-subspace-ex.png>
+Package pdftex.def Info: Images/vector-subspace-ex.png  used on input line 145.
+
+(pdftex.def)             Requested size: 305.70186pt x 305.70186pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
+
+ []
+
+[31 <./Images/vector-subspace-ex.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
+
+ []
+
+) (./ch1/Linear_combination.tex [32]
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
+
+ []
+
+) (./ch1/Linear_independence.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 30--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+) (./ch1/Basis.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+
+ []
+
+
+Underfull \vbox (badness 2970) has occurred while \output is active []
+
+ [36]
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+
+Underfull \vbox (badness 2393) has occurred while \output is active []
+
+ [39]
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--139
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--153
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 154--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--182
+
+ []
+
+) (./ch1/Rank.tex
+Underfull \hbox (badness 10000) in paragraph at lines 183--1
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+Underfull \vbox (badness 6510) has occurred while \output is active []
+
+ [43]
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
+
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 139--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+
+ []
+
+[45]) (./ch1/Basis_change.tex
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
+
+ []
+
+[46])) (./ch2/ch2.tex [47] [48
+
+]
+Chapter 2.
+(./ch2/Definition.tex
+Underfull \vbox (badness 1881) has occurred while \output is active []
+
+ [49]
+Overfull \hbox (2.69688pt too wide) in paragraph at lines 43--44
+\OT1/cmr/m/n/12 In a ge-o-met-ric sense, each equa-tion in the lin-ear sys-tem 
+rep-re-sents a hy-per-plane in the $\OML/cmm/m/it/12 n$\OT1/cmr/m/n/12 -dimensi
+onal
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--141
+
+ []
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
+
+ []
+
+) (./ch2/Solving.tex
+Underfull \vbox (badness 1742) has occurred while \output is active []
+
+ [52]
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--59
+
+ []
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 63--66
+
+ []
+
+) (./ch2/Basis_change.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \vbox (badness 7064) has occurred while \output is active []
+
+ [56]))
+(./ch3/ch3.tex [57] [58
+
+]
+Chapter 3.
+(./ch3/Introduction.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+
+ []
+
+[59]
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
+
+ []
+
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 87--89
+
+ []
+
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
+
+ []
+
+)) (./ch4/ch4.tex [62]
+Chapter 4.
+) (./ch5/ch5.tex [63
+
+] [64
+
+]
+Chapter 5.
+) (./ch6/ch6.tex [65] [66
+
+]
+Chapter 6.
+) (./ch7/ch7.tex [67] [68
+
+]
+Chapter 7.
+) (./ch8/ch8.tex [69] [70
+
+]
+Chapter 8.
+) (./ch9/ch9.tex [71] [72
+
+]
+Chapter 9.
+) [73] (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 9F1B4606C919BD9DC36AA325D4BEBDCF;7342.
+ ) 
+Here is how much of TeX's memory you used:
+ 31099 strings out of 476098
+ 652942 string characters out of 5793537
+ 1948975 words of memory out of 5000000
+ 52411 multiletter control sequences out of 15000+600000
+ 570137 words of font info for 80 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 101i,17n,107p,1290b,600s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfrm1200.pfb>
+Output written on main.pdf (73 pages, 1363814 bytes).
+PDF statistics:
+ 712 PDF objects out of 1000 (max. 8388607)
+ 563 compressed objects within 6 object streams
+ 146 named destinations out of 1000 (max. 500000)
+ 566 words of extra memory for PDF output out of 10000 (max. 10000000)
+
