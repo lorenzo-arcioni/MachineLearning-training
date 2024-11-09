@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.9)  9 NOV 2024 23:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.9)  9 NOV 2024 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -992,16 +992,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [6
 
-] (./main.toc [7])
+]
+No file main.toc.
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [8] (./ch0/ch0.tex
-Chapter 0.
-[9
+[7] (./ch0/ch0.tex [8
 
 ]
-<Images/Linear_Algebra-map.png, id=331, 2948.01375pt x 1855.93375pt>
+Chapter 0.
+[9]
+<Images/Linear_Algebra-map.png, id=283, 2948.01375pt x 1855.93375pt>
 File: Images/Linear_Algebra-map.png Graphic file (type png)
 <use Images/Linear_Algebra-map.png>
 Package pdftex.def Info: Images/Linear_Algebra-map.png  used on input line 21.
@@ -1038,7 +1039,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--58
 
  []
 
-<Images/Linear_Algebra-vector-sum1.png, id=364, 1996.45876pt x 687.56876pt>
+<Images/Linear_Algebra-vector-sum1.png, id=315, 1996.45876pt x 687.56876pt>
 File: Images/Linear_Algebra-vector-sum1.png Graphic file (type png)
 <use Images/Linear_Algebra-vector-sum1.png>
 Package pdftex.def Info: Images/Linear_Algebra-vector-sum1.png  used on input l
@@ -1051,7 +1052,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-<Images/Linear_Algebra-vector-sum2.png, id=370, 1100.11pt x 1101.11375pt>
+<Images/Linear_Algebra-vector-sum2.png, id=321, 1100.11pt x 1101.11375pt>
 File: Images/Linear_Algebra-vector-sum2.png Graphic file (type png)
 <use Images/Linear_Algebra-vector-sum2.png>
 Package pdftex.def Info: Images/Linear_Algebra-vector-sum2.png  used on input l
@@ -1151,7 +1152,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
  []
 
-<Images/vector-space-ex.png, id=440, 849.1725pt x 849.1725pt>
+<Images/vector-space-ex.png, id=392, 849.1725pt x 849.1725pt>
 File: Images/vector-space-ex.png Graphic file (type png)
 <use Images/vector-space-ex.png>
 Package pdftex.def Info: Images/vector-space-ex.png  used on input line 85.
@@ -1171,7 +1172,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--141
 
  []
 
-<Images/vector-subspace-ex.png, id=458, 849.1725pt x 849.1725pt>
+<Images/vector-subspace-ex.png, id=410, 849.1725pt x 849.1725pt>
 File: Images/vector-subspace-ex.png Graphic file (type png)
 <use Images/vector-subspace-ex.png>
 Package pdftex.def Info: Images/vector-subspace-ex.png  used on input line 145.
@@ -1568,10 +1569,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 9F1B4606C919BD9DC36AA325D4BEBDCF;7342.
  ) 
 Here is how much of TeX's memory you used:
- 31116 strings out of 474116
- 652101 string characters out of 5747717
+ 31113 strings out of 474116
+ 652062 string characters out of 5747717
  1951190 words of memory out of 5000000
- 52772 multiletter control sequences out of 15000+600000
+ 52771 multiletter control sequences out of 15000+600000
  570137 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,17n,107p,1290b,600s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1591,10 +1592,10 @@ pe1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public
 /symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfb
 x1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
 
-Output written on main.pdf (73 pages, 1367300 bytes).
+Output written on main.pdf (73 pages, 1363805 bytes).
 PDF statistics:
- 761 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
+ 712 PDF objects out of 1000 (max. 8388607)
+ 563 compressed objects within 6 object streams
  146 named destinations out of 1000 (max. 500000)
  566 words of extra memory for PDF output out of 10000 (max. 10000000)
 
