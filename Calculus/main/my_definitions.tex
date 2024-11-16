@@ -1,0 +1,123 @@
+\expandafter\def\expandafter\normalsize\expandafter{
+  \setlength\abovedisplayskip{1ex}
+  \setlength\belowdisplayskip{4ex}
+  \setlength\abovedisplayshortskip{1ex}
+  \setlength\belowdisplayshortskip{4ex}
+}
+
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+\definecolor{def_color}{RGB}{237, 237, 237}
+\definecolor{the_color}{RGB}{89, 79, 57}
+\definecolor{pro_color_front}{RGB}{71, 93, 107}
+\definecolor{pro_color_back}{RGB}{204, 206, 207}
+\definecolor{lem_color}{RGB}{204, 206, 207}
+
+\counterwithin{figure}{chapter}
+
+\iffalse
+\subsection{Vector Norm}
+
+In linear algebra, the norm of a vector is a measure of its size or magnitude. It provides a quantitative measure of vector size or distance, making it a versatile tool in a wide range of applications.
+
+\subsubsection{Euclidean Norm (2-norm)}
+
+The Euclidean norm of a vector \(\vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}\) in \(\mathbb{R}^n\) is defined as:
+
+\[
+\|\vec{v}\|_2 = \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2}
+\]
+
+This norm represents the length of the vector as if it were the hypotenuse of a right-angled triangle in a Cartesian coordinate system.
+
+\subsubsection{Other Norms}
+
+Apart from the Euclidean norm, there are other norms, each with its own characteristics. Some notable examples include:
+
+\begin{itemize}
+    \item \textbf{Taxicab Norm (1-norm):}
+    \[
+    \|\vec{v}\|_1 = |v_1| + |v_2| + \ldots + |v_n|
+    \]
+    
+    \item \textbf{Infinity Norm (\(\infty\)-norm):}
+    \[
+    \|\vec{v}\|_{\infty} = \max\{|v_1|, |v_2|, \ldots, |v_n|\}
+    \]
+\end{itemize}
+
+\subsubsection{Properties of Vector Norms}
+
+Vector norms satisfy several key properties, including the triangle inequality:
+
+\[
+\|\vec{v} + \vec{w}\| \leq \|\vec{v}\| + \|\vec{w}\|
+\]
+
+Understanding vector norms is essential in various applications, such as error analysis, optimization, and signal processing.
+
+\subsubsection{Computational Considerations}
+
+In practice, computing vector norms is often done efficiently using computational tools or libraries. The choice of norm depends on the specific problem at hand, and different norms may be appropriate in different contexts.
+\fi
+
+\newcommand{\matrixA}{% 
+$\begin{bNiceMatrix}
+t_{1,1,1}  & & \Cdots        &t_{1,1,n}\\
+\Vdots      &\Ddots     &               &\Vdots \\
+            &           &                        \\
+t_{1,m,1}  & &  \Cdots       & t_{1,m,n}\\
+    \end{bNiceMatrix}$
+}   
+
+\newcommand{\matrixI}{% 
+    $\begin{bNiceMatrix}
+    t_{i,1,1}  & & \Cdots        &t_{i,1,n}\\
+    \Vdots      &\Ddots     &               &\Vdots \\
+    &           &                           &\\
+    t_{i,m,1}  & \Cdots&               & t_{i,m,n}\\
+    \end{bNiceMatrix}$
+}
+
+\newcommand{\matrixB}{% 
+    $\begin{bNiceMatrix}
+    t_{k,1,1}  & & \Cdots        &t_{k,1,n}\\
+    \Vdots      &\Ddots     &               &\Vdots \\
+    &           &                           &\\
+    t_{k,m,1}  & \Cdots&               & t_{k,m,n}\\
+    \end{bNiceMatrix}$
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SCALAR-TENSOR-PRODUCT%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\matrixC}{% 
+    $\begin{bNiceMatrix}
+    c \cdot a_{11}^{k}  & & \Cdots        &c \cdot a_{1n}^{k}\\
+    \Vdots      &\Ddots     &               &\Vdots \\
+    &           &                           &\\
+    c \cdot a_{m1}^{k}  & \Cdots&               &c \cdot a_{mn}^{k}\\
+    \end{bNiceMatrix}$
+}
+
+\newcommand{\matrixD}{% 
+    $\begin{bNiceMatrix}
+    c \cdot a_{11}^{i}  & & \Cdots        &c \cdot a_{1n}^{i}\\
+    \Vdots      &\Ddots     &               &\Vdots \\
+    &           &                           &\\
+    c \cdot a_{m1}^{i}  & \Cdots&               &c \cdot a_{mn}^{i}\\
+    \end{bNiceMatrix}$
+}
+
+\newcommand{\matrixE}{% 
+    $\begin{bNiceMatrix}
+    c \cdot a_{11}^{k}  & & \Cdots        &c \cdot a_{1n}^{k}\\
+    \Vdots      &\Ddots     &               &\Vdots \\
+    &           &                           &\\
+    c \cdot a_{m1}^{k}  & \Cdots&               &c \cdot a_{mn}^{k}\\
+    \end{bNiceMatrix}$
+}
+
+\newcommand{\notimplies}{\hphantom{0}\!\!\not\!\!\!\!\implies}

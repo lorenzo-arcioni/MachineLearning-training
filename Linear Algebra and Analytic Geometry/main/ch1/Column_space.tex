@@ -1,0 +1,154 @@
+\section{Rows and Columns Space}
+
+In this section, we will investigate the vector space spanned by the row vectors (or column vectors) of a matrix. And, in the next chapter, we will see how such spaces relate to solutions of systems of linear equations.
+
+To begin, you need to know some terminology. For an $m \times n$ matrix 
+
+\[
+A = \begin{bmatrix}
+a_{1,1} & a_{1,2} & \dots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \dots & a_{2,n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m,1} & a_{m,2} & \dots & a_{m,n} \\
+\end{bmatrix},
+\]
+
+the $n$-tuples corresponding to the rows of $A$ are called the row vectors of $A$.
+
+
+\textbf{Row Vectors of $A$:}
+\[
+\begin{aligned}
+& \vec r_1 = \begin{pmatrix} a_{1,1}, & a_{1,2}, & \dots, & a_{1,n} \end{pmatrix} \\
+& \vec r_2 = \begin{pmatrix} a_{2,1}, & a_{2,2}, & \dots, & a_{2,n} \end{pmatrix} \\
+&  \ \quad \quad \quad \quad \quad \vdots \\
+& \vec r_m = \begin{pmatrix} a_{m,1}, & a_{m,2}, & \dots, & a_{m,n} \end{pmatrix}
+\end{aligned}
+\]
+
+Similarly, the columns of $A$ are called the column vectors of $A$. You will find it useful to preserve the column notation for these column vectors.
+
+\textbf{Column Vectors of $A$:}
+\[
+\begin{aligned}
+& \vec c_1 = \begin{pmatrix} a_{1,1} \\ a_{2,1} \\ \vdots \\ a_{m,1} \end{pmatrix} \quad
+\begin{pmatrix} a_{1,2} \\ a_{2,2} \\ \vdots \\ a_{m,2} \end{pmatrix} \quad
+\dots \quad
+\begin{pmatrix} a_{1,n} \\ a_{2,n} \\ \vdots \\ a_{m,n} \end{pmatrix}
+\end{aligned}
+\]
+
+Two fundamental concepts associated with matrices are the row space and column space, which offer deep insights into their structure and behavior.
+
+Consider a matrix $A$ with dimensions $m \times n$. The row space of $A$, denoted as $\text{Row}(A)$, encompasses all possible linear combinations of its row vectors. Mathematically, it can be represented as the subspace spanned by the row vectors of $A$ in $\mathbb{R}^n$. 
+
+Formally:
+
+\[
+\text{Row}(A) = \text{span}\{\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_m\}
+\]
+
+where $\vec{r}_i$ represents the $i$-th row vector of $A$.
+
+Similarly, the column space of $A$, denoted as $\text{Col}(A)$, captures all possible linear combinations of its column vectors. It forms a subspace spanned by the column vectors of $A$ in $\mathbb{R}^m$. 
+
+Formally:
+
+\[
+\text{Col}(A) = \text{span}\{\vec{c}_1, \vec{c}_2, \ldots, \vec{c}_n\}
+\]
+
+where $\vec{c}_i$ represents the $i$-th column vector of $A$.
+
+\subsection{Row-Equivalent Matrices and Row Space}
+
+The row space of a matrix refers to the space formed by all possible linear combinations of its row vectors. Two matrices are considered row-equivalent if one can be obtained from the other through elementary row operations, such as multiplying a row by a number or adding one row to another. 
+
+If matrix A can be turned into matrix B through these operations, then the row space of A is exactly the same as the row space of B.
+
+This is because the rows of B can be represented as combinations of the rows of A, and conversely, the rows of A can be expressed as combinations of the rows of B. Hence, the row spaces of A and B are identical.
+\\
+
+\textbf{Remark.}
+The concept previously highlighted is significant: it indicates that elementary row operations don't change the row space of a matrix. However, it's important to note that these operations might impact the column space.
+
+\subsection{Basis for Row Space}
+
+When a matrix is in row-echelon form, its nonzero row vectors form a set that is both linearly independent and spans the row space. This set serves as a basis for the row space.
+
+So, if a matrix $A$ is row-equivalent to a matrix $B$ in row-echelon form, then the nonzero row vectors of $B$ form a basis for the row space of $A$.
+
+\subsection{Basis for Column Space}
+
+Just calculate the transpose of the matrix and find a basis for row space.
+
+\subsection{Row and Column Spaces Dimension}
+
+The row space and column space of a matrix \( A \) are fundamental concepts representing the span of vectors formed by its rows and columns, respectively. Let \( A \) be an \( m \times n \) matrix, the row space and column space of \( A \) share a key property: they have the same dimension. 
+\\
+
+Let \( \vec r_1, \vec r_2, ..., \vec r_m \) denote the row vectors and \( \vec c_1, \vec c_2, ..., \vec c_n \) denote the column vectors of \( A \).
+\\
+
+Suppose the row space of \( A \) has dimension \( s \), spanned by linearly independent vectors \( \vec b_1, \vec b_2, ..., \vec b_s \). Each row vector of \( A \) can then be expressed as a linear combination of these basis vectors.
+
+By representing each row vector as a linear combination of the basis vectors, 
+
+$$
+\vec r_i = \alpha_{i,1} \vec b_1 + \cdots + \alpha_{i,s} \vec b_s
+$$
+
+we can analyze the relationships between the entries of \( A \) and the basis vectors.
+
+Isolating the entries corresponding to each column of \( A \), we obtain systems of scalar equations relating the entries of \( A \) to the basis vectors.
+
+So for each column $j$ in the matrix $A$, we obtain the following system of linear equations:
+
+\[
+\begin{cases}
+\alpha_{1,1}\vec b_{1}^{\ j} + \alpha_{1,2}\vec b_{2}^{\ j} + \dots + \alpha_{1,s}\vec b_{s}^{\ j} = \vec r_{1}^{\ j}\\
+\alpha_{2,1}\vec b_{1}^{\ j} + \alpha_{2,2}\vec b_{2}^{\ j} + \dots + \alpha_{2,s}\vec b_{s}^{\ j} = \vec r_{2}^{\ j}\\
+\ \ \ \vdots & \\
+\alpha_{m,1}\vec b_{1}^{\ j} + \alpha_{m,2}\vec b_{2}^{\ j} + \dots + \alpha_{m,s}\vec b_{s}^{\ j} = \vec r_{m}^{\ j}
+\end{cases}
+\]
+
+where $\vec c_j = [\vec r_1^{\ j}, \vec r_2^{\ j}, \cdots, \vec r_m^{\ j}]^T$. With this in mind, we can now write each column vector $c_j$ of $A$ as
+
+$$
+\vec c_j = \begin{bmatrix}
+    \alpha_{1,1}\\
+    \alpha_{2,1}\\
+    \vdots\\
+    \alpha_{m,1}
+\end{bmatrix} \vec b_{1}^j + \begin{bmatrix}
+    \alpha_{1,2}\\
+    \alpha_{2,2}\\
+    \vdots\\
+    \alpha_{m,2}
+\end{bmatrix} \vec b_{2}^j + \cdots + \begin{bmatrix}
+    \alpha_{1,s}\\
+    \alpha_{2,s}\\
+    \vdots\\
+    \alpha_{m,s}
+\end{bmatrix} \vec b_{s}^j
+$$
+
+So the column space is spanned by $s$ vectors; the dimension of the column space of \( A \) cannot exceed the dimension of the row space of \( A \), i.e., \( \text{dim}(\text{column space of } A) \leq \text{dim}(\text{row space of } A) \).
+
+Considering the transpose of \( A \), denoted as \( A^T \), and repeating the analysis, we conclude that \( \text{dim}(\text{column space of } A^T) \leq \text{dim}(\text{row space of } A^T) \).
+\\
+
+This mutual limitation implies that the dimensions of the row space and column space of \( A \) are equal, highlighting the profound connection between the rows and columns of a matrix.
+
+\subsection{The Rank of a Matrix}
+Since the column-spanned vector space has the same dimension as the row-spanned vector space, for each matrix we have a new feature to describe and analyse.
+
+\subsubsection{Definition}
+
+The rank of a matrix \( A \) is the dimension of the vector space spanned by its column/row vectors. In simpler terms, it is the maximum number of linearly independent columns (or rows) in the matrix \( A \).
+\\
+
+\subsubsection{Computing the Rank}
+
+To compute the rank of a matrix, we typically use row reduction techniques to transform the matrix into row-echelon form or reduced row-echelon form. The number of non-zero rows (or pivot columns) in the reduced form is equal to the rank of the matrix.

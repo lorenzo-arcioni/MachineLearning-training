@@ -1,0 +1,62 @@
+\contentsline {chapter}{Preface}{3}{chapter*.1}%
+\contentsline {chapter}{Prerequisites}{5}{chapter*.2}%
+\contentsline {chapter}{\numberline {0}Introduction}{9}{chapter.0}%
+\contentsline {section}{\numberline {0.1}Objects}{10}{section.0.1}%
+\contentsline {subsection}{\numberline {0.1.1}Scalars}{11}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {0.1.2}Vectors}{11}{subsection.0.1.2}%
+\contentsline {subsection}{\numberline {0.1.3}Matrices}{12}{subsection.0.1.3}%
+\contentsline {subsubsection}{Square Matrices}{13}{subsection.0.1.3}%
+\contentsline {subsubsection}{Triangular Matrices}{13}{subsection.0.1.3}%
+\contentsline {subsubsection}{Diagonal Matrices}{13}{subsection.0.1.3}%
+\contentsline {subsubsection}{Symmetric Matrices}{13}{subsection.0.1.3}%
+\contentsline {section}{\numberline {0.2}Basic Operations}{13}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}Transposition}{14}{subsection.0.2.1}%
+\contentsline {subsubsection}{Matrix Transposition}{14}{subsection.0.2.1}%
+\contentsline {subsubsection}{Properties:}{14}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {0.2.2}Addition}{15}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {0.2.3}Sum Over Axes}{17}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {0.2.4}Multiplication}{19}{subsection.0.2.4}%
+\contentsline {subsubsection}{Compatibilità tra Assi}{19}{subsection.0.2.4}%
+\contentsline {subsubsection}{Prodotto}{20}{subsection.0.2.4}%
+\contentsline {section}{\numberline {0.3}Gaussian Elimination}{22}{section.0.3}%
+\contentsline {subsection}{\numberline {0.3.1}Gauss-Jordan Algorithm}{23}{subsection.0.3.1}%
+\contentsline {section}{\numberline {0.4}Inverse of a Matrix}{24}{section.0.4}%
+\contentsline {chapter}{\numberline {1}Vector spaces}{27}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{27}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Vector Subspaces}{29}{subsection.1.1.1}%
+\contentsline {subsubsection}{Sum of Subspaces}{31}{figure.1.2}%
+\contentsline {subsubsection}{Intersection of Subspaces}{32}{Item.14}%
+\contentsline {subsubsection}{Union of Subspaces}{33}{Item.14}%
+\contentsline {section}{\numberline {1.2}Linear Combinations}{33}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Span}{33}{subsection.1.2.1}%
+\contentsline {subsubsection}{The Span of a Subset of a Vector Space is a Vector Subspace}{34}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Linear (in)dependence}{34}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Basis and Dimension}{35}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Basis}{35}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Dimension}{40}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Rows and Columns Space}{42}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Row-Equivalent Matrices and Row Space}{44}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Basis for Row Space}{44}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Basis for Column Space}{44}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Row and Column Spaces Dimension}{44}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}The Rank of a Matrix}{45}{subsection.1.5.5}%
+\contentsline {subsubsection}{Definition}{46}{subsection.1.5.5}%
+\contentsline {subsubsection}{Computing the Rank}{46}{subsection.1.5.5}%
+\contentsline {section}{\numberline {1.6}Intuitive Approach to Basis Change}{46}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Linear Systems}{49}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Definition}{49}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Geometric Interpretation}{50}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Associated Homogeneous System}{50}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Solving Linear Systems}{53}{section.2.2}%
+\contentsline {section}{\numberline {2.3}In depth Basis Change}{56}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Linear Maps}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction to Linear Maps}{59}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Properties of Linear Maps}{60}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Find the Kernel of a Linear Map}{61}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Find the Image of a Linear Map}{61}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {4}Il Determinante}{63}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Eigenvalues and Eigenvectors}{65}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Inner Product Spaces}{67}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Eigenvalues and Eigenvectors}{69}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Euclidean vector space}{71}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Analytic Geometry in the plane}{73}{chapter.9}%

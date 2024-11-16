@@ -1,0 +1,83 @@
+\section{In depth Basis Change}
+\label{subsection:indepth-basis-change}
+In the previous chapter, we have introduced the main idea behind basis change and explained what transition matrix is. In this section, we will delve into the details of how the transformation matrix between one basis and another of a vector space is computed, and we will provide an intuitive interpretation of why this process works. 
+
+Let $B = \{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n\}$ and $B' = \{\vec{u}_1, \vec{u}_2, \ldots, \vec{u}_n\}$ be two bases for $\mathbb{R}^n$. 
+
+How can we find the transformation matrix from $B'$ to $B$ without knowing the coordinates of vectors of $B$ with respect to $B'$?\\
+
+We have to find a way to express the vectors of $B'$ as a linear combination of vectors of $B$ in some way.
+For each vector component we can write a system of $n$ linear equations with $n$ unknown.
+
+
+$$
+\begin{cases}
+    x_{1,1} \vec v_1 + \ldots + x_{n,1} \vec v_n = \vec u_1  \longrightarrow \begin{cases}
+                                                                                x_{1,1} \vec v_1^{\ 1} + \ldots + x_{1,n} \vec v_n^{\ 1} = \vec u_1^{\ 1} \\
+                                                                                \ \ \ \vdots\\
+                                                                                x_{1,1} \vec v_1^{\ n} + \ldots + x_{1,n} \vec v_n^{\ n} = \vec u_1^{\ n}  
+                                                                             \end{cases}\\
+    \ \ \ \vdots \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ \vdots\\
+    x_{1,n} \vec v_1 + \ldots + x_{n,n} \vec v_n = \vec u_n  \longrightarrow \begin{cases}
+                                                                                x_{n,1} \vec v_1^{\ 1} + \ldots + x_{n,n} \vec v_n^{\ 1} = \vec u_n^{\ 1} \\
+                                                                                \ \ \ \vdots\\
+                                                                                x_{n,1} \vec v_1^{\ n} + \ldots + x_{n,n} \vec v_n^{\ n} = \vec u_n^{\ n}  
+                                                                             \end{cases}
+\end{cases}
+$$
+
+So, since we have common coefficients, we can put all known terms (the vectors $\vec v_i$ in this case) in a matrix and augment it with all known constants (the vectors $\vec u_i$ in this case):
+
+$$
+\begin{aligned}
+&\begin{bmatrix}
+     \vec v_1^{\ 1} &  \vec v_2^{\ 1} &  \cdots & \vec v_n^{\ 1} & | & \vec u_1^{\ 1} &  \vec u_2^{\ 1} & \cdots & \vec u_n^{\ 1}\\
+     \vec v_1^{\ 2} &  \vec v_2^{\ 2} &  \cdots & \vec v_n^{\ 2} & | & \vec u_1^{\ 2} &  \vec u_2^{\ 2} & \cdots & \vec u_n^{\ 2}\\
+     \vdots & \vdots & \ddots & \vdots &|& \vdots & \vdots & \ddots &\vdots\\
+     \vec v_1^{\ n} &  \vec v_2^{\ n} &  \cdots & \vec v_n^{\ n} & | & \vec u_1^{\ n} &  \vec u_2^{\ n} & \cdots & \vec u_n^{\ n}
+\end{bmatrix}.\\ 
+& \quad \underbrace{\text{\phantom{----------------------}}}_{\text{\large $B$}} \ \ \ \quad \underbrace{\text{\phantom{-----------------------}}}_{\text{\large $B'$}}
+\end{aligned}
+$$
+
+
+After the Gauss-Jordan reduction we have this situation
+
+$$
+\begin{bmatrix}
+     1 &  0 &  \ldots & 0 & | & x_{1,1} &  x_{1,2} & \ldots & x_{1,n}\\
+     0 &  1 &  \ldots & 0 & | & x_{2,1} &  x_{2,2} & \ldots & x_{2,n}\\
+     \vdots & \vdots & \ddots & \vdots &|& \vdots & \vdots & \ddots & \vdots\\
+     0 &  0 &  \ldots & 1 & | & x_{n,1} &  x_{n,2} & \ldots & x_{n,n}
+\end{bmatrix} 
+$$
+
+As we can see, we have obtained a bijective correspondence between the vectors of $B$ and the vectors of $B'$, because we can write the vectors of $B'$ as a unique combinations of vectors of $B$ in this way:
+
+$$
+\begin{aligned}
+\vec u_1 &= x_{1,1} \vec v_1 + x_{1,2} \vec v_2 + \cdots + x_{1,n} \vec v_n\\
+\vec u_2 &= x_{2,1} \vec v_1 + x_{2,2} \vec v_2 + \cdots + x_{2,n} \vec v_n\\
+&\vdots\\
+\vec u_n &= x_{n,1} \vec v_1 + x_{n,2} \vec v_2 + \cdots + x_{n,n} \vec v_n\\
+\end{aligned}.
+$$
+
+As we have previously ascertained, our transition matrix from $B'$ to $B$ is 
+
+$$
+X = \begin{bmatrix}
+    x_{1,1} & x_{1,2} & \cdots & x_{1, n}\\
+    x_{2,1} & x_{2,2} & \cdots & x_{2, n}\\
+    \vdots  & \vdots & \ddots & \vdots\\
+    x_{n,1} & x_{n,2} & \cdots & x_{n, n}
+\end{bmatrix}.
+$$
+
+So we can transform the coordinates of a generic vector $\vec w$, expressed through the $B'$ basis, in the coordinates with respect to $B$ basis in this way:
+
+$$
+[ \ \vec w \ ]_B = X [ \ \vec w \ ]_{B'}.
+$$
+
+The same process can be applied to find the transition matrix from $B$ to $B'$, just swap the two bases in the augmented matrix and solve the linear systems.

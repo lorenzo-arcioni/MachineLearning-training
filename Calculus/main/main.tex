@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{book}
+\usepackage[most]{tcolorbox}
+%\usepackage{fontspec}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[left=20mm, right=20mm, bottom=20mm]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usepackage{nicematrix}
+\usepackage{mathtools}
+\usepackage{centernot}
+\usepackage{titlesec}
+
+\titleformat*{\subsubsection}{\large\bfseries}
+
+\usetikzlibrary{positioning}
+
+\hypersetup{
+    colorlinks=false,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+
+\usetikzlibrary{arrows.meta}
+\setlength{\parindent}{0pt}
+\input{my_definitions}
+%\setmainfont{Ubuntu Mono}
+\title{Analisi I}
+\author{Mattia Arcioni}
+\date{\today}
+\linespread{1.25}
+\setcounter{chapter}{-1}
+
+
+\begin{document}
+\maketitle
+
+\input{preface}
+\input{prerequisites}
+
+\tableofcontents
+\newpage
+
+\input{ch0/ch0}
+\input{ch1/ch1}
+\input{ch2/ch2}
+\input{ch3/ch3}
+\input{ch4/ch4}
+\input{ch5/ch5}
+\input{ch6/ch6}
+\input{ch7/ch7}
+\input{ch8/ch8}
+\input{ch9/ch9}
+
+\end{document}

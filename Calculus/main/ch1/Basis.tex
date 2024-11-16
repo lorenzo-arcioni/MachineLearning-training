@@ -1,0 +1,184 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BASIS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basis and Dimension}
+
+\subsection{Basis}
+
+A maximal linearly independent subset of vectors of $V$ that spans $V$ is called a \textbf{basis} of the vector space $V$.
+\\
+
+This means that a subset $B$ of $V$ is a \textbf{basis} if it satisfies the two following conditions:
+
+\begin{itemize}
+\item \textbf{Linear independence:}
+    For every finite subset $\{ \vec{\beta} _{1},\dotsc ,\vec {\beta}_{n}\}$ of $B$, if ${\displaystyle c_{1}\vec {\beta}_{1} + \cdots + c_{n}\vec {\beta}_{n}=\vec {0} }$ for some ${\displaystyle c_{1},\dotsc ,c_{m}}$ in $\mathbb F$, then ${\displaystyle c_{1}=\cdots =c_{m}=0}$.
+\item \textbf{Spanning property:}
+    For every vector $\vec{v}$ in $V$, one can choose ${\displaystyle a_{1},\dots, a_{n}}$ in $\mathbb F$ and ${\displaystyle \vec {\beta}_{1},\dots  ,\vec {\beta}_{n}}$ in $B$ such that ${\displaystyle \vec {v} = a_{1}\vec {\beta}_{1} + \cdots + a_{n}\vec {\beta}_{n}}$.
+\end{itemize}
+
+The scalars $a_{i}$ are called the coordinates of the vector $\vec{v}$ with respect to the \textbf{basis} $B$, and by the first property they are uniquely determined.
+\\
+
+Note that is more useful to consider a basis as a sequence of vectors instead of a set. This because when considering the coordinates of a vector, we have an implicit need to know the order of the basis vectors for applying coordinates to the right basis vectors. For this reason, we will denote a basis with angle brackets $\langle \beta_1, \beta_2, \dots, \beta_n \rangle$.
+\\
+
+In a vector space $V$ with a basis $B = \langle\vec \beta_1, \dots, \vec \beta_n \rangle$, the coordinates of a generic vector $\vec v \in V$ are the coefficients used to express $\vec v$ as a linear combinations of the basis vectors. So the coordinates of the vector $\vec v \in V$ with respect to basis $B$ are represented by the column vector 
+
+$$
+[ \ \vec v \ ]_B =\begin{bmatrix}
+    c_1 \\
+    \vdots\\
+    c_n
+\end{bmatrix}
+$$
+
+
+
+In a vector space, the coordinates of a vector with respect to a given \emph{basis} are unique. Specifically, let $V$ be a vector space and $B = \langle \vec{\beta}_1, \vec{\beta}_2, \ldots, \vec{\beta}_n\rangle$ be a \emph{basis} for $V$. For any vector $\vec{v} \in V$, there exists a unique set of scalars $c_1, c_2, \ldots, c_n$ such that:
+
+$$
+\vec{v} = c_1 \vec{\beta}_1 + c_2 \vec{\beta}_2 + \ldots + c_n \vec{\beta}_n
+$$
+
+This uniqueness property ensures that the coordinates of $\vec{v}$ in terms of the \emph{basis} $B$ are well-defined and distinct.
+\\
+
+We can view a basis of a vector space as a minimal subset of vectors with which we can control all the dimensions of a vector space. In particular, each vector in the basis is responsible for "controlling" one dimension of the vector space. This way, through coefficients, we can express each dimension of the vector space. From the perspective of an individual component of a vector: the basis vector responsible for the $i$-th component of vector $\vec{v}$ will be a vector from the basis (let's denote it for simplicity as $\vec{\beta}_x \in B$). In this case, the $i$-th component of the basis vector $\vec{\beta}_x$ and the coefficient $\alpha_x$ will be responsible for generating the $i$-th component of vector $\vec{v}$ in a similar way to this: $v_i = \alpha_x b_{x_i}$.
+\\
+
+However, since there are other combinations that indirectly affect the same dimension managed by the basis vector $\vec{\beta}_x$, we also need to include these coefficients in the equation. Thus, we obtain $v_i = \alpha_1 \vec\beta^i_{1} + \ldots + \alpha_x \vec{\beta}^i_{x} + \ldots + \alpha_n \vec{\beta}^i_{n}$. Therefore, to find all the coefficients of the basis for vector $\vec{v}$ (across all components), one needs to solve the linear system $v_i = \alpha_1 \vec{\beta}^i_{1} + \ldots + \alpha_x \vec{\beta}^i_{x} + \ldots + \alpha_n \vec{\beta}^i_{n}$ for each $i$ from $1$ to $n$.
+
+$$
+\begin{cases}
+\alpha_1 \vec{\beta}^{\ 1}_{1} + \ldots + \alpha_x \vec{\beta}^{\ 1}_{x} + \ldots + \alpha_n \vec{\beta}^{\ 1}_{n} = v_1 \\
+\ \ \vdots\\
+\alpha_1 \vec{\beta}^{\ n}_{1} + \ldots + \alpha_x \vec{\beta}^{\ n}_{x} + \ldots + \alpha_n \vec{\beta}^{\ n}_{n} = v_n
+\end{cases}
+$$
+
+And since it is a linear system of $n$ equations and $n$ variables (where all equations are linearly independent, as we mentioned that ${B}$ is a minimal set that can control all dimensions of $V$), we obtain a unique solution for each vector in $V$.
+
+
+For each $\mathbb{R}^n$ vector space, the vectors 
+
+$$\xi_n = \langle \begin{bmatrix} 1 \\ 0 \\ 0 \\ \vdots \\ 0\end{bmatrix}, \\ \begin{bmatrix} 0 \\ 1 \\ 0 \\ \vdots \\ 0\end{bmatrix}, \ \dots, \\\begin{bmatrix} 0 \\ 0 \\ 0 \\ \vdots \\ 1\end{bmatrix}\rangle$$ 
+
+are a \textbf{basis} (known as \emph{canonical} \textbf{basis}) also known as $\xi_n$. We denote these vectors $\vec{e}_1, \dots, \vec{e}_n$.
+\\
+
+Every non-trivial vector space posses a basis. The trivial one, instead, doesn't have a basis (its basis is $\emptyset$). Existence of a basis in a vector space is guaranteed by the properties of spanning and linear independence.
+\\
+
+For a given basis $B$ of $V$ with $n$ elements, a linear combination of vectors $a_1 \vec v_1 + \cdots + a_k \vec v_k= \vec 0$ if and only if $a_1 [\vec v_1]_B + \cdots + a_k [\vec v_k]_B = \vec 0$.
+\\
+
+In fact, let $\langle \vec \beta_1, \cdots, \vec \beta_n \rangle$ be a basis of $V$ vector space. Each vector $\vec v_i \in V$ can be expressed as a linear combination of basis vector, so:
+
+\begin{align*}
+a_1 \vec v_1 + \cdots + a_k \vec v_k &= a_1 (\alpha_{1,1} \vec \beta_1 + \cdots + \alpha_{1,n} \vec \beta_n) + \cdots + a_k (\alpha_{k,1} \vec \beta_1 + \cdots + \alpha_{k,n} \vec \beta_n) = \\
+&=(a_1 \alpha_{1,1} + \cdots + a_k \alpha_{k,1}) \vec \beta_1 + \cdots + (a_1 \alpha_{1,n} + \cdots + a_k \alpha_{k,n}) \vec \beta_n = \vec 0.
+\end{align*}
+
+This implies that
+
+$$
+\begin{cases}
+a_1 \alpha_{1,1} + \cdots + a_k \alpha_{k,1} = 0 \\
+\ \ \vdots\\
+a_1 \alpha_{1,n} + \cdots + a_k \alpha_{k,n} = 0
+\end{cases}
+$$
+
+that can be easily written as follow:
+
+$$
+a_1 \begin{bmatrix}
+\alpha_{1,1}\\
+\vdots\\
+\alpha_{1,n}
+\end{bmatrix} + \cdots + a_{k} \begin{bmatrix}
+\alpha_{k,1}\\
+\vdots\\
+\alpha_{k,n}
+\end{bmatrix}
+= a_1 [\vec v_1]_B + \cdots + a_k [\vec v_k]_B = \vec 0.
+$$
+
+Geometrically, the whole matter can be interpreted in this way: each coordinate vector of every vector in the initial linear combination is "telling" how much "force" to apply to each base vector that "controls" a certain coordinate. Let's take an example: consider a generic component of every vector in the initial combination. We know that the combination $a_1 v_i + \cdots + a_k v_i$ equals zero, which tells us that the forces acting on the $i$-th component of the combination cancel out. However, this component (and all other components) stem from a sum of a linear combination of the $i$-th components of the base vectors. This implies that the force applied to any generic component is equally expressed by the same base vectors. So, for example $6=3\cdot2$ and $3=3\cdot1$, the combination $2 \cdot 6 + (-4) \cdot 3 = 0$, so also $2 \cdot (3\cdot2) + (-4) \cdot (3\cdot1) = 0$; now you can note that the number $3$ is our basis number, it can express $3$ and $6$.
+The coordinate of $6$ is $2$ and the coordinate of $3$ is $1$. Substitute now $6$ with $3$ and $3$ with $1$ in the first combination and tah dah: $2 \cdot 2 + (-4) \cdot 1 = 0$. That is obvious because we have scaled the \textbf{same} basis number by two factors that cancel each other out.
+\\
+
+\textbf{Steinitz Lemma}\\
+This lemma describes a relationship between the sizes of linearly independent sets and spanning sets within a vector space. It states that if you have a linearly independent set $U$ and a spanning set $W$ in a vector space $V$, then the size of $U$ cannot exceed the size of $W$. Furthermore, it asserts that by removing a specific number of vectors from $W$, you can create a new set that, when combined with $U$, still spans the entire space $V$. This lemma highlights the balance between linear independence and spanning capabilities in constructing bases for vector spaces.
+
+This lemma can be understood in terms of spanning and linear independence in vector spaces. Imagine a vector space as a geometric plane or higher-dimensional space. A set of vectors is linearly independent if none of them can be expressed as a linear combination of the others. This implies that each vector in the set contributes a unique direction to the space. On the other hand, a spanning set encompasses vectors that collectively cover the entire space, allowing you to reach any point within it through linear combinations of those vectors.
+
+The Steinitz Lemma highlights a balance between these two aspects: linear independence and spanning capability. It states that if you have a set of vectors that are linearly independent and another set that spans the space, you cannot have more linearly independent vectors than those that span the space. In other words, you can't introduce more unique directions than necessary to cover the entire space. Moreover, the lemma suggests that you can fine-tune the spanning set by removing redundant vectors while still ensuring that it covers the space adequately.
+\\
+
+\textbf{Exchange Lemma}\\
+This lemma addresses the process of exchanging vectors within a basis while maintaining the basis' fundamental properties. It states that given a vector space $V$ and a basis $B$, if there exists a vector $\vec{v}$ that can replace one of the basis vectors while preserving linear independence, then the resulting set after the exchange still forms a basis for $V$. This lemma offers an intuitive understanding of how bases can be modified without compromising their essential properties. Think of a basis as a set of vectors that serves as the "building blocks" for constructing any vector within the space through linear combinations. The Exchange Lemma states that if you have a basis and you encounter a vector that can replace one of the basis vectors while preserving linear independence, you can make that exchange without losing the ability to represent all vectors in the space.
+
+Geometrically, this means that if you have a set of vectors forming a basis, each vector contributes a unique direction to the space. If you find another vector that can take the place of one of the basis vectors without introducing any redundant direction, you can seamlessly integrate it into the basis. This process allows for flexibility in choosing basis vectors while ensuring that the resulting set still forms a complete "framework" for the vector space.
+\\
+
+
+\textbf{Theorem on Basis Size Consistency}\\
+This theorem establishes a fundamental property of bases in finite-dimensional vector spaces. It asserts that all bases of a finite-dimensional vector space have the same number of elements. In other words, the size of a basis is an intrinsic property of the vector space itself and does not depend on the specific choice of basis vectors. This theorem underscores the uniformity and consistency of bases across a given vector space.
+
+Geometrically, this theorem reflects the uniformity of bases across a given vector space. Imagine a basis as a set of vectors that forms the "standard directions" or "axes" along which you can measure and describe vectors within the space. The theorem asserts that, regardless of the specific choice of basis vectors, the number of these "standard directions" remains constant for a finite-dimensional vector space.
+
+In essence, this theorem emphasizes the intrinsic properties of vector spaces that dictate the number of dimensions needed to describe them fully. It implies that the dimensionality of a space is a well-defined characteristic that transcends the individual choice of basis vectors, highlighting the consistency and universality of bases within the same vector space.
+
+\subsection{Dimension}
+
+The \emph{dimension} of a vector space is a fundamental concept that quantifies the "size" or "degree of freedom" of the space. For a vector space $V$, the dimension is defined as the  the cardinality of a basis of $V$. The \emph{dimension} of the trivial vector space is equal to 0, since its basis is $\emptyset$.
+\\
+
+A vector space $V$ with a basis $B$ is \emph{finite-dimensional} if the basis $B$ has finitely many vectors
+\\
+
+\textbf{Dimensionality Corollary: Limits of Linear Independence}\\
+The corollary regarding the dimension of linearly independent sets states that in a vector space, the maximum number of linearly independent vectors within a set is bounded by the dimensionality of the space. This implies that adding more vectors beyond this limit leads to linear dependence, compromising the independence of the set. 
+\\
+
+Geometrically, it signifies that in a space of a given dimension, there is a finite capacity for representing distinct directions or degrees of freedom with linearly independent vectors. Algebraically, it underscores the role of dimensionality as an upper bound for the size of independent sets, reflecting the inherent structure of the space. This corollary guides the analysis of systems of equations, subspaces, and transformations by providing insight into the relationship between linear independence and space dimension. 
+\\
+
+Ultimately, it illuminates the fundamental connection between the structure of vector spaces and the properties of their subsets, offering a foundational principle for mathematical reasoning and analysis.
+\\
+
+\textbf{Dimensionality Corollary: Minimum Spanning Sets}\\
+The corollary states that any spanning set in a vector space must contain at least as many vectors as the dimension of the space. In a vector space of dimension $n$, a spanning set cannot have fewer than $n$ vectors. This is because a spanning set must be able to generate all vectors within the space. If it had fewer than $n$ vectors, there would not be enough basis vectors to span the entire space. Thus, the minimum size of a spanning set is the dimension of the vector space. 
+\\
+
+This corollary highlights a fundamental property of spanning sets: they must have sufficient vectors to cover the entire space, ensuring that any vector in the space can be expressed as a linear combination of those spanning vectors. It underscores the relationship between the dimension of a vector space and the minimum number of vectors required to span that space effectively.
+\\
+
+\textbf{Interconnection of Linear Independence and Spanning Sets in Vector Spaces}\\
+Combining the two previous results yields a fundamental understanding of linear independence and spanning sets in a vector space. The first corollary establishes that the maximum number of linearly independent vectors within a set is bounded by the dimensionality of the vector space. It implies that exceeding this limit results in linear dependence, compromising the set's independence. 
+
+Conversely, the second result, the theorem, states that any spanning set must contain at least $n$ vectors in a vector space of dimension $n$. If it had fewer than $n$ vectors, there would not be enough vectors to span the entire space.
+
+Therefore, the duality between linear independence and spanning sets is clear: a set of $n$ linearly independent vectors is guaranteed to span a space of dimension $n$, while a spanning set with $n$ vectors ensures linear independence and sufficiency for spanning the space. This interconnection underscores the importance of these concepts in understanding the structure and properties of vector spaces.
+\\
+
+\textbf{Dimension Inequality}\\
+If \(V\) is finite-dimensional and \(U\) is a subspace of \(V\), then \(\text{dim} \, U \leq \text{dim} \, V\). This inequality highlights that the dimension of a subspace cannot exceed the dimension of its parent vector space.
+\\
+
+Geometrically, this statement reflects the idea that a subspace cannot "stick out" beyond the dimensions of its parent space. If you imagine a three-dimensional room (parent space) and a two-dimensional wall within it (subspace), the wall cannot extend beyond the boundaries of the room. Therefore, the dimension of the subspace must be less than or equal to the dimension of the parent space.
+\\
+
+\textbf{Equality of Dimensions}\\
+Suppose \(V\) is finite-dimensional and \(U\) is a subspace of \(V\) such that \(\text{dim} \, U = \text{dim} \, V\). Then \(U = V\). This equality asserts that when the dimensions of a subspace and its parent space are equal, the subspace spans the entire parent space.
+\\
+
+This concept can be visualized as a smaller room (subspace) filling up the entire space of a larger room (parent space). If both rooms have the same dimensions, it means the smaller room perfectly fits within the larger one, occupying all available space. Geometrically, this represents a complete overlap between the subspace and the parent space.
+\\
+
+\textbf{Dimension of Sum of Subspaces}\\
+For subspaces \(V_1\) and \(V_2\) of a finite-dimensional vector space, \(\text{dim}(V_1 + V_2) = \text{dim} \, V_1 + \text{dim} \, V_2 - \text{dim}(V_1 \cap V_2)\). This equation determines the dimension of the sum of two subspaces based on their individual dimensions and their intersection.
+\\
+
+Geometrically, this theorem describes how the dimensions of subspaces interact when they are combined. It's like stacking two rooms (subspaces) on top of each other within a building (parent space). The combined space's dimension is determined by adding the individual dimensions of each room and then adjusting for any shared areas between them. This reflects the total usable space created by the combination of both subspaces.
+\\
